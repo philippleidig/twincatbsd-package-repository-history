@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Commits from Specific Branch</title>
+    <script>
+        async function fetchCommitsFromBranch() {
+            const owner = 'philippleidig'; // GitHub Benutzername
+            const repo = 'twincatbsd-repository-history'; // Name des Repos
+            const branch = 'main'; // Der Branch, von dem du die Commits abfragen möchtest
+            const searchTerm = ''; // Der Begriff, nach dem in Commit-Nachrichten gesucht wird
+
+
+
+            const url = `https://api.github.com/repos/${owner}/${repo}/commits?sha=${branch}`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const commits = await response.json();
+
+                // Filtern nach Commits, die den Suchbegriff in der Commit-Nachricht enthalten
+                const filteredCommits = commits.filter(commit =>
+                    commit.commit.message.toLowerCase().includes(searchTerm.toLowerCase())
+                );
+
+                // Ausgabe der gefilterten Commits
+                console.log('Gefilterte Commits:', filteredCommits);
+                const commitList = document.getElementById('commitList');
+                commitList.innerHTML = ''; // Leeren der Liste vor dem Hinzufügen
+
+                filteredCommits.forEach(commit => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `SHA: ${commit.sha}, Message: ${commit.commit.message}`;
+                    commitList.appendChild(listItem);
+                });
+
+            } catch (error) {
+                console.error('Error fetching commits:', error);
+            }
+        }
+
+        async function fetchFileFromCommit() {
+            const owner = 'philippleidig'; // GitHub Benutzername
+            const repo = 'twincatbsd-repository-history'; // Name des Repos
+            const filePath = 'packagesite.html'; // Pfad zur Datei
+            const commitSHA = 'ea2166ac1a0a6b171455fbfd370d3a8825487f1e'; // Der spezifische Commit SHA
+
+            const url = `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}?ref=${commitSHA}`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const data = await response.json();
+
+                // Der Inhalt der Datei ist Base64-kodiert, deshalb dekodieren wir diesen
+                const fileContent = atob(data.content);
+
+                console.log(fileContent); // Hier kannst du den Inhalt der Datei verwenden
+               // document.getElementById('fileContent').innerText = fileContent;
+            } catch (error) {
+                console.error('Error fetching file:', error);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Commit Historie von Branch</h1>
+    <ul id="commitList">Lade Commits...</ul>
+    <pre id="fileContent">Lade Datei...</pre>
+    <script>
+        fetchCommitsFromBranch();
+    </script>
+    <script>
+        fetchFileFromCommit();
+    </script>
+</body>
+</html>
