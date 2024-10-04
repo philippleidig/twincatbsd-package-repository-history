@@ -5,14 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TwinCAT/BSD Packages Overview</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
 
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.datatables.net/2.1.7/css/dataTables.bootstrap5.css" rel="stylesheet">
-
-
-
+  <link href="style.css" rel="stylesheet" />
 
 </head>
 
@@ -26,48 +23,37 @@
 
   <content class="content">
     <div class="table-container">
-      <table id="table" width="100%"></table>
+      <div id="table" width="100%"></div>
     </div>
 
     <div class="package-info-container">
-      <div class="package-info-header">
-        <h1 id="name">
-        </h1>
-        <p class="version">
-          Version:
-          <span id="version">
-          </span>
-        </p>
+      <div>
+        <h1 id="package-info-name"></h1>
+        <p id="package-info-comment"></p>
       </div>
-      <div class="package-info-description">
-        <p id="comment">
-        </p>
+      <div>
+        <b>Version:</b><br>
+        <div id="package-info-version-container">
+          <select id="package-info-version"></select>
       </div>
-      <div class="package-info-additional-info">
+      </div>
+      <div>
         <p>
-          Maintainer:
-          <a id="maintainer">
-          </a>
+          <b>Maintainer:</b>
+          <a id="package-info-maintainer"></a>
         </p>
         <p>
-          Architecture:
-          <span id="arch">
-          </span>
+          <b>Architecture:</b>
+          <span id="package-info-arch"></span>
         </p>
         <p>
-          Description:
-          <span id="comment-details">
-          </span>
+          <b>Description:</b>
+          <span id="package-info-comment-details"></span>
         </p>
       </div>
-      <div class="package-info-deps-info">
-        <h3>
-          Dependencies:
-        </h3>
-        <ul id="deps">
-          <li>
-          </li>
-        </ul>
+      <div>
+        <h3>Dependencies:</h3>
+        <div id="package-info-deps"></div>
       </div>
     </div>
   </content>
@@ -78,16 +64,7 @@
   </footer>
 
 
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-  <script src="https://cdn.datatables.net/2.1.7/js/dataTables.min.js"></script>
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.datatables.net/2.1.7/js/dataTables.bootstrap5.js"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
-
+  <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
   <script src="main.js"></script>
 
 </body>

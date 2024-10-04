@@ -1,7 +1,135 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 .content {
     width: 100%;
+    display: flex;
 }
 
 .table-container {
-    width: 60%;
+    width: 70%;
+}
+
+.package-info-container {
+    width: 30%;
+    padding: 30px;
+}
+
+.gridjs-table th:first-child,
+.gridjs-table td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: white;
+    z-index: 1;
+}
+
+.gridjs-tbody tr:nth-child(even) .gridjs-td {
+    background-color: #f2f2f2;
+}
+
+.gridjs-tbody tr:nth-child(odd) .gridjs-td {
+    background-color: #ffffff;
+}
+
+.gridjs-tbody tr:hover .gridjs-td {
+    background-color: red;
+}
+
+.selected {
+    background-color: red;
+}
+
+td[data-column-id="package"],
+td:first-child {
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+ul ul {
+    margin-left: 10px;
+}
+
+li {
+    margin: 5px 0;
+}
+
+.collapsible {
+    cursor: pointer;
+}
+
+.arrow {
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.2s ease;
+    width: 12px;
+}
+
+.arrow.collapsed {
+    transform: rotate(0deg);
+}
+
+.arrow.expanded {
+    transform: rotate(90deg);
+}
+
+.dependency-content {
+    display: none;
+    margin-left: 10px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+#package-info-version {
+    appearance: none;
+    background-color: #f9f9f9;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 10px 40px 10px 12px;
+    font-size: 16px;
+    color: #333;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#package-info-version::after {
+    content: '▼';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #999;
+    pointer-events: none;
+}
+
+#package-info-version-container {
+    position: relative;
+    display: inline-block;
+}
+
+#package-info-version:hover {
+    border-color: #3b82f6;
+}
+
+#package-info-version:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+#package-info-version:disabled {
+    background-color: #e5e7eb;
+    color: #9ca3af;
+    cursor: not-allowed;
 }
