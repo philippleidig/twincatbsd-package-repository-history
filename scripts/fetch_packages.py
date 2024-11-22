@@ -20,8 +20,8 @@ PACKAGESITE_YAML_PATH = 'packagesite.yaml'
 PACKAGESITE_JSON_PATH = 'packagesite.json'
 TEMP_PATH = 'temp'
 
-PACKAGES_PATH = '..\packagehistory.json'
-README_PATH = "..\README.md"
+PACKAGES_PATH = 'packagehistory.json'
+README_PATH = "README.md"
 
 def load_json_file(file_path):
     if os.path.exists(file_path):
@@ -377,8 +377,8 @@ def run():
     sort_json_packages(json_path)
 
     # move packagesite.json from temp folder
-    packagesite_path = os.path.join("..\\", PACKAGESITE_JSON_PATH)
-    move_file(json_path, packagesite_path)
+    # packagesite_path = os.path.join("..\\", PACKAGESITE_JSON_PATH)
+    move_file(json_path, PACKAGESITE_JSON_PATH)
 
     # delete temp folder recursively
     delete_folder_recursively(TEMP_PATH)

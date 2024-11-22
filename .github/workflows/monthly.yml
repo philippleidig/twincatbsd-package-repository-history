@@ -39,8 +39,8 @@ jobs:
   
       - name: Add and Commit changes
         run: |
-          git add packagesite.json packagehistory.json
-          git commit -m "$REPOSITORY_DATE_$REPOSITORY_BUILD" 
+          git add packagesite.json packagehistory.json README.md
+          git commit -m "${{ env.REPOSITORY_DATE }}_${{ env.REPOSITORY_BUILD }}" 
   
       - name: Push changes to main branch
         run: |
