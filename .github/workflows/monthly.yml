@@ -27,7 +27,7 @@ jobs:
         run: python scripts/fetch_packages.py   
 
       - name: Upload packagesite.json as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: "${{ env.REPOSITORY_DATE }}_${{ env.REPOSITORY_BUILD }}_packagesite.json"
           path: packagesite.json
