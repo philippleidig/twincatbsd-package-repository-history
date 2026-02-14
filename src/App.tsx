@@ -204,6 +204,11 @@ function App() {
           </div>
         </div>
       </div>
+
+      <footer className="flex-shrink-0 border-t border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-4 py-2 text-center text-xs text-slate-500 dark:text-slate-400">
+        This is an independent, community-driven project — not affiliated with, endorsed by, or sponsored by Beckhoff Automation GmbH &amp; Co. KG.
+        "TwinCAT" and "TwinCAT/BSD" are registered trademarks of Beckhoff Automation GmbH &amp; Co. KG.
+      </footer>
     </div>
   );
 }

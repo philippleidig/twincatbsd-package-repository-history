@@ -1,5 +1,9 @@
 # TwinCAT/BSD 14 - Package History
 
+## Disclaimer
+
+This is an independent, community-driven project and is **not affiliated with, endorsed by, or sponsored by Beckhoff Automation GmbH & Co. KG**. "TwinCAT" and "TwinCAT/BSD" are registered trademarks of Beckhoff Automation GmbH & Co. KG. All trademarks belong to their respective owners. The use of these names is solely for descriptive and informational purposes and does not imply any association with or endorsement by the trademark holder.
+
 | Build  | Release Date | FreeBSD Version | Package Count | Update Date |
 |--------|--------------|-----------------|---------------|-------------|
 | 126815 | 2024-02-06 | 14 | 1495 | 2024-02-10 |
