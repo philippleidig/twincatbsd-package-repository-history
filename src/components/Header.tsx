@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { BuildInfo } from '../types/package';
 
 interface HeaderProps {
@@ -6,9 +7,25 @@ interface HeaderProps {
   builds: Record<string, BuildInfo>;
   selectedBuild: string;
   onSelectBuild: (buildId: string) => void;
+  onUploadPackageLog: (content: string) => void;
 }
 
-export function Header({ theme, onToggleTheme, builds, selectedBuild, onSelectBuild }: HeaderProps) {
+export function Header({ theme, onToggleTheme, builds, selectedBuild, onSelectBuild, onUploadPackageLog }: HeaderProps) {
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (typeof reader.result === 'string') {
+        onUploadPackageLog(reader.result);
+      }
+    };
+    reader.readAsText(file);
+    // Reset so the same file can be uploaded again
+    e.target.value = '';
+  };
   const sortedBuilds = Object.entries(builds).sort(([a], [b]) => Number(b) - Number(a));
   const currentBuild = builds[selectedBuild];
 
@@ -51,6 +68,24 @@ export function Header({ theme, onToggleTheme, builds, selectedBuild, onSelectBu
             </span>
           </div>
         )}
+
+        <button
+          onClick={() => fileInputRef.current?.click()}
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors text-sm font-medium text-slate-600 dark:text-slate-300"
+          aria-label="Upload packages.log"
+        >
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+          </svg>
+          <span className="hidden sm:inline">Upload packages.log</span>
+        </button>
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept=".log,.txt"
+          onChange={handleFileChange}
+          className="hidden"
+        />
 
         <button
           onClick={onToggleTheme}

@@ -4,11 +4,13 @@ import { usePackageData } from './hooks/usePackageData';
 import { Header } from './components/Header';
 import { PackageList } from './components/PackageList';
 import { PackageDetails } from './components/PackageDetails';
+import { PackageLogAnalysis } from './components/PackageLogAnalysis';
+import { PackageCheckResult } from './types/package';
+import { parsePackageLog, detectBuild, analyzePackages } from './utils/packageLogParser';
 
-interface Tab {
-  id: string;
-  packageName: string;
-}
+type Tab =
+  | { id: string; type: 'package'; packageName: string }
+  | { id: string; type: 'analysis'; label: string; results: PackageCheckResult[]; buildId: string };
 
 function App() {
   const { theme, toggleTheme } = useTheme();
@@ -27,25 +29,43 @@ function App() {
   const currentBuild = selectedBuild || latestBuild;
 
   const openPackageInTab = useCallback((packageName: string) => {
-    // Check if tab already exists
-    const existingTab = openTabs.find(tab => tab.packageName === packageName);
+    const existingTab = openTabs.find(tab => tab.type === 'package' && tab.packageName === packageName);
     if (existingTab) {
       setActiveTabId(existingTab.id);
       return;
     }
-    // Create new tab
     const newTab: Tab = {
       id: `tab-${Date.now()}`,
+      type: 'package',
       packageName,
     };
     setOpenTabs(prev => [...prev, newTab]);
     setActiveTabId(newTab.id);
   }, [openTabs]);
 
+  const handleUploadPackageLog = useCallback((content: string) => {
+    if (!packageHistory) return;
+
+    const parsed = parsePackageLog(content);
+    if (parsed.length === 0) return;
+
+    const detectedBuild = detectBuild(parsed, packageHistory) || currentBuild;
+    const results = analyzePackages(parsed, detectedBuild, packageHistory);
+
+    const newTab: Tab = {
+      id: `analysis-${Date.now()}`,
+      type: 'analysis',
+      label: `Analysis (${detectedBuild})`,
+      results,
+      buildId: detectedBuild,
+    };
+    setOpenTabs(prev => [...prev, newTab]);
+    setActiveTabId(newTab.id);
+  }, [packageHistory, currentBuild]);
+
   const closeTab = useCallback((tabId: string) => {
     setOpenTabs(prev => {
       const newTabs = prev.filter(tab => tab.id !== tabId);
-      // If closing the active tab, switch to another tab or back to main view
       if (activeTabId === tabId) {
         if (newTabs.length > 0) {
           setActiveTabId(newTabs[newTabs.length - 1].id);
@@ -62,7 +82,7 @@ function App() {
   }, [openTabs, activeTabId]);
 
   const activeTabPkg = useMemo(() => {
-    if (!packageSite || !activeTab) return null;
+    if (!packageSite || !activeTab || activeTab.type !== 'package') return null;
     return packageSite[activeTab.packageName] || null;
   }, [packageSite, activeTab]);
 
@@ -95,6 +115,11 @@ function App() {
     return null;
   }
 
+  const getTabLabel = (tab: Tab) => {
+    if (tab.type === 'package') return tab.packageName;
+    return tab.label;
+  };
+
   return (
     <div className="h-full flex flex-col bg-slate-50 dark:bg-slate-900">
       <Header
@@ -103,6 +128,7 @@ function App() {
         builds={packageHistory.builds}
         selectedBuild={currentBuild}
         onSelectBuild={setSelectedBuild}
+        onUploadPackageLog={handleUploadPackageLog}
       />
 
       <div className="flex-1 flex min-h-0">
@@ -111,7 +137,7 @@ function App() {
             packages={packageSite}
             history={packageHistory}
             selectedBuild={currentBuild}
-            selectedPackage={activeTab?.packageName || null}
+            selectedPackage={activeTab?.type === 'package' ? activeTab.packageName : null}
             onSelectPackage={openPackageInTab}
             searchQuery={searchQuery}
             onSearchChange={setSearchQuery}
@@ -139,7 +165,7 @@ function App() {
                         : 'text-slate-600 dark:text-slate-400'
                     }`}
                   >
-                    {tab.packageName}
+                    {getTabLabel(tab)}
                   </button>
                   <button
                     onClick={(e) => {
@@ -160,13 +186,21 @@ function App() {
 
           {/* Tab Content */}
           <div className="flex-1 min-h-0">
-            <PackageDetails
-              pkg={activeTabPkg}
-              packages={packageSite}
-              history={packageHistory}
-              selectedBuild={currentBuild}
-              onOpenPackageTab={openPackageInTab}
-            />
+            {activeTab?.type === 'analysis' ? (
+              <PackageLogAnalysis
+                results={activeTab.results}
+                buildId={activeTab.buildId}
+                history={packageHistory}
+              />
+            ) : (
+              <PackageDetails
+                pkg={activeTabPkg}
+                packages={packageSite}
+                history={packageHistory}
+                selectedBuild={currentBuild}
+                onOpenPackageTab={openPackageInTab}
+              />
+            )}
           </div>
         </div>
       </div>

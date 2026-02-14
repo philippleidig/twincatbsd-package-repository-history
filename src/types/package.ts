@@ -54,3 +54,19 @@ export interface DependencyNode {
   children: DependencyNode[];
   isCircular?: boolean;
 }
+
+export interface ParsedPackage {
+  name: string;
+  version: string;
+  description: string;
+}
+
+export type PackageCheckStatus = 'match' | 'mismatch' | 'not_found';
+
+export interface PackageCheckResult {
+  name: string;
+  installedVersion: string;
+  expectedVersion: string | null;
+  status: PackageCheckStatus;
+  description: string;
+}
