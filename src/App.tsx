@@ -19,6 +19,7 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [openTabs, setOpenTabs] = useState<Tab[]>([]);
   const [activeTabId, setActiveTabId] = useState<string | null>(null);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const latestBuild = useMemo(() => {
     if (!packageHistory) return '';
@@ -32,6 +33,7 @@ function App() {
     const existingTab = openTabs.find(tab => tab.type === 'package' && tab.packageName === packageName);
     if (existingTab) {
       setActiveTabId(existingTab.id);
+      setSidebarOpen(false);
       return;
     }
     const newTab: Tab = {
@@ -41,6 +43,7 @@ function App() {
     };
     setOpenTabs(prev => [...prev, newTab]);
     setActiveTabId(newTab.id);
+    setSidebarOpen(false);
   }, [openTabs]);
 
   const handleUploadPackageLog = useCallback((content: string) => {
@@ -129,10 +132,33 @@ function App() {
         selectedBuild={currentBuild}
         onSelectBuild={setSelectedBuild}
         onUploadPackageLog={handleUploadPackageLog}
+        onToggleSidebar={() => setSidebarOpen(prev => !prev)}
       />
 
       <div className="flex-1 flex min-h-0">
-        <div className="w-80 lg:w-96 flex-shrink-0">
+        {/* Mobile sidebar overlay */}
+        {sidebarOpen && (
+          <div
+            className="fixed inset-0 z-40 bg-black/50 md:hidden"
+            onClick={() => setSidebarOpen(false)}
+          />
+        )}
+
+        {/* Sidebar - overlay on mobile, static on desktop */}
+        <div className={`
+          fixed inset-y-0 left-0 z-50 w-80 transform transition-transform duration-200 ease-in-out md:relative md:z-auto md:transform-none md:transition-none md:w-80 lg:w-96 md:flex-shrink-0
+          ${sidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+        `}>
+          {/* Mobile close button */}
+          <button
+            onClick={() => setSidebarOpen(false)}
+            className="absolute top-3 right-3 z-10 p-1 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 md:hidden"
+            aria-label="Close sidebar"
+          >
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
           <PackageList
             packages={packageSite}
             history={packageHistory}

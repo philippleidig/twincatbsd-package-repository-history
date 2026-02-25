@@ -29,8 +29,8 @@ export function PackageLogAnalysis({ results, buildId, history }: PackageLogAnal
   return (
     <div className="h-full flex flex-col bg-slate-50 dark:bg-slate-900">
       {/* Header */}
-      <div className="sticky top-0 z-10 bg-slate-50 dark:bg-slate-900 px-6 pt-6 pb-4 border-b border-slate-200 dark:border-slate-700">
-        <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-1">
+      <div className="sticky top-0 z-10 bg-slate-50 dark:bg-slate-900 px-4 md:px-6 pt-4 md:pt-6 pb-3 md:pb-4 border-b border-slate-200 dark:border-slate-700">
+        <h1 className="text-xl md:text-2xl font-bold text-slate-800 dark:text-slate-100 mb-1">
           Package Log Analysis
         </h1>
         <p className="text-slate-600 dark:text-slate-400">
@@ -38,7 +38,7 @@ export function PackageLogAnalysis({ results, buildId, history }: PackageLogAnal
         </p>
       </div>
 
-      <div className="flex-1 overflow-auto p-6">
+      <div className="flex-1 overflow-auto p-4 md:p-6">
         {/* Build Info */}
         {buildInfo && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
@@ -70,7 +70,7 @@ export function PackageLogAnalysis({ results, buildId, history }: PackageLogAnal
         )}
 
         {/* Summary */}
-        <div className="grid grid-cols-3 gap-4 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
           <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-green-200 dark:border-green-800">
             <div className="text-xs font-medium text-green-600 dark:text-green-400 uppercase tracking-wide mb-1">
               Consistent
@@ -95,7 +95,7 @@ export function PackageLogAnalysis({ results, buildId, history }: PackageLogAnal
         </div>
 
         {/* Filter */}
-        <div className="flex gap-2 mb-4">
+        <div className="flex flex-wrap gap-2 mb-4">
           <button
             onClick={() => setFilter('all')}
             className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${

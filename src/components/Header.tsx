@@ -8,9 +8,10 @@ interface HeaderProps {
   selectedBuild: string;
   onSelectBuild: (buildId: string) => void;
   onUploadPackageLog: (content: string) => void;
+  onToggleSidebar: () => void;
 }
 
-export function Header({ theme, onToggleTheme, builds, selectedBuild, onSelectBuild, onUploadPackageLog }: HeaderProps) {
+export function Header({ theme, onToggleTheme, builds, selectedBuild, onSelectBuild, onUploadPackageLog, onToggleSidebar }: HeaderProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,8 +31,17 @@ export function Header({ theme, onToggleTheme, builds, selectedBuild, onSelectBu
   const currentBuild = builds[selectedBuild];
 
   return (
-    <header className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-4 py-3 flex items-center justify-between shadow-sm">
-      <div className="flex items-center gap-4">
+    <header className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-3 md:px-4 py-3 flex items-center justify-between shadow-sm gap-2">
+      <div className="flex items-center gap-2 md:gap-4">
+        <button
+          onClick={onToggleSidebar}
+          className="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors md:hidden"
+          aria-label="Toggle package list"
+        >
+          <svg className="w-5 h-5 text-slate-600 dark:text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
         <img
           src="./images/twincatbsd.svg"
           alt="TwinCAT/BSD"
@@ -39,9 +49,9 @@ export function Header({ theme, onToggleTheme, builds, selectedBuild, onSelectBu
         />
       </div>
 
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-2 md:gap-6 flex-wrap justify-end">
         <div className="flex items-center gap-3">
-          <label htmlFor="build-select" className="text-sm font-medium text-slate-600 dark:text-slate-300">
+          <label htmlFor="build-select" className="hidden sm:inline text-sm font-medium text-slate-600 dark:text-slate-300">
             Build:
           </label>
           <select

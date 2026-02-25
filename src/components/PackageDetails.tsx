@@ -40,8 +40,8 @@ export function PackageDetails({ pkg, packages, history, selectedBuild, onOpenPa
   return (
     <div className="h-full flex flex-col bg-slate-50 dark:bg-slate-900">
       {/* Sticky Header */}
-      <div className="sticky top-0 z-10 bg-slate-50 dark:bg-slate-900 px-6 pt-6 pb-4 border-b border-slate-200 dark:border-slate-700">
-        <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-1">
+      <div className="sticky top-0 z-10 bg-slate-50 dark:bg-slate-900 px-4 md:px-6 pt-4 md:pt-6 pb-3 md:pb-4 border-b border-slate-200 dark:border-slate-700">
+        <h1 className="text-xl md:text-2xl font-bold text-slate-800 dark:text-slate-100 mb-1 break-all">
           {pkg.name}
         </h1>
         <p className="text-slate-600 dark:text-slate-400">
@@ -50,13 +50,13 @@ export function PackageDetails({ pkg, packages, history, selectedBuild, onOpenPa
       </div>
 
       {/* Scrollable Content */}
-      <div className="flex-1 overflow-auto p-6">
+      <div className="flex-1 overflow-auto p-4 md:p-6">
 
       {/* Two-column layout when dependencies exist */}
       <div className={`flex gap-6 ${hasDependencies ? 'flex-col xl:flex-row' : ''}`}>
         {/* Left column - Package info */}
         <div className={hasDependencies ? 'xl:w-1/2 min-w-0' : 'max-w-3xl'}>
-          <div className="grid grid-cols-2 gap-4 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
               <div className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-1">
                 Current Version
@@ -81,28 +81,28 @@ export function PackageDetails({ pkg, packages, history, selectedBuild, onOpenPa
               <h2 className="font-semibold text-slate-800 dark:text-slate-200">Details</h2>
             </div>
             <div className="p-4 space-y-3 text-sm">
-              <div className="flex">
-                <span className="w-28 font-medium text-slate-500 dark:text-slate-400">Maintainer</span>
+              <div className="flex flex-col sm:flex-row">
+                <span className="w-28 flex-shrink-0 font-medium text-slate-500 dark:text-slate-400">Maintainer</span>
                 <a href={`mailto:${pkg.maintainer}`} className="text-twincat-red hover:underline">
                   {pkg.maintainer}
                 </a>
               </div>
-              <div className="flex">
-                <span className="w-28 font-medium text-slate-500 dark:text-slate-400">Origin</span>
-                <span className="text-slate-700 dark:text-slate-300">{pkg.origin}</span>
+              <div className="flex flex-col sm:flex-row">
+                <span className="w-28 flex-shrink-0 font-medium text-slate-500 dark:text-slate-400">Origin</span>
+                <span className="text-slate-700 dark:text-slate-300 break-all">{pkg.origin}</span>
               </div>
-              <div className="flex">
-                <span className="w-28 font-medium text-slate-500 dark:text-slate-400">Architecture</span>
+              <div className="flex flex-col sm:flex-row">
+                <span className="w-28 flex-shrink-0 font-medium text-slate-500 dark:text-slate-400">Architecture</span>
                 <span className="text-slate-700 dark:text-slate-300">{pkg.arch}</span>
               </div>
-              <div className="flex">
-                <span className="w-28 font-medium text-slate-500 dark:text-slate-400">License</span>
+              <div className="flex flex-col sm:flex-row">
+                <span className="w-28 flex-shrink-0 font-medium text-slate-500 dark:text-slate-400">License</span>
                 <span className="text-slate-700 dark:text-slate-300">{pkg.licenses?.join(', ') || 'N/A'}</span>
               </div>
               {pkg.www && (
-                <div className="flex">
-                  <span className="w-28 font-medium text-slate-500 dark:text-slate-400">Website</span>
-                  <a href={pkg.www} target="_blank" rel="noopener noreferrer" className="text-twincat-red hover:underline truncate">
+                <div className="flex flex-col sm:flex-row">
+                  <span className="w-28 flex-shrink-0 font-medium text-slate-500 dark:text-slate-400">Website</span>
+                  <a href={pkg.www} target="_blank" rel="noopener noreferrer" className="text-twincat-red hover:underline break-all">
                     {pkg.www}
                   </a>
                 </div>
