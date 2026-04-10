@@ -29,3 +29,4 @@ This is an independent, community-driven project and is **not affiliated with, e
 | 266331 | 2025-12-16 | 14.3-RELEASE-p5 | 1756 | 2026-01-10 |
 | 275264 | 2026-01-16 | 14.3-RELEASE-p7 | 1769 | 2026-02-10 |
 | 287859 | 2026-02-17 | 14.3-RELEASE-p8 | 1771 | 2026-03-10 |
+| 306164 | 2026-03-30 | 14.3-RELEASE-p9 | 1783 | 2026-04-10 |
