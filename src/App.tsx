@@ -5,12 +5,14 @@ import { Header } from './components/Header';
 import { PackageList } from './components/PackageList';
 import { PackageDetails } from './components/PackageDetails';
 import { PackageLogAnalysis } from './components/PackageLogAnalysis';
+import { BuildCompare } from './components/BuildCompare';
 import { PackageCheckResult } from './types/package';
 import { parsePackageLog, detectBuild, analyzePackages } from './utils/packageLogParser';
 
 type Tab =
   | { id: string; type: 'package'; packageName: string }
-  | { id: string; type: 'analysis'; label: string; results: PackageCheckResult[]; buildId: string };
+  | { id: string; type: 'analysis'; label: string; results: PackageCheckResult[]; buildId: string }
+  | { id: string; type: 'compare'; label: string };
 
 function App() {
   const { theme, toggleTheme } = useTheme();
@@ -66,6 +68,16 @@ function App() {
     setActiveTabId(newTab.id);
   }, [packageHistory, currentBuild]);
 
+  const handleCompareBuilds = useCallback(() => {
+    const newTab: Tab = {
+      id: `compare-${Date.now()}`,
+      type: 'compare',
+      label: 'Build Compare',
+    };
+    setOpenTabs(prev => [...prev, newTab]);
+    setActiveTabId(newTab.id);
+  }, []);
+
   const closeTab = useCallback((tabId: string) => {
     setOpenTabs(prev => {
       const newTabs = prev.filter(tab => tab.id !== tabId);
@@ -120,6 +132,7 @@ function App() {
 
   const getTabLabel = (tab: Tab) => {
     if (tab.type === 'package') return tab.packageName;
+    if (tab.type === 'analysis') return tab.label;
     return tab.label;
   };
 
@@ -132,6 +145,7 @@ function App() {
         selectedBuild={currentBuild}
         onSelectBuild={setSelectedBuild}
         onUploadPackageLog={handleUploadPackageLog}
+        onCompareBuilds={handleCompareBuilds}
         onToggleSidebar={() => setSidebarOpen(prev => !prev)}
       />
 
@@ -216,6 +230,10 @@ function App() {
               <PackageLogAnalysis
                 results={activeTab.results}
                 buildId={activeTab.buildId}
+                history={packageHistory}
+              />
+            ) : activeTab?.type === 'compare' ? (
+              <BuildCompare
                 history={packageHistory}
               />
             ) : (
