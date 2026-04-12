@@ -70,3 +70,12 @@ export interface PackageCheckResult {
   status: PackageCheckStatus;
   description: string;
 }
+
+export type BuildCompareStatus = 'added' | 'deleted' | 'modified';
+
+export interface BuildCompareResult {
+  name: string;
+  status: BuildCompareStatus;
+  versionA: string | null;
+  versionB: string | null;
+}

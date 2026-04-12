@@ -1,4 +1,4 @@
-import { ParsedPackage, PackageCheckResult, PackageHistory } from '../types/package';
+import { ParsedPackage, PackageCheckResult, PackageHistory, BuildCompareResult } from '../types/package';
 
 export function parsePackageLog(content: string): ParsedPackage[] {
   const lines = content.split(/\r?\n/);
@@ -91,4 +91,27 @@ export function analyzePackages(
       description: pkg.description,
     };
   });
+}
+
+export function compareBuilds(
+  buildIdA: string,
+  buildIdB: string,
+  history: PackageHistory
+): BuildCompareResult[] {
+  const results: BuildCompareResult[] = [];
+
+  for (const [pkgName, pkg] of Object.entries(history.packages)) {
+    const versionA = pkg.versions[buildIdA] || null;
+    const versionB = pkg.versions[buildIdB] || null;
+
+    if (versionA && !versionB) {
+      results.push({ name: pkgName, status: 'deleted', versionA, versionB });
+    } else if (!versionA && versionB) {
+      results.push({ name: pkgName, status: 'added', versionA, versionB });
+    } else if (versionA && versionB && versionA !== versionB) {
+      results.push({ name: pkgName, status: 'modified', versionA, versionB });
+    }
+  }
+
+  return results.sort((a, b) => a.name.localeCompare(b.name));
 }
