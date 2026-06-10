@@ -2435,7 +2435,7 @@
         "abi": "FreeBSD:14:*",
         "arch": "freebsd:14:*",
         "prefix": "/usr/local",
-        "sum": "84945308627ad1e8da0e05e1b4b804d892858caa2a55edd2af01b56f7b836374",
+        "sum": "eb18e56456c76dec580545dc752a7b5305f07758e74f8a6bc95b920fb13884a8",
         "flatsize": 243,
         "path": "All/bhf-meta-default-5_1.pkg",
         "repopath": "All/bhf-meta-default-5_1.pkg",
@@ -2443,7 +2443,7 @@
         "licenses": [
             "NA"
         ],
-        "pkgsize": 1263,
+        "pkgsize": 1264,
         "desc": "Install this package if you want the default TC/BSD packages",
         "deps": {
             "BapiCmd": {
@@ -2484,7 +2484,7 @@
             },
             "bhyve-bhf": {
                 "origin": "bhf/bhyve-bhf",
-                "version": "14.4.2.1_9"
+                "version": "14.4.5.0_9"
             },
             "bwf": {
                 "origin": "bhf/bwf",
@@ -2504,11 +2504,11 @@
             },
             "os-release-bhf": {
                 "origin": "bhf/os-release-bhf",
-                "version": "14.4.2.1_319475"
+                "version": "14.4.5.0_334630"
             },
             "restorepoint": {
                 "origin": "bhf/restorepoint",
-                "version": "0.1.7"
+                "version": "0.1.8"
             },
             "runonce": {
                 "origin": "bhf/runonce",
@@ -2527,7 +2527,7 @@
             "bhf"
         ],
         "annotations": {
-            "build_timestamp": "2026-04-28T08:15:16+0000",
+            "build_timestamp": "2026-05-28T09:36:56+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -2606,22 +2606,22 @@
     "bhyve-bhf": {
         "name": "bhyve-bhf",
         "origin": "bhf/bhyve-bhf",
-        "version": "14.4.2.1_9",
+        "version": "14.4.5.0_9",
         "comment": "TC/BSD Hypervisor",
         "maintainer": "info@beckhoff.com",
         "www": "https://github.com/beckhoff/freebsd-src",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "c2c6d2d96dc52b66f0c82ec00adeb6c0b3f778b9492f92015b6f6a62343c7595",
+        "sum": "4a11b492c7cb0b8a6732ac6c8c7825dbd2d3e5b597cdb34dd4a15dde2c5436f7",
         "flatsize": 1245010,
-        "path": "All/bhyve-bhf-14.4.2.1_9.pkg",
-        "repopath": "All/bhyve-bhf-14.4.2.1_9.pkg",
+        "path": "All/bhyve-bhf-14.4.5.0_9.pkg",
+        "repopath": "All/bhyve-bhf-14.4.5.0_9.pkg",
         "licenselogic": "single",
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 383129,
+        "pkgsize": 383223,
         "desc": "Bhyve\n\nThis package includes the bhyve hypervisor known from FreeBSD. It includes all\nfeatures known from FreeBSD's bhyve. Additionally, it adds some advanced\nfeatures like GPU passthrough or FwCfg support to bhyve.\n\nWWW: https://github.com/beckhoff/freebsd-src",
         "deps": {
             "rtapi": {
@@ -2654,7 +2654,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-04-27T08:38:40+0000",
+            "build_timestamp": "2026-05-21T12:11:29+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -59596,7 +59596,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "1a9103441711fd330926abe2601c2641b758b66fcb7747d6fc9b901ccf177664",
+        "sum": "03e3057a5d20185cbfcf47f49068553f4357c5644412cb82feab7cddca92ebe8",
         "flatsize": 102252,
         "path": "All/luemuctl-0.1.35.1_3.pkg",
         "repopath": "All/luemuctl-0.1.35.1_3.pkg",
@@ -59604,12 +59604,12 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 38428,
+        "pkgsize": 38450,
         "desc": "With luemuctl you can easily create or run a TC/BSD or Windows 10 VM.",
         "deps": {
             "bhyve-bhf": {
                 "origin": "bhf/bhyve-bhf",
-                "version": "14.4.2.1_9"
+                "version": "14.4.5.0_9"
             },
             "cdrtools": {
                 "origin": "sysutils/cdrtools",
@@ -59641,7 +59641,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-04-27T08:41:36+0000",
+            "build_timestamp": "2026-05-21T12:12:53+0000",
             "built_by": "poudriere-git-1.0_2",
             "flavor": "default"
         }
@@ -59656,7 +59656,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "b6775f4ee268aae4ecf96b32e1dd48304aaa3e0672196ba78d25e82d69a9b7bf",
+        "sum": "f3b73162ff7ddb1ff82090163df5168a745e978757d3c1f2bd4f8902042aa706",
         "flatsize": 102252,
         "path": "All/luemuctl-bare-0.1.35.1_3.pkg",
         "repopath": "All/luemuctl-bare-0.1.35.1_3.pkg",
@@ -59664,12 +59664,12 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 38353,
+        "pkgsize": 38375,
         "desc": "With luemuctl you can easily create or run a TC/BSD or Windows 10 VM.",
         "deps": {
             "bhyve-bhf": {
                 "origin": "bhf/bhyve-bhf",
-                "version": "14.4.2.1_9"
+                "version": "14.4.5.0_9"
             },
             "dhcpd": {
                 "origin": "net/dhcpd",
@@ -59685,7 +59685,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-04-27T08:38:44+0000",
+            "build_timestamp": "2026-05-21T12:11:34+0000",
             "built_by": "poudriere-git-1.0_2",
             "flavor": "bare"
         }
@@ -67415,19 +67415,19 @@
     "os-generic-kernel": {
         "name": "os-generic-kernel",
         "origin": "os/kernel",
-        "version": "14.4.2.1,2",
+        "version": "14.4.5.0,2",
         "comment": "FreeBSD kernel without debug enabled",
         "maintainer": "info@beckhoff.com",
         "www": "https://www.freebsd.org",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/",
-        "sum": "5589652734b85316414da942779ae2db9faede09a4851ac95746b144a59e5815",
-        "flatsize": 173203910,
-        "path": "All/os-generic-kernel-14.4.2.1,2.pkg",
-        "repopath": "All/os-generic-kernel-14.4.2.1,2.pkg",
+        "sum": "12a8c5935c79742a1020a852ddc64ced46f27fbc93a4d3622bf6b8b1ea41dd8a",
+        "flatsize": 173203958,
+        "path": "All/os-generic-kernel-14.4.5.0,2.pkg",
+        "repopath": "All/os-generic-kernel-14.4.5.0,2.pkg",
         "licenselogic": "single",
-        "pkgsize": 48223447,
+        "pkgsize": 48222549,
         "desc": "This FreeBSD OS port installs the default kernel in /boot/kernel.\n\nThis is not required for jails or other chroot environments.\n\nWWW: https://www.freebsd.org",
         "categories": [
             "os"
@@ -67436,7 +67436,7 @@
             "DEBUG": "off"
         },
         "annotations": {
-            "build_timestamp": "2026-04-27T08:36:55+0000",
+            "build_timestamp": "2026-05-21T12:09:30+0000",
             "built_by": "poudriere-git-1.0_2",
             "flavor": "generic"
         }
@@ -67444,35 +67444,35 @@
     "os-generic-userland": {
         "name": "os-generic-userland",
         "origin": "os/userland",
-        "version": "14.4.2.1,2",
+        "version": "14.4.5.0,2",
         "comment": "Metaport for the FreeBSD userland",
         "maintainer": "info@beckhoff.com",
         "www": "https://www.freebsd.org",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "bb140405b7d0f08ffd6883c6b1eea7cff47f2eda6157d956115b9d8b99cc51fc",
+        "sum": "b05399f57d09eaa502697af43f6d77237828f36aa36d8b4eba964fdc76b5420d",
         "flatsize": 243,
-        "path": "All/os-generic-userland-14.4.2.1,2.pkg",
-        "repopath": "All/os-generic-userland-14.4.2.1,2.pkg",
+        "path": "All/os-generic-userland-14.4.5.0,2.pkg",
+        "repopath": "All/os-generic-userland-14.4.5.0,2.pkg",
         "licenselogic": "single",
         "licenses": [
             "NA"
         ],
-        "pkgsize": 1104,
+        "pkgsize": 1105,
         "desc": "This FreeBSD OS port installs the userland meta-package. This package\ninstalls the other OS dependancies to give you a fully functional FreeBSD\nenvironment, suitable for both a host system and jails.\n\nWWW: https://www.freebsd.org",
         "deps": {
             "os-generic-userland-base": {
                 "origin": "os/userland-base",
-                "version": "14.4.2.1,2"
+                "version": "14.4.5.0,2"
             },
             "os-generic-userland-docs": {
                 "origin": "os/userland-docs",
-                "version": "14.4.2.1,2"
+                "version": "14.4.5.0,2"
             },
             "os-generic-userland-lib32": {
                 "origin": "os/userland-lib32",
-                "version": "14.4.2.1,2"
+                "version": "14.4.5.0,2"
             }
         },
         "categories": [
@@ -67486,7 +67486,7 @@
             "TESTS": "off"
         },
         "annotations": {
-            "build_timestamp": "2026-04-28T08:11:34+0000",
+            "build_timestamp": "2026-05-28T09:35:25+0000",
             "built_by": "poudriere-git-1.0_2",
             "flavor": "generic"
         }
@@ -67494,48 +67494,48 @@
     "os-generic-userland-base": {
         "name": "os-generic-userland-base",
         "origin": "os/userland-base",
-        "version": "14.4.2.1,2",
+        "version": "14.4.5.0,2",
         "comment": "FreeBSD base system share and libexec dirs",
         "maintainer": "info@beckhoff.com",
         "www": "https://www.freebsd.org",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/",
-        "sum": "057a6ff0cf488fe0d2725b6ae91062e76d52c180bb62d83928c3f3ac4de5289f",
-        "flatsize": 90087666,
-        "path": "All/os-generic-userland-base-14.4.2.1,2.pkg",
-        "repopath": "All/os-generic-userland-base-14.4.2.1,2.pkg",
+        "sum": "d929a7bd03daf0ab0839438e7f86b8d8e9f576635c65107fbe129a59d6c1f8a3",
+        "flatsize": 90087476,
+        "path": "All/os-generic-userland-base-14.4.5.0,2.pkg",
+        "repopath": "All/os-generic-userland-base-14.4.5.0,2.pkg",
         "licenselogic": "single",
-        "pkgsize": 10223030,
+        "pkgsize": 10216495,
         "desc": "This FreeBSD OS port installs the directories and files that are apart of\n/usr/share as well as /libexec and /usr/libexec. It is part of the 'userland'\nmetapackage, and is normally installed as part of its dependancy chain.\n\nThis package includes the 'base-update' command, which can be used to safely\nupdate your base-package system.\n\nWWW: https://www.freebsd.org",
         "deps": {
             "os-generic-userland-base-bootstrap": {
                 "origin": "os/userland-base-bootstrap",
-                "version": "14.4.2.1,2"
+                "version": "14.4.5.0,2"
             },
             "os-generic-userland-bin": {
                 "origin": "os/userland-bin",
-                "version": "14.4.2.1,2"
+                "version": "14.4.5.0,2"
             },
             "os-generic-userland-boot": {
                 "origin": "os/userland-boot",
-                "version": "14.4.2.1_1,2"
+                "version": "14.4.5.0_1,2"
             },
             "os-generic-userland-conf": {
                 "origin": "os/userland-conf",
-                "version": "14.4.2.1,2"
+                "version": "14.4.5.0,2"
             },
             "os-generic-userland-lib": {
                 "origin": "os/userland-lib",
-                "version": "14.4.2.1,2"
+                "version": "14.4.5.0,2"
             },
             "os-generic-userland-rescue": {
                 "origin": "os/userland-rescue",
-                "version": "14.4.2.1,2"
+                "version": "14.4.5.0,2"
             },
             "os-generic-userland-sbin": {
                 "origin": "os/userland-sbin",
-                "version": "14.4.2.1,2"
+                "version": "14.4.5.0,2"
             }
         },
         "categories": [
@@ -67586,7 +67586,7 @@
             "libzfs.so.4"
         ],
         "annotations": {
-            "build_timestamp": "2026-04-27T08:38:06+0000",
+            "build_timestamp": "2026-05-21T12:10:38+0000",
             "built_by": "poudriere-git-1.0_2",
             "flavor": "generic"
         }
@@ -67594,19 +67594,19 @@
     "os-generic-userland-base-bootstrap": {
         "name": "os-generic-userland-base-bootstrap",
         "origin": "os/userland-base-bootstrap",
-        "version": "14.4.2.1,2",
+        "version": "14.4.5.0,2",
         "comment": "FreeBSD userland libelf, rtld and other critical early libraries",
         "maintainer": "info@beckhoff.com",
         "www": "https://www.freebsd.org",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/",
-        "sum": "413dbcf85fde430c5f66391022f6c7fa849347b0aed66b74b7fc5f45692e29d4",
+        "sum": "32f35b7a1fcdecbc014bad167e2c8d6e68cd07267fd1e6b9853a451c93675dcb",
         "flatsize": 2536123,
-        "path": "All/os-generic-userland-base-bootstrap-14.4.2.1,2.pkg",
-        "repopath": "All/os-generic-userland-base-bootstrap-14.4.2.1,2.pkg",
+        "path": "All/os-generic-userland-base-bootstrap-14.4.5.0,2.pkg",
+        "repopath": "All/os-generic-userland-base-bootstrap-14.4.5.0,2.pkg",
         "licenselogic": "single",
-        "pkgsize": 960102,
+        "pkgsize": 960748,
         "desc": "This FreeBSD OS port installs the critical runtime libraries, such as RTLD,\nlibc, libm and others. This package should be updated after the kernel, but before\nother userland packages. This updating best-practice is enforced when using the\n'base-update' tool for updating.\n\nWWW: https://www.freebsd.org",
         "categories": [
             "os"
@@ -67617,7 +67617,7 @@
             "libthr.so.3"
         ],
         "annotations": {
-            "build_timestamp": "2026-04-27T08:36:55+0000",
+            "build_timestamp": "2026-05-21T12:09:30+0000",
             "built_by": "poudriere-git-1.0_2",
             "flavor": "generic"
         }
@@ -67625,19 +67625,19 @@
     "os-generic-userland-bin": {
         "name": "os-generic-userland-bin",
         "origin": "os/userland-bin",
-        "version": "14.4.2.1,2",
+        "version": "14.4.5.0,2",
         "comment": "FreeBSD userland bin directories and binaries",
         "maintainer": "info@beckhoff.com",
         "www": "https://www.freebsd.org",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/",
-        "sum": "1f3be2a02619e02adeed55fa563696723670bf0f1b76f0661a9abd54b46f7e1c",
+        "sum": "6c5d53a06674cf187393adaa2eae78aec571d4acdbfbd4127e117363f37eb4f3",
         "flatsize": 15284912,
-        "path": "All/os-generic-userland-bin-14.4.2.1,2.pkg",
-        "repopath": "All/os-generic-userland-bin-14.4.2.1,2.pkg",
+        "path": "All/os-generic-userland-bin-14.4.5.0,2.pkg",
+        "repopath": "All/os-generic-userland-bin-14.4.5.0,2.pkg",
         "licenselogic": "single",
-        "pkgsize": 4745742,
+        "pkgsize": 4746069,
         "desc": "This FreeBSD OS port installs the binaries that are included in the /bin and\n/usr/bin directories, minus the compilers and other development related tools.\n\nWWW: https://www.freebsd.org",
         "categories": [
             "os"
@@ -67740,7 +67740,7 @@
             "libzutil.so.2"
         ],
         "annotations": {
-            "build_timestamp": "2026-04-27T08:37:13+0000",
+            "build_timestamp": "2026-05-21T12:10:04+0000",
             "built_by": "poudriere-git-1.0_2",
             "flavor": "generic"
         }
@@ -67748,25 +67748,25 @@
     "os-generic-userland-boot": {
         "name": "os-generic-userland-boot",
         "origin": "os/userland-boot",
-        "version": "14.4.2.1_1,2",
+        "version": "14.4.5.0_1,2",
         "comment": "FreeBSD Userland boot directories and files",
         "maintainer": "info@beckhoff.com",
         "www": "https://www.freebsd.org",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/",
-        "sum": "050f30e318d345313a72df3b31ef50bf2eec65a67592ad245560bd2f590d0b7c",
+        "sum": "401c450bdc95565ba78a95a3188ad5cae2a6676b429d20b44ac1a26f4b2ada2f",
         "flatsize": 6946524,
-        "path": "All/os-generic-userland-boot-14.4.2.1_1,2.pkg",
-        "repopath": "All/os-generic-userland-boot-14.4.2.1_1,2.pkg",
+        "path": "All/os-generic-userland-boot-14.4.5.0_1,2.pkg",
+        "repopath": "All/os-generic-userland-boot-14.4.5.0_1,2.pkg",
         "licenselogic": "single",
-        "pkgsize": 1287541,
+        "pkgsize": 1287567,
         "desc": "This FreeBSD OS port installs the /boot support files, including\nthe loaders, menus and other configuration files.\n\nWWW: https://www.freebsd.org",
         "categories": [
             "os"
         ],
         "annotations": {
-            "build_timestamp": "2026-04-27T08:37:13+0000",
+            "build_timestamp": "2026-05-21T12:09:56+0000",
             "built_by": "poudriere-git-1.0_2",
             "flavor": "generic"
         }
@@ -67774,19 +67774,19 @@
     "os-generic-userland-conf": {
         "name": "os-generic-userland-conf",
         "origin": "os/userland-conf",
-        "version": "14.4.2.1,2",
+        "version": "14.4.5.0,2",
         "comment": "FreeBSD userland etc files and directories",
         "maintainer": "info@beckhoff.com",
         "www": "https://www.freebsd.org",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/",
-        "sum": "d2ca042f054825cd7dce6f60df0c2a877559d5654e3eeda07050742a808c2ad6",
+        "sum": "e8af8da85eb9f9c8f2e5560e880a09cae8d7c93bb299677b16b7c40bf79ac797",
         "flatsize": 1791476,
-        "path": "All/os-generic-userland-conf-14.4.2.1,2.pkg",
-        "repopath": "All/os-generic-userland-conf-14.4.2.1,2.pkg",
+        "path": "All/os-generic-userland-conf-14.4.5.0,2.pkg",
+        "repopath": "All/os-generic-userland-conf-14.4.5.0,2.pkg",
         "licenselogic": "single",
-        "pkgsize": 282362,
+        "pkgsize": 282222,
         "desc": "This FreeBSD OS port installs the configuration files that are included\nin the /etc directory. These files are updated when using 'pkg upgrade' or\nthe 'base-update' system utility. Files that are unable to be merged\nautomatically can be interactively updated using the 'base-update merge'\ncommand.\n\nWARNING: Removing this package will delete your configuration files in /etc!\n\nWWW: https://www.freebsd.org",
         "categories": [
             "os"
@@ -67795,7 +67795,7 @@
             "libc.so.7"
         ],
         "annotations": {
-            "build_timestamp": "2026-04-27T08:37:01+0000",
+            "build_timestamp": "2026-05-21T12:09:55+0000",
             "built_by": "poudriere-git-1.0_2",
             "flavor": "generic"
         }
@@ -67803,24 +67803,24 @@
     "os-generic-userland-devtools": {
         "name": "os-generic-userland-devtools",
         "origin": "os/userland-devtools",
-        "version": "14.4.2.1,2",
+        "version": "14.4.5.0,2",
         "comment": "FreeBSD userland compilers and libraries",
         "maintainer": "info@beckhoff.com",
         "www": "https://www.freebsd.org",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/",
-        "sum": "e10a1e3d82caf85db80396149d3ba2341feeef328b29c50e2244bda11bcaf9e1",
-        "flatsize": 288854029,
-        "path": "All/os-generic-userland-devtools-14.4.2.1,2.pkg",
-        "repopath": "All/os-generic-userland-devtools-14.4.2.1,2.pkg",
+        "sum": "2daeec7b637ed1ee9cb31f459274ce30fdde157b74207c10a2c1326ef9e92467",
+        "flatsize": 288852812,
+        "path": "All/os-generic-userland-devtools-14.4.5.0,2.pkg",
+        "repopath": "All/os-generic-userland-devtools-14.4.5.0,2.pkg",
         "licenselogic": "single",
-        "pkgsize": 80582203,
+        "pkgsize": 80585934,
         "desc": "This FreeBSD OS port installs programs, libraries, and header files that are\nused to build other software. Some major programs like clang, make, and lldb\nare included. If you want to build and/or compile anything, you will need to\ninstall this port.\n\nRestricted jails may want to skip this port, to minimize the arsenal available\nto intruders.\n\nWWW: https://www.freebsd.org",
         "deps": {
             "os-generic-userland-lib32-development": {
                 "origin": "os/userland-lib32-development",
-                "version": "14.4.2.1,2"
+                "version": "14.4.5.0,2"
             }
         },
         "categories": [
@@ -67858,7 +67858,7 @@
             "libz.so.6"
         ],
         "annotations": {
-            "build_timestamp": "2026-04-27T08:41:17+0000",
+            "build_timestamp": "2026-05-21T12:13:08+0000",
             "built_by": "poudriere-git-1.0_2",
             "flavor": "generic"
         }
@@ -67866,25 +67866,25 @@
     "os-generic-userland-docs": {
         "name": "os-generic-userland-docs",
         "origin": "os/userland-docs",
-        "version": "14.4.2.1,2",
+        "version": "14.4.5.0,2",
         "comment": "FreeBSD userland documentation and man pages",
         "maintainer": "info@beckhoff.com",
         "www": "https://www.freebsd.org",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/",
-        "sum": "503eb6e64f9a36d81616e94d36fabe696115783cbe774b01af8517be42e5205f",
+        "sum": "acc5e562a6a595d38e4bfe00364a9069464ae4d77680d31e0b6dd74b095d707c",
         "flatsize": 16584627,
-        "path": "All/os-generic-userland-docs-14.4.2.1,2.pkg",
-        "repopath": "All/os-generic-userland-docs-14.4.2.1,2.pkg",
+        "path": "All/os-generic-userland-docs-14.4.5.0,2.pkg",
+        "repopath": "All/os-generic-userland-docs-14.4.5.0,2.pkg",
         "licenselogic": "single",
-        "pkgsize": 12959189,
+        "pkgsize": 12957427,
         "desc": "This FreeBSD OS port installs the userland man pages, as well as info files.\n\nThis package is not required for runtime and can be ignored if space\nis at a premium.\n\nWWW: https://www.freebsd.org",
         "categories": [
             "os"
         ],
         "annotations": {
-            "build_timestamp": "2026-04-27T08:37:48+0000",
+            "build_timestamp": "2026-05-21T12:10:36+0000",
             "built_by": "poudriere-git-1.0_2",
             "flavor": "generic"
         }
@@ -67892,19 +67892,19 @@
     "os-generic-userland-lib": {
         "name": "os-generic-userland-lib",
         "origin": "os/userland-lib",
-        "version": "14.4.2.1,2",
+        "version": "14.4.5.0,2",
         "comment": "FreeBSD userland lib directories and files",
         "maintainer": "info@beckhoff.com",
         "www": "https://www.freebsd.org",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/",
-        "sum": "76e39098925c0bf61bc57fc32adf3020be3549d7f0509d94563505024c4449c7",
-        "flatsize": 197509092,
-        "path": "All/os-generic-userland-lib-14.4.2.1,2.pkg",
-        "repopath": "All/os-generic-userland-lib-14.4.2.1,2.pkg",
+        "sum": "41763a6048a9dec3bd0ff7ec24284f39d2a9d0f539f0741181ceeda43a71fd52",
+        "flatsize": 197508692,
+        "path": "All/os-generic-userland-lib-14.4.5.0,2.pkg",
+        "repopath": "All/os-generic-userland-lib-14.4.5.0,2.pkg",
         "licenselogic": "single",
-        "pkgsize": 48856298,
+        "pkgsize": 48850819,
         "desc": "This FreeBSD OS port installs the runtime libraries from /lib and /usr/lib.\n\nWWW: https://www.freebsd.org",
         "categories": [
             "os"
@@ -68097,7 +68097,7 @@
             "libzutil.so.2"
         ],
         "annotations": {
-            "build_timestamp": "2026-04-27T08:36:55+0000",
+            "build_timestamp": "2026-05-21T12:09:30+0000",
             "built_by": "poudriere-git-1.0_2",
             "flavor": "generic"
         }
@@ -68105,19 +68105,19 @@
     "os-generic-userland-lib32": {
         "name": "os-generic-userland-lib32",
         "origin": "os/userland-lib32",
-        "version": "14.4.2.1,2",
+        "version": "14.4.5.0,2",
         "comment": "FreeBSD userland 32bit libraries",
         "maintainer": "info@beckhoff.com",
         "www": "https://www.freebsd.org",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/",
-        "sum": "370734ca8bc577dc52f6961bb6b2291ce32035fafc95c5d1a3be1a23b46403ad",
-        "flatsize": 32455297,
-        "path": "All/os-generic-userland-lib32-14.4.2.1,2.pkg",
-        "repopath": "All/os-generic-userland-lib32-14.4.2.1,2.pkg",
+        "sum": "85688958bec44a2c1c5c82359cf527c512717c63c42bb3c4a81cf567adf03aed",
+        "flatsize": 32454897,
+        "path": "All/os-generic-userland-lib32-14.4.5.0,2.pkg",
+        "repopath": "All/os-generic-userland-lib32-14.4.5.0,2.pkg",
         "licenselogic": "single",
-        "pkgsize": 10715500,
+        "pkgsize": 10714444,
         "desc": "This FreeBSD OS port installs the 32bit Compat libraries in /usr/lib32, for\namd64 hosts. This port is not required for normal runtime of 64bit host\nsystems.\n\nWWW: https://www.freebsd.org",
         "categories": [
             "os"
@@ -68298,7 +68298,7 @@
             "libzutil.so.2:32"
         ],
         "annotations": {
-            "build_timestamp": "2026-04-27T08:37:24+0000",
+            "build_timestamp": "2026-05-21T12:10:19+0000",
             "built_by": "poudriere-git-1.0_2",
             "flavor": "generic"
         }
@@ -68306,25 +68306,25 @@
     "os-generic-userland-lib32-development": {
         "name": "os-generic-userland-lib32-development",
         "origin": "os/userland-lib32-development",
-        "version": "14.4.2.1,2",
+        "version": "14.4.5.0,2",
         "comment": "FreeBSD userland 32bit library debug files",
         "maintainer": "info@beckhoff.com",
         "www": "https://www.freebsd.org",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/",
-        "sum": "dd3cd718185b54563ea2271fe8a5b9995f9c6b1c26da7b651ff99bf2494b6f2f",
-        "flatsize": 104339230,
-        "path": "All/os-generic-userland-lib32-development-14.4.2.1,2.pkg",
-        "repopath": "All/os-generic-userland-lib32-development-14.4.2.1,2.pkg",
+        "sum": "d03a4e419788fc6bc0073bb1ec4a4de2320b4f48e2f55f95a90b777079e4eb66",
+        "flatsize": 104338230,
+        "path": "All/os-generic-userland-lib32-development-14.4.5.0,2.pkg",
+        "repopath": "All/os-generic-userland-lib32-development-14.4.5.0,2.pkg",
         "licenselogic": "single",
-        "pkgsize": 50910660,
+        "pkgsize": 50908744,
         "desc": "This FreeBSD OS port installs the lib32 debugging files in /usr/lib32.\n\nWWW: https://www.freebsd.org",
         "categories": [
             "os"
         ],
         "annotations": {
-            "build_timestamp": "2026-04-27T08:37:40+0000",
+            "build_timestamp": "2026-05-21T12:10:08+0000",
             "built_by": "poudriere-git-1.0_2",
             "flavor": "generic"
         }
@@ -68332,25 +68332,25 @@
     "os-generic-userland-rescue": {
         "name": "os-generic-userland-rescue",
         "origin": "os/userland-rescue",
-        "version": "14.4.2.1,2",
+        "version": "14.4.5.0,2",
         "comment": "FreeBSD userland rescue directory and binaries",
         "maintainer": "info@beckhoff.com",
         "www": "https://www.freebsd.org",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/",
-        "sum": "e881f9179a2b55649bc4bca476b536ad0fcff62961f4e09b6f89f38d98b1779f",
+        "sum": "fcda985989a5e0d842829874559bc7f9e7d2ee5f8b3f079bd0b587d4c4a8eec3",
         "flatsize": 17033958,
-        "path": "All/os-generic-userland-rescue-14.4.2.1,2.pkg",
-        "repopath": "All/os-generic-userland-rescue-14.4.2.1,2.pkg",
+        "path": "All/os-generic-userland-rescue-14.4.5.0,2.pkg",
+        "repopath": "All/os-generic-userland-rescue-14.4.5.0,2.pkg",
         "licenselogic": "single",
-        "pkgsize": 6169237,
+        "pkgsize": 6168871,
         "desc": "This FreeBSD OS port installs the static userland binaries in /rescue, which\ncan be used in single-user mode or in other instances where system libraries\nhave been corrupted.\n\nWWW: https://www.freebsd.org",
         "categories": [
             "os"
         ],
         "annotations": {
-            "build_timestamp": "2026-04-27T08:37:21+0000",
+            "build_timestamp": "2026-05-21T12:09:49+0000",
             "built_by": "poudriere-git-1.0_2",
             "flavor": "generic"
         }
@@ -68358,19 +68358,19 @@
     "os-generic-userland-sbin": {
         "name": "os-generic-userland-sbin",
         "origin": "os/userland-sbin",
-        "version": "14.4.2.1,2",
+        "version": "14.4.5.0,2",
         "comment": "FreeBSD userland bin directories and binaries",
         "maintainer": "info@beckhoff.com",
         "www": "https://www.freebsd.org",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/",
-        "sum": "fbff917e33861c85693cbb426313cdc6c19cad6842ec1fba1bcef6ba5aaeb229",
-        "flatsize": 30591138,
-        "path": "All/os-generic-userland-sbin-14.4.2.1,2.pkg",
-        "repopath": "All/os-generic-userland-sbin-14.4.2.1,2.pkg",
+        "sum": "b6cec416a7cde095a0a19886d48a90a079c63d9272a7bce23914ad57c005a6ec",
+        "flatsize": 30591522,
+        "path": "All/os-generic-userland-sbin-14.4.5.0,2.pkg",
+        "repopath": "All/os-generic-userland-sbin-14.4.5.0,2.pkg",
         "licenselogic": "single",
-        "pkgsize": 7761950,
+        "pkgsize": 7762762,
         "desc": "This FreeBSD OS port installs the binaries that are included in the /sbin and\n/usr/sbin directories.\n\nWWW: https://www.freebsd.org",
         "categories": [
             "os"
@@ -68471,7 +68471,7 @@
             "libzutil.so.2"
         ],
         "annotations": {
-            "build_timestamp": "2026-04-27T08:37:19+0000",
+            "build_timestamp": "2026-05-21T12:09:36+0000",
             "built_by": "poudriere-git-1.0_2",
             "flavor": "generic"
         }
@@ -68479,29 +68479,29 @@
     "os-release-bhf": {
         "name": "os-release-bhf",
         "origin": "bhf/os-release-bhf",
-        "version": "14.4.2.1_319475",
+        "version": "14.4.5.0_334630",
         "comment": "FreeBSD build id",
         "maintainer": "info@beckhoff.com",
         "www": "UNKNOWN",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "d59d03b6821803ce50806471c28688ecaf3203cc25a386bbc28e75bbb101b9b3",
+        "sum": "68949b86af203fb215fca279ff5abca64b50b913b64b34b2aaa4a5e8b8c5fbc7",
         "flatsize": 21759,
-        "path": "All/os-release-bhf-14.4.2.1_319475.pkg",
-        "repopath": "All/os-release-bhf-14.4.2.1_319475.pkg",
+        "path": "All/os-release-bhf-14.4.5.0_334630.pkg",
+        "repopath": "All/os-release-bhf-14.4.5.0_334630.pkg",
         "licenselogic": "single",
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 7510,
+        "pkgsize": 7512,
         "desc": "Installs /etc/os-release.d/666-bhf which includes the pipeline id the package was build from.",
         "categories": [
             "bhf"
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-04-28T08:11:34+0000",
+            "build_timestamp": "2026-05-28T09:35:25+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -97391,22 +97391,22 @@
     "restorepoint": {
         "name": "restorepoint",
         "origin": "bhf/restorepoint",
-        "version": "0.1.7",
+        "version": "0.1.8",
         "comment": "Tools to easily snapshot and rollback zfs root-pools.",
         "maintainer": "info@beckhoff.com",
         "www": "UNKNOWN",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "9277d6aa063530d4ce19322e3400d7d2adbfbecf55a6d06fd71d283d77f93c20",
-        "flatsize": 39271,
-        "path": "All/restorepoint-0.1.7.pkg",
-        "repopath": "All/restorepoint-0.1.7.pkg",
+        "sum": "bd2b917caae7ebb938b2ddb6313adfdc40a98ed45f7a48ebbaccc15ddbe5f3df",
+        "flatsize": 39282,
+        "path": "All/restorepoint-0.1.8.pkg",
+        "repopath": "All/restorepoint-0.1.8.pkg",
         "licenselogic": "single",
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 12923,
+        "pkgsize": 12924,
         "desc": "utility to snapshot and rollback zfs root-pools as a whole.",
         "deps": {
             "shlib": {
@@ -97419,7 +97419,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-03-25T19:51:04+0000",
+            "build_timestamp": "2026-05-07T08:58:47+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -102970,7 +102970,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "c4056c7f69c999f71f9ce6d4840a3682a27d46b20d6b7e01b5a9ef54cf70c314",
+        "sum": "65c4815f0563b729c580c3999bc64ecb5988b24c77441ab28b47b8b3a4373e31",
         "flatsize": 473655,
         "path": "All/TC31-TcIoPtp-2.1.2_1.pkg",
         "repopath": "All/TC31-TcIoPtp-2.1.2_1.pkg",
@@ -102978,7 +102978,7 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 198561,
+        "pkgsize": 198565,
         "desc": "TwinCAT Precise Time Protocol",
         "deps": {
             "TC31-XAR": {
@@ -102991,7 +102991,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-04-28T08:12:36+0000",
+            "build_timestamp": "2026-05-28T09:35:46+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -103040,7 +103040,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "8e180e6e9dfde6535a7d321a1b9fcd94db1a6d4f9e5d9b5e35767f5ecc7b50af",
+        "sum": "27fc0398cd79c76610aff5660fef45a3e53ca85e06f9ce901ab14a15ece40c5e",
         "flatsize": 5635174,
         "path": "All/TC31-XAR-4026.24.40_17.pkg",
         "repopath": "All/TC31-XAR-4026.24.40_17.pkg",
@@ -103048,7 +103048,7 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 1807879,
+        "pkgsize": 1807892,
         "desc": "TwinCAT System Service and runtime\n\nWWW: https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_overview/4275768971.html",
         "deps": {
             "BapiCmd": {
@@ -103065,7 +103065,7 @@
             },
             "TC31-XAR-EtherCATSlave": {
                 "origin": "bhf/TC31-XAR-EtherCATSlave",
-                "version": "2.3.4"
+                "version": "2.5.1"
             },
             "TF5000-NC-PTP": {
                 "origin": "bhf/TF5000-NC-PTP",
@@ -103113,11 +103113,11 @@
             },
             "os-generic-userland-base-bootstrap": {
                 "origin": "os/userland-base-bootstrap",
-                "version": "14.4.2.1,2"
+                "version": "14.4.5.0,2"
             },
             "os-generic-userland-lib": {
                 "origin": "os/userland-lib",
-                "version": "14.4.2.1,2"
+                "version": "14.4.5.0,2"
             },
             "rte": {
                 "origin": "bhf/rte",
@@ -103149,7 +103149,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-04-28T08:12:30+0000",
+            "build_timestamp": "2026-05-28T09:35:42+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -103185,29 +103185,29 @@
     "TC31-XAR-EtherCATSlave": {
         "name": "TC31-XAR-EtherCATSlave",
         "origin": "bhf/TC31-XAR-EtherCATSlave",
-        "version": "2.3.4",
+        "version": "2.5.1",
         "comment": "TwinCAT EtherCATSlave driver",
         "maintainer": "info@beckhoff.com",
         "www": "UNKNOWN",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "0926fb539e7a3f9236834004b86db834b1c4050ce71d05ed10e28d919154a1b4",
+        "sum": "12819730fae911db23425c9d9841ca69577ad3dc9d5f8ec012c2c7d5b6b2ca09",
         "flatsize": 477244,
-        "path": "All/TC31-XAR-EtherCATSlave-2.3.4.pkg",
-        "repopath": "All/TC31-XAR-EtherCATSlave-2.3.4.pkg",
+        "path": "All/TC31-XAR-EtherCATSlave-2.5.1.pkg",
+        "repopath": "All/TC31-XAR-EtherCATSlave-2.5.1.pkg",
         "licenselogic": "single",
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 213067,
+        "pkgsize": 213057,
         "desc": "TwinCAT EtherCATSlave driver.",
         "categories": [
             "bhf"
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-03-25T17:17:32+0000",
+            "build_timestamp": "2026-05-28T09:35:25+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -103306,7 +103306,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "c9cd85242c392a3d2876a2c1e3796b67903bcd006c1f73baf183690c34340dc9",
+        "sum": "ebab35d5cd9aa3527349eb2d3b43adf7265641f106d29d8f8d4ce56bee9fd435",
         "flatsize": 5795531,
         "path": "All/TcAmsLogger-0.0.0.2_67.pkg",
         "repopath": "All/TcAmsLogger-0.0.0.2_67.pkg",
@@ -103314,7 +103314,7 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 1291144,
+        "pkgsize": 1291302,
         "desc": "TwinCAT ADS Monitor - AMS Logger",
         "deps": {
             "TC31-XAR": {
@@ -103337,7 +103337,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-04-28T08:13:46+0000",
+            "build_timestamp": "2026-05-28T09:36:21+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -103501,7 +103501,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "bd35f1b229a807b4ddfd1e1c4688c260b7ef0ba96b919c5f36796ac7fce8445f",
+        "sum": "2540f6c970ee0984b2e10847a57177fd8fbdf9e9d00c644829b3550861a8eecf",
         "flatsize": 46471,
         "path": "All/tcbsd-upgrade-0.0.14.9.pkg",
         "repopath": "All/tcbsd-upgrade-0.0.14.9.pkg",
@@ -103509,7 +103509,7 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 15773,
+        "pkgsize": 15778,
         "desc": "Tool for upgrading your system in the most safe way possible",
         "deps": {
             "curl": {
@@ -103518,7 +103518,7 @@
             },
             "restorepoint": {
                 "origin": "bhf/restorepoint",
-                "version": "0.1.7"
+                "version": "0.1.8"
             },
             "shlib": {
                 "origin": "bhf/shlib",
@@ -103530,7 +103530,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-04-10T06:32:02+0000",
+            "build_timestamp": "2026-05-07T08:59:06+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -103787,22 +103787,22 @@
     "TcMeasurementCore": {
         "name": "TcMeasurementCore",
         "origin": "bhf/TcMeasurementCore",
-        "version": "3.3.409.0",
+        "version": "3.3.449.0",
         "comment": "",
         "maintainer": "info@beckhoff.com",
         "www": "UNKNOWN",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "ae1e05ef410f8e3c8d131bdcf875aec0ffd2af77962a1fdaa024aa8dcdb1c2f2",
-        "flatsize": 31441768,
-        "path": "All/TcMeasurementCore-3.3.409.0.pkg",
-        "repopath": "All/TcMeasurementCore-3.3.409.0.pkg",
+        "sum": "0eee38ec21643b022b435140927d8657b878f08579a51901c87ccd6a72dc645a",
+        "flatsize": 34927528,
+        "path": "All/TcMeasurementCore-3.3.449.0.pkg",
+        "repopath": "All/TcMeasurementCore-3.3.449.0.pkg",
         "licenselogic": "single",
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 15779439,
+        "pkgsize": 17794826,
         "desc": "TwinCAT Measurement Core services.",
         "categories": [
             "bhf"
@@ -103821,7 +103821,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-04-16T11:28:36+0000",
+            "build_timestamp": "2026-05-21T06:19:30+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -105457,7 +105457,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "f52fcb4af668e5c29eb732f012117fcbee7dcd6441806e922fd88a2fc93f1d76",
+        "sum": "56e29d38c74aeffd69c94ea5ad48497a469bbfe3a32ca6b9f85a228301b9ea4e",
         "flatsize": 8714979,
         "path": "All/TF1810-PLC-HMI-Web-4.0.1.2_5.pkg",
         "repopath": "All/TF1810-PLC-HMI-Web-4.0.1.2_5.pkg",
@@ -105465,7 +105465,7 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 733560,
+        "pkgsize": 733542,
         "desc": "TC3 PLC HMI Web is a stand-alone web server for the presentation of visualisations which\nare created in the TwinCAT PLC development environment. In order to show the visualisations,\nyou need an HTML5 capable web browser.\nLocal URL: http://127.0.0.1:43241/Port_851/Visu/webvisu.htm\nRemote URL: https://device_name/Tc3PlcHmiWeb/Port_851/Visu/webvisu.htm\n\nWWW: https://www.beckhoff.com/tf1810/",
         "deps": {
             "TC31-XAR": {
@@ -105492,7 +105492,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-04-28T08:13:48+0000",
+            "build_timestamp": "2026-05-28T09:36:28+0000",
             "built_by": "poudriere-git-1.0_2"
         },
         "messages": [
@@ -105686,7 +105686,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "d2c4e9857b459f73427c87eb79091bd299ac29a741abb859a9852f7c98ff4aea",
+        "sum": "efb192b3bedd57a44c5f1a5528c6c549f2dfd45d554320130f13a71df6f39c12",
         "flatsize": 170562738,
         "path": "All/TF3520-Analytics-Storage-Provider-33.16.5.pkg",
         "repopath": "All/TF3520-Analytics-Storage-Provider-33.16.5.pkg",
@@ -105694,7 +105694,7 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 42733011,
+        "pkgsize": 42730563,
         "desc": "The TF3520 Analytics Storage Provider offers a possibility to store your high\nresolution data into a database or store by the usage of the TwinCAT Analytics\nBinary data format. The key is that the user does not have to worry about the\nstructure of the data or tables. This is done automatically by the Storage \nProvider, which puts all that has been configured into a database or store \nand also searches the desired variables for the post-analysis.",
         "deps": {
             "TF6000-ADS-Comm-Lib": {
@@ -105703,7 +105703,7 @@
             },
             "TcMeasurementCore": {
                 "origin": "bhf/TcMeasurementCore",
-                "version": "3.3.409.0"
+                "version": "3.3.449.0"
             },
             "TcTypeSystem2.8": {
                 "origin": "bhf/TcTypeSystem2.8",
@@ -105734,7 +105734,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-04-16T11:32:07+0000",
+            "build_timestamp": "2026-05-21T06:22:39+0000",
             "built_by": "poudriere-git-1.0_2"
         },
         "messages": [
@@ -105846,15 +105846,15 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "8dbef5b9d4e3ccad7058a2115e81a346c0642835d26e3d81ab8bab6d321db0e5",
-        "flatsize": 7956038,
+        "sum": "6e02ac4f870917e0b4c319bcfb502ad75c9090cb2f06380bdc44a5c9602706a2",
+        "flatsize": 7937990,
         "path": "All/TF5100-NCI-3.2.23.0_4.pkg",
         "repopath": "All/TF5100-NCI-3.2.23.0_4.pkg",
         "licenselogic": "single",
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 787058,
+        "pkgsize": 785860,
         "desc": "The TwinCAT NCI stands for 'numerical control interpolation' and is the NC\nsystem for interpolated path movements.  TwinCAT NCI offers 3D interpolation\n(interpreter, setpoint generation, position controller), an integrated PLC with\nan NC interface and an I/O connection for axes via the fieldbus.\n\nNCI can be used to drive 3 path axes and up to 5 auxiliary axes per channel. In\naddition, master/slave couplings can be formed. In combination with TwinCAT\nKinematic Transformation (TS 511x), complex kinematic systems can be controlled\nvia NCI.\n\nProgramming is done with a dedicated NC program, based on DIN 66025, with its\nown language extensions (cf. Interpreter (DIN 66025/G-Code)) or directly from\nthe PLC with the PLC Library: Tc2_PlcInterpolation.\n\nWWW: https://www.beckhoff.com/tf5100/",
         "deps": {
             "TC31-XAR": {
@@ -105876,7 +105876,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-04-28T08:12:36+0000",
+            "build_timestamp": "2026-05-28T09:35:46+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -105912,22 +105912,22 @@
     "TF5400-Advanced-Motion-Pack": {
         "name": "TF5400-Advanced-Motion-Pack",
         "origin": "bhf/TF5400-Advanced-Motion-Pack",
-        "version": "3.4.60",
+        "version": "3.4.67",
         "comment": "TwinCAT Advanced Motion driver",
         "maintainer": "info@beckhoff.com",
         "www": "https://www.beckhoff.com/tf5xxx/",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "29529d0773cfc660198fa81a7e3db6d524af2d3d380faf7397aff7ab77d55774",
-        "flatsize": 16168190,
-        "path": "All/TF5400-Advanced-Motion-Pack-3.4.60.pkg",
-        "repopath": "All/TF5400-Advanced-Motion-Pack-3.4.60.pkg",
+        "sum": "2569e54409a8b8c1284ed41ec3ad853979db93238ca60923b9572d590bb5ab7a",
+        "flatsize": 16317182,
+        "path": "All/TF5400-Advanced-Motion-Pack-3.4.67.pkg",
+        "repopath": "All/TF5400-Advanced-Motion-Pack-3.4.67.pkg",
         "licenselogic": "single",
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 3407269,
+        "pkgsize": 3429529,
         "desc": "The package TF5400 TwinCAT 3 Advanced Motion Pack contains the necessary components\nfor the TwinCAT functions TF5110 - TF5112 TwinCAT 3 Kinematic Transformation, TF5410 TwinCAT 3\nMotion Collision Avoidance, TF5420 TwinCAT 3 Motion Pick-and-Place and TF5430 TwinCAT 3 Planar Motion.\n\nWWW: https://www.beckhoff.com/tf5xxx/",
         "deps": {
             "TF5000-NC-PTP": {
@@ -105940,7 +105940,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-04-16T11:30:01+0000",
+            "build_timestamp": "2026-05-28T09:35:25+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -106024,7 +106024,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "c02a5112ab1a7ddc14fa9202c9c89e4943ba866869954582f8135dfa180a55da",
+        "sum": "dffd54fd65e6773a2490c5ad13962b5e699c217cb89e11a1edf0f97194931f83",
         "flatsize": 30068297,
         "path": "All/TF6100-OPC-UA-Server-5.4.5_1,1.pkg",
         "repopath": "All/TF6100-OPC-UA-Server-5.4.5_1,1.pkg",
@@ -106032,7 +106032,7 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 7786295,
+        "pkgsize": 7786288,
         "desc": "OPC UA offers secure, reliable and manufacturer-neutral transport of raw data\nand pre-processed information from the manufacturing level into the production\nplanning or ERP system. With OPC UA, all desired information is available to\nevery authorised application and every authorised person at any time and in any\nplace.\n\n\nTwinCAT OPC UA Server\n\nsupports the following OPC UA functions: Data Access, Historical Data Access,\nAlarms & Conditions Intermediate storage of data on the server: interruption of\nthe communication connection does not lead to loss of data.  graphical\nconfigurator for simple handling of local and remote OPC UA servers definition\nof user/groups-based access rights at namespace and node level support of\nclient/server certificates to establish secure communication\n\n\nTwinCAT OPC UA Client\n\nsupports OPC UA communication with remote OPC UA servers available as\nPLCopen-compliant PLC function block or as TwinCAT I/O device support of\nclient/server certificates to establish secure communication\n\nWWW: https://www.beckhoff.com/tf6100/",
         "deps": {
             "TC31-XAR": {
@@ -106086,36 +106086,36 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-04-28T08:12:36+0000",
+            "build_timestamp": "2026-05-28T09:35:46+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
     "TF610x-OPC-UA-Client-PubSub": {
         "name": "TF610x-OPC-UA-Client-PubSub",
         "origin": "bhf/TF610x-OPC-UA-Client-PubSub",
-        "version": "2.1.9",
+        "version": "2.1.11",
         "comment": "TwinCAT OpcUa Client and PubSub driver",
         "maintainer": "info@beckhoff.com",
         "www": "UNKNOWN",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "a12b63a6a91bf6fa8b6e5b59113252b18af42ccbe914e56c2e0775e3a73e353a",
-        "flatsize": 2238516,
-        "path": "All/TF610x-OPC-UA-Client-PubSub-2.1.9.pkg",
-        "repopath": "All/TF610x-OPC-UA-Client-PubSub-2.1.9.pkg",
+        "sum": "fcaed54d7b1e892cc788367a92f27c4dd528ca23c09a122024f51627358c9689",
+        "flatsize": 2242101,
+        "path": "All/TF610x-OPC-UA-Client-PubSub-2.1.11.pkg",
+        "repopath": "All/TF610x-OPC-UA-Client-PubSub-2.1.11.pkg",
         "licenselogic": "single",
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 723555,
+        "pkgsize": 721690,
         "desc": "TwinCAT 3 OPC UA Pub/Sub extends the OPC UA client/server architecture to include publisher/subscriber communication patterns.\r\nThe TF6105 TwinCAT 3 OPC UA Pub/Sub provides the necessary implementations of the protocol so that these kinds of communication patterns can be readily integrated into the TwinCAT application.\r\nIt includes various transport protocols as defined in the corresponding OPC UA specification part (OPC10000-14), e.g. UDP and MQTT.",
         "categories": [
             "bhf"
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-04-27T08:38:57+0000",
+            "build_timestamp": "2026-05-18T14:45:33+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -106158,7 +106158,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "51a7bbf3f38f1dbbf710bad8fba5f8ab5fc4339e7ab27dc24f685fac297f2cd7",
+        "sum": "71d489a0b1a3623be4387189d421ca9a359b460bd0e146c4b6655136663fb74e",
         "flatsize": 3509526,
         "path": "All/TF6250-Modbus-TCP-2.0.17.0_15.pkg",
         "repopath": "All/TF6250-Modbus-TCP-2.0.17.0_15.pkg",
@@ -106166,7 +106166,7 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 881433,
+        "pkgsize": 881435,
         "desc": "TwinCAT Modbus represents a simple gateway between Modbus TCP and TwinCAT ADS devices.\n\nWWW: https://www.beckhoff.com/tf6250/",
         "deps": {
             "TC31-XAR": {
@@ -106189,7 +106189,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-04-28T08:12:36+0000",
+            "build_timestamp": "2026-05-28T09:35:56+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -106289,7 +106289,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "ec4c701e3db0f48cdecb1ce2245e1ff6db9360cf6565b346004fea9543fdc899",
+        "sum": "d18c345986dc1e0172aa7d79c25946a5dbd47648f1d88132e92cee1e245b6a89",
         "flatsize": 4028082,
         "path": "All/TF6310-TCP-IP-2.0.21.0_67.pkg",
         "repopath": "All/TF6310-TCP-IP-2.0.21.0_67.pkg",
@@ -106297,7 +106297,7 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 1209233,
+        "pkgsize": 1209244,
         "desc": "TwinCAT TCP/IP enables the implementation and realisation of one or several TCP/IP server/ clients within the TwinCAT 3 PLC.\n\nWWW: https://www.beckhoff.com/tf6310/",
         "deps": {
             "TC31-XAR": {
@@ -106320,7 +106320,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-04-28T08:13:55+0000",
+            "build_timestamp": "2026-05-28T09:36:30+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -106440,7 +106440,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "d038aa34dd24efb074870a4614ef57aff4d68646f66c46d4c4a118db03fc500c",
+        "sum": "25870815a4ddf561fd84ffed7d4e8e606d9bfbe9baac4a496e7c156c2684f4b2",
         "flatsize": 4414549,
         "path": "All/TF6421-XML-Server-3.2.38.3_3.pkg",
         "repopath": "All/TF6421-XML-Server-3.2.38.3_3.pkg",
@@ -106448,7 +106448,7 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 960840,
+        "pkgsize": 960744,
         "desc": "The TwinCAT XML Data Server enables initialising of TwinCAT PLC variables with data stored in an XML file, or formatted saving of PLC variables in an XML file.\n\nWWW: https://www.beckhoff.com/tf6421/",
         "deps": {
             "TC31-XAR": {
@@ -106471,7 +106471,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-04-28T08:13:11+0000",
+            "build_timestamp": "2026-05-28T09:36:06+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -106543,7 +106543,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "507c3c04489f293fe72a0549cf5b63659dfe87a888223c05f37e145fb28cc543",
+        "sum": "6ebd5ec6137db9efc9817d8545a29886f4f631f47af62b054a80aa9b1db1844f",
         "flatsize": 1112121,
         "path": "All/TF8310-Wind-Framework-3.1.2.19_3.pkg",
         "repopath": "All/TF8310-Wind-Framework-3.1.2.19_3.pkg",
@@ -106551,7 +106551,7 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 373275,
+        "pkgsize": 373374,
         "desc": "The TwinCAT 3 Wind Framework is based on the modular architecture of TwinCAT 3\nand provides control technology and industry expertise in the form of\nencapsulated modules and an application template. TcCOM modules provide\nhigher-level system services. The status module enables the monitoring of all\ncomponents and includes error detection, event management, error handling and\nreporting. The parameter and command modules provide services for configuration\nand interaction with the system.",
         "deps": {
             "TC31-XAR": {
@@ -106564,7 +106564,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-04-28T08:13:57+0000",
+            "build_timestamp": "2026-05-28T09:36:32+0000",
             "built_by": "poudriere-git-1.0_2",
             "deprecated": "Unversioned driver is deprecated, prefer to use versioned driver.",
             "expiration_date": "2025-01-10"
@@ -108802,22 +108802,22 @@
     "vm-installer": {
         "name": "vm-installer",
         "origin": "bhf/vm-installer",
-        "version": "1.0.3.0_1",
+        "version": "1.0.4.0_1",
         "comment": "Tools to easily setup Beckhoff virtual machine configurations",
         "maintainer": "info@beckhoff.com",
         "www": "UNKNOWN",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "14a3bc17aed5a85a7bb46e5e3e59eec26ce3ed82288d304d80fb8c9feb0531e2",
-        "flatsize": 33868,
-        "path": "All/vm-installer-1.0.3.0_1.pkg",
-        "repopath": "All/vm-installer-1.0.3.0_1.pkg",
+        "sum": "1d43b0c588401bea6ea79fdded1013a8e0352f6df546463cf5fe7cb1a5ad6450",
+        "flatsize": 34321,
+        "path": "All/vm-installer-1.0.4.0_1.pkg",
+        "repopath": "All/vm-installer-1.0.4.0_1.pkg",
         "licenselogic": "single",
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 11382,
+        "pkgsize": 11572,
         "desc": "Tools to easily setup Beckhoff virtual machine configurations",
         "deps": {
             "BapiCmd": {
@@ -108834,7 +108834,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-04-27T08:40:42+0000",
+            "build_timestamp": "2026-05-21T12:12:39+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
