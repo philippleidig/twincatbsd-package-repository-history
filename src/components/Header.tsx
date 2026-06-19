@@ -9,10 +9,11 @@ interface HeaderProps {
   onSelectBuild: (buildId: string) => void;
   onUploadPackageLog: (content: string) => void;
   onCompareBuilds: () => void;
+  onImpactAnalysis: () => void;
   onToggleSidebar: () => void;
 }
 
-export function Header({ theme, onToggleTheme, builds, selectedBuild, onSelectBuild, onUploadPackageLog, onCompareBuilds, onToggleSidebar }: HeaderProps) {
+export function Header({ theme, onToggleTheme, builds, selectedBuild, onSelectBuild, onUploadPackageLog, onCompareBuilds, onImpactAnalysis, onToggleSidebar }: HeaderProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -89,6 +90,17 @@ export function Header({ theme, onToggleTheme, builds, selectedBuild, onSelectBu
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
           </svg>
           <span className="hidden sm:inline">Compare Builds</span>
+        </button>
+
+        <button
+          onClick={onImpactAnalysis}
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors text-sm font-medium text-slate-600 dark:text-slate-300"
+          aria-label="Update Impact Analysis"
+        >
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          <span className="hidden sm:inline">Impact Analysis</span>
         </button>
 
         <button

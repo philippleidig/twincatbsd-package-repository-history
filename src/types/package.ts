@@ -71,6 +71,24 @@ export interface PackageCheckResult {
   description: string;
 }
 
+export interface ImpactDependent {
+  name: string;
+  versionA: string | null;
+  versionB: string | null;
+  changed: boolean;
+  direct: boolean;
+}
+
+export interface ImpactResult {
+  packageName: string;
+  versionA: string | null;
+  versionB: string | null;
+  changed: boolean;
+  directDependents: ImpactDependent[];
+  transitiveDependents: ImpactDependent[];
+  transitiveCount: number;
+}
+
 export type BuildCompareStatus = 'added' | 'deleted' | 'modified';
 
 export interface BuildCompareResult {
