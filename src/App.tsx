@@ -6,13 +6,20 @@ import { PackageList } from './components/PackageList';
 import { PackageDetails } from './components/PackageDetails';
 import { PackageLogAnalysis } from './components/PackageLogAnalysis';
 import { BuildCompare } from './components/BuildCompare';
+import { DependencyGraph } from './components/DependencyGraph';
+import { ReverseDependencies } from './components/ReverseDependencies';
+import { UpdateImpactAnalysis } from './components/UpdateImpactAnalysis';
 import { PackageCheckResult } from './types/package';
 import { parsePackageLog, detectBuild, analyzePackages } from './utils/packageLogParser';
+import { buildReverseDependencyIndex } from './utils/dependencyResolver';
 
 type Tab =
   | { id: string; type: 'package'; packageName: string }
   | { id: string; type: 'analysis'; label: string; results: PackageCheckResult[]; buildId: string }
-  | { id: string; type: 'compare'; label: string };
+  | { id: string; type: 'compare'; label: string }
+  | { id: string; type: 'graph'; packageName: string; label: string }
+  | { id: string; type: 'reverse'; packageName: string; label: string }
+  | { id: string; type: 'impact'; label: string; packageName?: string };
 
 function App() {
   const { theme, toggleTheme } = useTheme();
@@ -30,6 +37,11 @@ function App() {
   }, [packageHistory]);
 
   const currentBuild = selectedBuild || latestBuild;
+
+  const reverseIndex = useMemo(
+    () => (packageSite ? buildReverseDependencyIndex(packageSite) : new Map<string, string[]>()),
+    [packageSite]
+  );
 
   const openPackageInTab = useCallback((packageName: string) => {
     const existingTab = openTabs.find(tab => tab.type === 'package' && tab.packageName === packageName);
@@ -73,6 +85,49 @@ function App() {
       id: `compare-${Date.now()}`,
       type: 'compare',
       label: 'Build Compare',
+    };
+    setOpenTabs(prev => [...prev, newTab]);
+    setActiveTabId(newTab.id);
+  }, []);
+
+  const openGraphInTab = useCallback((packageName: string) => {
+    const existing = openTabs.find(tab => tab.type === 'graph' && tab.packageName === packageName);
+    if (existing) {
+      setActiveTabId(existing.id);
+      return;
+    }
+    const newTab: Tab = {
+      id: `graph-${Date.now()}`,
+      type: 'graph',
+      packageName,
+      label: `Graph: ${packageName}`,
+    };
+    setOpenTabs(prev => [...prev, newTab]);
+    setActiveTabId(newTab.id);
+  }, [openTabs]);
+
+  const openReverseInTab = useCallback((packageName: string) => {
+    const existing = openTabs.find(tab => tab.type === 'reverse' && tab.packageName === packageName);
+    if (existing) {
+      setActiveTabId(existing.id);
+      return;
+    }
+    const newTab: Tab = {
+      id: `reverse-${Date.now()}`,
+      type: 'reverse',
+      packageName,
+      label: `Used by: ${packageName}`,
+    };
+    setOpenTabs(prev => [...prev, newTab]);
+    setActiveTabId(newTab.id);
+  }, [openTabs]);
+
+  const handleImpactAnalysis = useCallback((packageName?: string) => {
+    const newTab: Tab = {
+      id: `impact-${Date.now()}`,
+      type: 'impact',
+      label: 'Impact Analysis',
+      packageName,
     };
     setOpenTabs(prev => [...prev, newTab]);
     setActiveTabId(newTab.id);
@@ -132,7 +187,6 @@ function App() {
 
   const getTabLabel = (tab: Tab) => {
     if (tab.type === 'package') return tab.packageName;
-    if (tab.type === 'analysis') return tab.label;
     return tab.label;
   };
 
@@ -146,6 +200,7 @@ function App() {
         onSelectBuild={setSelectedBuild}
         onUploadPackageLog={handleUploadPackageLog}
         onCompareBuilds={handleCompareBuilds}
+        onImpactAnalysis={() => handleImpactAnalysis()}
         onToggleSidebar={() => setSidebarOpen(prev => !prev)}
       />
 
@@ -236,6 +291,27 @@ function App() {
               <BuildCompare
                 history={packageHistory}
               />
+            ) : activeTab?.type === 'graph' ? (
+              <DependencyGraph
+                rootPackage={activeTab.packageName}
+                packages={packageSite}
+                reverseIndex={reverseIndex}
+                onOpenPackageTab={openPackageInTab}
+              />
+            ) : activeTab?.type === 'reverse' ? (
+              <ReverseDependencies
+                packageName={activeTab.packageName}
+                packages={packageSite}
+                reverseIndex={reverseIndex}
+                onOpenPackageTab={openPackageInTab}
+              />
+            ) : activeTab?.type === 'impact' ? (
+              <UpdateImpactAnalysis
+                history={packageHistory}
+                reverseIndex={reverseIndex}
+                initialPackage={activeTab.packageName}
+                onOpenPackageTab={openPackageInTab}
+              />
             ) : (
               <PackageDetails
                 pkg={activeTabPkg}
@@ -243,6 +319,9 @@ function App() {
                 history={packageHistory}
                 selectedBuild={currentBuild}
                 onOpenPackageTab={openPackageInTab}
+                onOpenGraph={openGraphInTab}
+                onOpenReverse={openReverseInTab}
+                onOpenImpact={handleImpactAnalysis}
               />
             )}
           </div>

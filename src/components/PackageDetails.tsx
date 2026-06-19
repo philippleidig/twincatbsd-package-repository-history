@@ -9,9 +9,12 @@ interface PackageDetailsProps {
   history: PackageHistory;
   selectedBuild: string;
   onOpenPackageTab?: (packageName: string) => void;
+  onOpenGraph?: (packageName: string) => void;
+  onOpenReverse?: (packageName: string) => void;
+  onOpenImpact?: (packageName: string) => void;
 }
 
-export function PackageDetails({ pkg, packages, history, selectedBuild, onOpenPackageTab }: PackageDetailsProps) {
+export function PackageDetails({ pkg, packages, history, selectedBuild, onOpenPackageTab, onOpenGraph, onOpenReverse, onOpenImpact }: PackageDetailsProps) {
   const dependencyTree = useMemo(() => {
     if (!pkg) return [];
     return resolveDependencyTree(pkg.name, packages);
@@ -44,9 +47,44 @@ export function PackageDetails({ pkg, packages, history, selectedBuild, onOpenPa
         <h1 className="text-xl md:text-2xl font-bold text-slate-800 dark:text-slate-100 mb-1 break-all">
           {pkg.name}
         </h1>
-        <p className="text-slate-600 dark:text-slate-400">
+        <p className="text-slate-600 dark:text-slate-400 mb-3">
           {pkg.comment}
         </p>
+        <div className="flex flex-wrap gap-2">
+          {onOpenGraph && (
+            <button
+              onClick={() => onOpenGraph(pkg.name)}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors text-sm font-medium text-slate-700 dark:text-slate-300"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7a3 3 0 11-6 0 3 3 0 016 0zM18 11a2 2 0 100-4 2 2 0 000 4zM18 17a2 2 0 100-4 2 2 0 000 4zM6 19a2 2 0 100-4 2 2 0 000 4zM10 9.5L16 7m-6 5l6 2m-9 .5l2-2" />
+              </svg>
+              Dependency Graph
+            </button>
+          )}
+          {onOpenReverse && (
+            <button
+              onClick={() => onOpenReverse(pkg.name)}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors text-sm font-medium text-slate-700 dark:text-slate-300"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+              </svg>
+              Reverse Dependencies
+            </button>
+          )}
+          {onOpenImpact && (
+            <button
+              onClick={() => onOpenImpact(pkg.name)}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors text-sm font-medium text-slate-700 dark:text-slate-300"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              Impact Analysis
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Scrollable Content */}
