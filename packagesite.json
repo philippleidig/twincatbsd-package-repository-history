@@ -1876,6 +1876,108 @@
             "cpe": "cpe:2.3:a:avahi:avahi:0.8:::::freebsd14:x64:2"
         }
     },
+    "azure-pipelines-agent-internal": {
+        "name": "azure-pipelines-agent-internal",
+        "origin": "bhf/azure-pipelines-agent",
+        "version": "4.255.0",
+        "comment": "Azure Pipelines Agent for FreeBSD",
+        "maintainer": "info@beckhoff.com",
+        "www": "https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "30745a3812f60531f5b7bb1ca02209b5e619b9a983ef63936ebf836b77556f53",
+        "flatsize": 78480436,
+        "path": "All/azure-pipelines-agent-internal-4.255.0.pkg",
+        "repopath": "All/azure-pipelines-agent-internal-4.255.0.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "MIT"
+        ],
+        "pkgsize": 22837244,
+        "desc": "To build your code or deploy your software using Azure Pipelines, you need at\nleast one agent. As you add more code and people, you'll eventually need more.\n\nWhen your pipeline runs, the system begins one or more jobs. An agent is\ncomputing infrastructure with installed agent software that runs one job at a\ntime.\n\nAn agent that you set up and manage on your own to run jobs is a self-hosted\nagent. You can use self-hosted agents in Azure Pipelines or Team Foundation\nServer (TFS). Self-hosted agents give you more control to install dependent\nsoftware needed for your builds and deployments. Also, machine-level caches and\nconfiguration persist from run to run, which can boost speed.\n\nThis port provides the agent software for Azure Pipelines on FreeBSD.\n\nWWW: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents\nWWW: https://azdevops01.beckhoff.com/GSW01/Common/_git/azure-pipelines-agent",
+        "deps": {
+            "bash": {
+                "origin": "shells/bash",
+                "version": "5.3.9"
+            },
+            "git": {
+                "origin": "devel/git",
+                "version": "2.53.0"
+            },
+            "icu": {
+                "origin": "devel/icu",
+                "version": "76.1,1"
+            },
+            "libinotify": {
+                "origin": "devel/libinotify",
+                "version": "20240724_3"
+            },
+            "libunwind": {
+                "origin": "devel/libunwind",
+                "version": "20250904"
+            },
+            "node24": {
+                "origin": "www/node24",
+                "version": "24.14.0"
+            },
+            "npm-node24": {
+                "origin": "www/npm-node24",
+                "version": "11.11.0"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "shlibs_required": [
+            "libada.so.3",
+            "libbrotlidec.so.1",
+            "libbrotlienc.so.1",
+            "libc++.so.1",
+            "libc.so.7",
+            "libcares.so.2",
+            "libcrypto.so.30",
+            "libcxxrt.so.1",
+            "libdl.so.1",
+            "libexecinfo.so.1",
+            "libgcc_s.so.1",
+            "libgssapi_krb5.so.2.2",
+            "libgtest.so.1.16.0",
+            "libhdr_histogram.so.6",
+            "libicui18n.so.76",
+            "libicuuc.so.76",
+            "libinotify.so.0",
+            "libkvm.so.7",
+            "libllhttp.so.9.3",
+            "libm.so.5",
+            "libmerve.so.1",
+            "libnbytes.so",
+            "libnghttp2.so.14",
+            "libnghttp3.so.9",
+            "libngtcp2.so.16",
+            "librt.so.1",
+            "libsimdjson.so.30",
+            "libsqlite3.so.0",
+            "libssl.so.30",
+            "libthr.so.3",
+            "libutil.so.9",
+            "libuv.so.1",
+            "libuvwasi.so",
+            "libz.so.6",
+            "libzstd.so.1"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T21:56:48+0000",
+            "built_by": "poudriere-git-1.0_2"
+        },
+        "messages": [
+            {
+                "message": "Run the following commands to create a new agent in directory 'agent01':\nmkdir agent01 && cd agent01\ncp -R /usr/local/share/azure-pipelines-agent/ .\n\nVisit https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux\nfor more information about configuring and running the agent.\n\nIf you want to install multiple agents per machine, repeat the above steps,\nreplacing 'agent01' with 'agent##' depending on how many agents are already\ninstalled.",
+                "type": "install"
+            }
+        ]
+    },
     "baloo-widgets": {
         "name": "baloo-widgets",
         "origin": "sysutils/baloo-widgets",
@@ -2358,6 +2460,109 @@
             "built_by": "poudriere-git-1.0_2"
         }
     },
+    "bbapi-cmd-internal": {
+        "name": "bbapi-cmd-internal",
+        "origin": "bhf/bbapi-cmd",
+        "version": "0.0.1_4",
+        "comment": "Beckhoff BIOS API user mode driver",
+        "maintainer": "info@beckhoff.com",
+        "www": "https://gitlab.com/beckhoff/bbapi-rs/",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "8782600c8c83ed053daf415bb465b4957f4d3af723a03273bc068b8c8e384d23",
+        "flatsize": 765222,
+        "path": "All/bbapi-cmd-internal-0.0.1_4.pkg",
+        "repopath": "All/bbapi-cmd-internal-0.0.1_4.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 299176,
+        "desc": "Command line interface to interact with the Beckhoff BIOS API.",
+        "categories": [
+            "bhf"
+        ],
+        "shlibs_required": [
+            "libc.so.7",
+            "libgcc_s.so.1",
+            "libthr.so.3"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T21:45:17+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "bbapi-device-trees-internal": {
+        "name": "bbapi-device-trees-internal",
+        "origin": "bhf/bbapi-device-trees",
+        "version": "0.0.1_4",
+        "comment": "Beckhoff BIOS API user mode driver",
+        "maintainer": "info@beckhoff.com",
+        "www": "https://gitlab.com/beckhoff/bbapi-rs/",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "1e8395676e94b3dfc3fd5c373280a8641eafff278da6742b45be5c31ce5919d7",
+        "flatsize": 22212,
+        "path": "All/bbapi-device-trees-internal-0.0.1_4.pkg",
+        "repopath": "All/bbapi-device-trees-internal-0.0.1_4.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 7883,
+        "desc": "Device trees for the Beckhoff BIOS API.",
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T21:18:47+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "bbapi-rs-internal": {
+        "name": "bbapi-rs-internal",
+        "origin": "bhf/bbapi-rs",
+        "version": "0.0.1_4",
+        "comment": "Beckhoff BIOS API user mode driver",
+        "maintainer": "info@beckhoff.com",
+        "www": "https://gitlab.com/beckhoff/bbapi-rs/",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "e0e8b3ab7abcbf33a327d90dd74d52da778982e2b74cdf352406c2143839bdf7",
+        "flatsize": 1958742,
+        "path": "All/bbapi-rs-internal-0.0.1_4.pkg",
+        "repopath": "All/bbapi-rs-internal-0.0.1_4.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 690881,
+        "desc": "Beckhoff BIOS API written in Rust.",
+        "deps": {
+            "shlib": {
+                "origin": "bhf/shlib",
+                "version": "4.0.40.1"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "shlibs_required": [
+            "libc.so.7",
+            "libgcc_s.so.1",
+            "libthr.so.3"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T22:30:14+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
     "bcg729": {
         "name": "bcg729",
         "origin": "audio/bcg729",
@@ -2435,7 +2640,7 @@
         "abi": "FreeBSD:14:*",
         "arch": "freebsd:14:*",
         "prefix": "/usr/local",
-        "sum": "eb18e56456c76dec580545dc752a7b5305f07758e74f8a6bc95b920fb13884a8",
+        "sum": "16ef821cf7d2dd28f18ed0f37f1a5b8c70b5561862e9b48916af264f3dc2579c",
         "flatsize": 243,
         "path": "All/bhf-meta-default-5_1.pkg",
         "repopath": "All/bhf-meta-default-5_1.pkg",
@@ -2443,7 +2648,7 @@
         "licenses": [
             "NA"
         ],
-        "pkgsize": 1264,
+        "pkgsize": 1261,
         "desc": "Install this package if you want the default TC/BSD packages",
         "deps": {
             "BapiCmd": {
@@ -2504,7 +2709,7 @@
             },
             "os-release-bhf": {
                 "origin": "bhf/os-release-bhf",
-                "version": "14.4.5.0_334630"
+                "version": "14.4.5.0_331159"
             },
             "restorepoint": {
                 "origin": "bhf/restorepoint",
@@ -2527,7 +2732,7 @@
             "bhf"
         ],
         "annotations": {
-            "build_timestamp": "2026-05-28T09:36:56+0000",
+            "build_timestamp": "2026-05-21T12:12:11+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -2655,6 +2860,41 @@
         "annotations": {
             "FreeBSD_version": "1404000",
             "build_timestamp": "2026-05-21T12:11:29+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "bhyve-bhf-symbols": {
+        "name": "bhyve-bhf-symbols",
+        "origin": "bhf/bhyve-bhf-symbols",
+        "version": "14.4.5.0_9",
+        "comment": "TC/BSD Hypervisor\" debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "972c2709af3ada96714b1da1bfad480efbae0db4afefa4180e503d3e4c2020d8",
+        "flatsize": 2755195,
+        "path": "All/bhyve-bhf-symbols-14.4.5.0_9.pkg",
+        "repopath": "All/bhyve-bhf-symbols-14.4.5.0_9.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 1075960,
+        "desc": "Bhyve debugging symbols",
+        "deps": {
+            "git": {
+                "origin": "devel/git",
+                "version": "2.53.0"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-05-21T12:13:01+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -3322,6 +3562,347 @@
         "annotations": {
             "FreeBSD_version": "1404000",
             "build_timestamp": "2026-03-25T14:19:10+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "build-bhyve-bhf": {
+        "name": "build-bhyve-bhf",
+        "origin": "bhf/build-bhyve-bhf",
+        "version": "14.4.5.0_9",
+        "comment": "TC/BSD Hypervisor\", intermediate package to build with and without debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "https://github.com/beckhoff/freebsd-src",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "ec6bf2ea67ff3c0a15a61df56b89be0b431a41a0863f17d0b108e2511d24c07f",
+        "flatsize": 5684933,
+        "path": "All/build-bhyve-bhf-14.4.5.0_9.pkg",
+        "repopath": "All/build-bhyve-bhf-14.4.5.0_9.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 5677433,
+        "desc": "Bhyve\n\nThis package includes the bhyve hypervisor known from FreeBSD. It includes all\nfeatures known from FreeBSD's bhyve. Additionally, it adds some advanced\nfeatures like GPU passthrough or FwCfg support to bhyve.\n\nWWW: https://github.com/beckhoff/freebsd-src",
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-05-21T12:09:30+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "build-rte": {
+        "name": "build-rte",
+        "origin": "bhf/build-rte",
+        "version": "4026.24.40",
+        "comment": "TwinCAT Realtime Ethernet driver tcether and tctap\", intermediate package to build with and without debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "d6543993f2452a884eb8f021ceb0c98a177f4332cd89437db7cdf2d8b974261b",
+        "flatsize": 91529,
+        "path": "All/build-rte-4026.24.40.pkg",
+        "repopath": "All/build-rte-4026.24.40.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 83628,
+        "desc": "Intermediate package to build TwinCAT Realtime Ethernet driver tcether and tctap with and without debugging symbols",
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-04-16T11:28:08+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "build-TC31-XAR": {
+        "name": "build-TC31-XAR",
+        "origin": "bhf/build-TC31-XAR",
+        "version": "4026.24.40_17",
+        "comment": "TwinCAT System Service\", intermediate package to build with and without debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "cc346fa42a33ea7e2cf33c2e2580a991ad89a49a3c4bdaa8ef208de3f9f2e1ff",
+        "flatsize": 17116054,
+        "path": "All/build-TC31-XAR-4026.24.40_17.pkg",
+        "repopath": "All/build-TC31-XAR-4026.24.40_17.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 17108490,
+        "desc": "Intermediate package to build TwinCAT System Service with and without debugging symbols",
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-04-27T08:36:55+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "build-TcCppUtils2.0": {
+        "name": "build-TcCppUtils2.0",
+        "origin": "bhf/build-TcCppUtils2.0",
+        "version": "2.0.263",
+        "comment": "",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "1852dad09d4f1d1ec779236a9b8ef4df3c2ca4a8b443e31c47528935661955a5",
+        "flatsize": 292342,
+        "path": "All/build-TcCppUtils2.0-2.0.263.pkg",
+        "repopath": "All/build-TcCppUtils2.0-2.0.263.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 284208,
+        "desc": "Intermediate package to build TcCppUtils2.0 ports.",
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T16:07:26+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "build-TcEventLoggerAdsProxy": {
+        "name": "build-TcEventLoggerAdsProxy",
+        "origin": "bhf/build-TcEventLoggerAdsProxy",
+        "version": "2.8.26",
+        "comment": "TcEventLoggerAdsProxy, intermediate package to build subports",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "3f36ba1798f3c041b4277aa06231573a15e7262a2528cfd939920259e696aa38",
+        "flatsize": 8872927,
+        "path": "All/build-TcEventLoggerAdsProxy-2.8.26.pkg",
+        "repopath": "All/build-TcEventLoggerAdsProxy-2.8.26.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 8865242,
+        "desc": "Intermediate package to build TcEventLoggerAdsProxy ports",
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T16:20:29+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "build-TcPalDrv": {
+        "name": "build-TcPalDrv",
+        "origin": "bhf/build-TcPalDrv",
+        "version": "4026.24.40",
+        "comment": "TwinCAT PAL driver\", intermediate package to build with and without debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "9457a8bfc6b9675b5e98e698328d6540a525230a2b7c490c31f5f3f505fc77e6",
+        "flatsize": 323289,
+        "path": "All/build-TcPalDrv-4026.24.40.pkg",
+        "repopath": "All/build-TcPalDrv-4026.24.40.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 315505,
+        "desc": "Intermediate package to build TwinCAT PAL driver with and without debugging symbols",
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-04-16T11:28:08+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "build-TcUsb": {
+        "name": "build-TcUsb",
+        "origin": "bhf/build-TcUsb",
+        "version": "4026.24.40",
+        "comment": "TwinCAT USB driver\", intermediate package to build with and without debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "1e7ea2f4575a502e8ea2408f6c474a0baba16249876f94eb7fa0aef97def7f05",
+        "flatsize": 135059,
+        "path": "All/build-TcUsb-4026.24.40.pkg",
+        "repopath": "All/build-TcUsb-4026.24.40.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 127073,
+        "desc": "Intermediate package to build TwinCAT USB driver with and without debugging symbols",
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-04-16T11:28:08+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "build-TF1810-PLC-HMI-Web": {
+        "name": "build-TF1810-PLC-HMI-Web",
+        "origin": "bhf/build-TF1810-PLC-HMI-Web",
+        "version": "4.0.1.2_5",
+        "comment": "TF1810 | TC3 PLC HMI Web",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "ce332f781a61b20ae857a617fc8bef2824ab9a213a5fc1f9f5fdd7b8ac7f8d70",
+        "flatsize": 1163446,
+        "path": "All/build-TF1810-PLC-HMI-Web-4.0.1.2_5.pkg",
+        "repopath": "All/build-TF1810-PLC-HMI-Web-4.0.1.2_5.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 1153847,
+        "desc": "Intermediate package to build TC3 PLC HMI Web with and without debugging symbols",
+        "deps": {
+            "TC31-XAR": {
+                "origin": "bhf/TC31-XAR",
+                "version": "4026.24.40_17"
+            },
+            "TF6000-ADS-Comm-Lib": {
+                "origin": "bhf/TF6000-ADS-Comm-Lib",
+                "version": "4026.24.40"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-05-05T07:06:01+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "build-TF6100-OPC-UA-Server": {
+        "name": "build-TF6100-OPC-UA-Server",
+        "origin": "bhf/build-TF6100-OPC-UA-Server",
+        "version": "5.4.5_1,1",
+        "comment": "TF6100 | TC3 OPC UA",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "f94d0da9b39923d7457fa87c71375bf01949a4732dca7c444ac7e96dbf51fbc1",
+        "flatsize": 211079651,
+        "path": "All/build-TF6100-OPC-UA-Server-5.4.5_1,1.pkg",
+        "repopath": "All/build-TF6100-OPC-UA-Server-5.4.5_1,1.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 211076679,
+        "desc": "Intermediate package to build TF6100-OPC-UA-Server ports",
+        "deps": {
+            "libxml2": {
+                "origin": "textproc/libxml2",
+                "version": "2.15.2"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-04-16T11:30:03+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "build-TF6340-Serial-Communication": {
+        "name": "build-TF6340-Serial-Communication",
+        "origin": "bhf/build-TF6340-Serial-Communication",
+        "version": "2.4.5_3",
+        "comment": "TF6340 | TC3 Serial Communication, intermediate package to build subports",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "23e7e5e0cebdba9afcdb7ea92106188f60c61bfcccc43dbad3d47c5ecac3ca1f",
+        "flatsize": 261375,
+        "path": "All/build-TF6340-Serial-Communication-2.4.5_3.pkg",
+        "repopath": "All/build-TF6340-Serial-Communication-2.4.5_3.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 253444,
+        "desc": "Intermediate package to build TF6340-Serial-Communication ports",
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T20:50:10+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "build-TwinCAT-AFM-BridgingGateway": {
+        "name": "build-TwinCAT-AFM-BridgingGateway",
+        "origin": "bhf/build-TwinCAT-AFM-BridgingGateway",
+        "version": "0.0.1_1",
+        "comment": "TwinCAT-AFM-BridgingGateway\", intermediate package to build with and without debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "2a24c1c61d947aa16bbea1d6bf8bea7fd54cd33b23863911ea058fde5858607d",
+        "flatsize": 2269725,
+        "path": "All/build-TwinCAT-AFM-BridgingGateway-0.0.1_1.pkg",
+        "repopath": "All/build-TwinCAT-AFM-BridgingGateway-0.0.1_1.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 2262067,
+        "desc": "Intermediate package to build TwinCAT-AFM-BridgingGateway port",
+        "deps": {
+            "spdlog": {
+                "origin": "devel/spdlog",
+                "version": "1.17.0"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T20:42:40+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -7994,6 +8575,253 @@
             "built_by": "poudriere-git-1.0_2",
             "expiration_date": "2026-11-10"
         }
+    },
+    "dotnet-sdk-internal": {
+        "name": "dotnet-sdk-internal",
+        "origin": "lang/dotnet-sdk",
+        "version": "8.0.8",
+        "comment": "dotnet",
+        "maintainer": "info@beckhoff.com",
+        "www": "https://github.com/dotnet/sdk",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "58e5ce2e60ba0381510bc7f017dcbc944f64811666c19a9ca3d9bdf6fc282c05",
+        "flatsize": 331,
+        "path": "All/dotnet-sdk-internal-8.0.8.pkg",
+        "repopath": "All/dotnet-sdk-internal-8.0.8.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "MIT"
+        ],
+        "pkgsize": 1917,
+        "desc": "The .NET SDK contains the components required to build console, web and server\napps as well as class libraries. There are several .NET SDK packages available\nfor FreeBSD. If you just want to build apps and class libraries using .NET,\nyou can use the versionless dotnet-sdk-internal package, which isn't scheduled\nto expire because it will always contain the oldest supported .NET major\nversion according to the .NET support policy:\n  https://aka.ms/dotnet-core-support\n\nFor CI scenarios or if you just want to use the latest available .NET SDK, you\nshould take a dotnet-sdk-internal package with a version suffix instead, as\nthese guarantee that the major version won't change. Existing pipelines will\ntherefore not break when a dotnet-sdk-internal package with a version suffix\nis updated, since it's always possible to build .NET apps using a newer .NET\nSDK with the same major version. However, you will then have to manually\nupdate the version suffix of the used dotnet-sdk-internal package before the\ncorresponding .NET version reaches end of support.\n\nWWW: https://github.com/dotnet/sdk",
+        "deps": {
+            "dotnet-sdk-internal-8.0": {
+                "origin": "lang/dotnet-sdk-8.0",
+                "version": "8.0.8"
+            }
+        },
+        "categories": [
+            "lang"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T22:13:50+0000",
+            "built_by": "poudriere-git-1.0_2"
+        },
+        "messages": [
+            {
+                "message": "Create a Personal Access Token (PAT) with the 'Packaging (Read)' permissions\nfor 'All Accessible Organizations', if not existing. Read the following article\non how to create a PAT:\nhttps://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate#create-a-pat\n\nRun the following command to add NuGet source 'TcThirdParty' required to build\nself-contained apps and, authenticate to it with your username and PAT:\ndotnet nuget add source https://azdevops01.beckhoff.com/GSW01/_packaging/TcThirdParty/nuget/v3/index.json \\\n    --name TcThirdParty \\\n    --username <USERNAME> \\\n    --password <PAT> \\\n    --store-password-in-clear-text \\\n    --valid-authentication-types basic\n\nThe information is stored only for the current user at\n~/.nuget/NuGet/NuGet.Config. To save the information to another file, use the\n--configfile option.",
+                "type": "install"
+            }
+        ]
+    },
+    "dotnet-sdk-internal-6.0": {
+        "name": "dotnet-sdk-internal-6.0",
+        "origin": "lang/dotnet-sdk-6.0",
+        "version": "6.0.33",
+        "comment": "dotnet",
+        "maintainer": "info@beckhoff.com",
+        "www": "https://github.com/dotnet/sdk",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "8b42ff9b0e6c5d824d5c648cb6b26213e25cdeeb70f33c7d3246b01398200c4c",
+        "flatsize": 20247695,
+        "path": "All/dotnet-sdk-internal-6.0-6.0.33.pkg",
+        "repopath": "All/dotnet-sdk-internal-6.0-6.0.33.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "MIT"
+        ],
+        "pkgsize": 1509697,
+        "desc": "The .NET SDK contains the components required to build console, web and server\napps as well as class libraries. There are several .NET SDK packages available\nfor FreeBSD. If you just want to build apps and class libraries using .NET,\nyou can use the versionless dotnet-sdk-internal package, which isn't scheduled\nto expire because it will always contain the oldest supported .NET major\nversion according to the .NET support policy:\n  https://aka.ms/dotnet-core-support\n\nFor CI scenarios or if you just want to use the latest available .NET SDK, you\nshould take a dotnet-sdk-internal package with a version suffix instead, as\nthese guarantee that the major version won't change. Existing pipelines will\ntherefore not break when a dotnet-sdk-internal package with a version suffix\nis updated, since it's always possible to build .NET apps using a newer .NET\nSDK with the same major version. However, you will then have to manually\nupdate the version suffix of the used dotnet-sdk-internal package before the\ncorresponding .NET version reaches end of support.\n\nWWW: https://github.com/dotnet/sdk",
+        "deps": {
+            "dotnet-aspnetcore-runtime-6.0": {
+                "origin": "lang/dotnet-aspnetcore-runtime-6.0",
+                "version": "6.0.33"
+            },
+            "dotnet-sdk-internal-subset-6.0": {
+                "origin": "lang/dotnet-sdk-subset-6.0",
+                "version": "6.0.33"
+            }
+        },
+        "categories": [
+            "lang"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T21:19:06+0000",
+            "built_by": "poudriere-git-1.0_2",
+            "expiration_date": "2024-11-12"
+        },
+        "messages": [
+            {
+                "message": "Create a Personal Access Token (PAT) with the 'Packaging (Read)' permissions\nfor 'All Accessible Organizations', if not existing. Read the following article\non how to create a PAT:\nhttps://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate#create-a-pat\n\nRun the following command to add NuGet source 'TcThirdParty' required to build\nself-contained apps and, authenticate to it with your username and PAT:\ndotnet nuget add source https://azdevops01.beckhoff.com/GSW01/_packaging/TcThirdParty/nuget/v3/index.json \\\n    --name TcThirdParty \\\n    --username <USERNAME> \\\n    --password <PAT> \\\n    --store-password-in-clear-text \\\n    --valid-authentication-types basic\n\nThe information is stored only for the current user at\n~/.nuget/NuGet/NuGet.Config. To save the information to another file, use the\n--configfile option.",
+                "type": "install"
+            }
+        ]
+    },
+    "dotnet-sdk-internal-8.0": {
+        "name": "dotnet-sdk-internal-8.0",
+        "origin": "lang/dotnet-sdk-8.0",
+        "version": "8.0.8",
+        "comment": "dotnet",
+        "maintainer": "info@beckhoff.com",
+        "www": "https://github.com/dotnet/sdk",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "894ece79bf1fa898c3322295a5e6c72390ec99ff56c9f8f93a2ea5bb9928278d",
+        "flatsize": 20248497,
+        "path": "All/dotnet-sdk-internal-8.0-8.0.8.pkg",
+        "repopath": "All/dotnet-sdk-internal-8.0-8.0.8.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "MIT"
+        ],
+        "pkgsize": 1509557,
+        "desc": "The .NET SDK contains the components required to build console, web and server\napps as well as class libraries. There are several .NET SDK packages available\nfor FreeBSD. If you just want to build apps and class libraries using .NET,\nyou can use the versionless dotnet-sdk-internal package, which isn't scheduled\nto expire because it will always contain the oldest supported .NET major\nversion according to the .NET support policy:\n  https://aka.ms/dotnet-core-support\n\nFor CI scenarios or if you just want to use the latest available .NET SDK, you\nshould take a dotnet-sdk-internal package with a version suffix instead, as\nthese guarantee that the major version won't change. Existing pipelines will\ntherefore not break when a dotnet-sdk-internal package with a version suffix\nis updated, since it's always possible to build .NET apps using a newer .NET\nSDK with the same major version. However, you will then have to manually\nupdate the version suffix of the used dotnet-sdk-internal package before the\ncorresponding .NET version reaches end of support.\n\nWWW: https://github.com/dotnet/sdk",
+        "deps": {
+            "dotnet-aspnetcore-runtime-8.0": {
+                "origin": "lang/dotnet-aspnetcore-runtime-8.0",
+                "version": "8.0.8"
+            },
+            "dotnet-sdk-internal-subset-8.0": {
+                "origin": "lang/dotnet-sdk-subset-8.0",
+                "version": "8.0.8"
+            }
+        },
+        "categories": [
+            "lang"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T20:42:44+0000",
+            "built_by": "poudriere-git-1.0_2",
+            "expiration_date": "2026-11-10"
+        },
+        "messages": [
+            {
+                "message": "Create a Personal Access Token (PAT) with the 'Packaging (Read)' permissions\nfor 'All Accessible Organizations', if not existing. Read the following article\non how to create a PAT:\nhttps://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate#create-a-pat\n\nRun the following command to add NuGet source 'TcThirdParty' required to build\nself-contained apps and, authenticate to it with your username and PAT:\ndotnet nuget add source https://azdevops01.beckhoff.com/GSW01/_packaging/TcThirdParty/nuget/v3/index.json \\\n    --name TcThirdParty \\\n    --username <USERNAME> \\\n    --password <PAT> \\\n    --store-password-in-clear-text \\\n    --valid-authentication-types basic\n\nThe information is stored only for the current user at\n~/.nuget/NuGet/NuGet.Config. To save the information to another file, use the\n--configfile option.",
+                "type": "install"
+            }
+        ]
+    },
+    "dotnet-sdk-internal-subset-6.0": {
+        "name": "dotnet-sdk-internal-subset-6.0",
+        "origin": "lang/dotnet-sdk-subset-6.0",
+        "version": "6.0.33",
+        "comment": "dotnet",
+        "maintainer": "info@beckhoff.com",
+        "www": "https://github.com/dotnet/sdk",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "260311da695f1bb4981725729c6b00c0fadd846659982e678ff6f110b3d42d3b",
+        "flatsize": 315663533,
+        "path": "All/dotnet-sdk-internal-subset-6.0-6.0.33.pkg",
+        "repopath": "All/dotnet-sdk-internal-subset-6.0-6.0.33.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "MIT"
+        ],
+        "pkgsize": 70298101,
+        "desc": "The .NET SDK contains the components required to build console, web and server\napps as well as class libraries. There are several .NET SDK packages available\nfor FreeBSD. If you just want to build apps and class libraries using .NET,\nyou can use the versionless dotnet-sdk-internal package, which isn't scheduled\nto expire because it will always contain the oldest supported .NET major\nversion according to the .NET support policy:\n  https://aka.ms/dotnet-core-support\n\nFor CI scenarios or if you just want to use the latest available .NET SDK, you\nshould take a dotnet-sdk-internal package with a version suffix instead, as\nthese guarantee that the major version won't change. Existing pipelines will\ntherefore not break when a dotnet-sdk-internal package with a version suffix\nis updated, since it's always possible to build .NET apps using a newer .NET\nSDK with the same major version. However, you will then have to manually\nupdate the version suffix of the used dotnet-sdk-internal package before the\ncorresponding .NET version reaches end of support.\n\nWWW: https://github.com/dotnet/sdk",
+        "deps": {
+            "dotnet-aspnetcore-runtime-subset-6.0": {
+                "origin": "lang/dotnet-aspnetcore-runtime-subset-6.0",
+                "version": "6.0.33"
+            }
+        },
+        "categories": [
+            "lang"
+        ],
+        "shlibs_required": [
+            "libc++.so.1",
+            "libc.so.7",
+            "libcxxrt.so.1",
+            "libdl.so.1",
+            "libgcc_s.so.1",
+            "libgssapi_krb5.so.2.2",
+            "libinotify.so.0",
+            "libm.so.5",
+            "librt.so.1",
+            "libthr.so.3",
+            "libunwind-x86_64.so.8",
+            "libunwind.so.8",
+            "libz.so.6"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T20:41:26+0000",
+            "built_by": "poudriere-git-1.0_2",
+            "expiration_date": "2024-11-12"
+        },
+        "messages": [
+            {
+                "message": "Create a Personal Access Token (PAT) with the 'Packaging (Read)' permissions\nfor 'All Accessible Organizations', if not existing. Read the following article\non how to create a PAT:\nhttps://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate#create-a-pat\n\nRun the following command to add NuGet source 'TcThirdParty' required to build\nself-contained apps and, authenticate to it with your username and PAT:\ndotnet nuget add source https://azdevops01.beckhoff.com/GSW01/_packaging/TcThirdParty/nuget/v3/index.json \\\n    --name TcThirdParty \\\n    --username <USERNAME> \\\n    --password <PAT> \\\n    --store-password-in-clear-text \\\n    --valid-authentication-types basic\n\nThe information is stored only for the current user at\n~/.nuget/NuGet/NuGet.Config. To save the information to another file, use the\n--configfile option.",
+                "type": "install"
+            }
+        ]
+    },
+    "dotnet-sdk-internal-subset-8.0": {
+        "name": "dotnet-sdk-internal-subset-8.0",
+        "origin": "lang/dotnet-sdk-subset-8.0",
+        "version": "8.0.8",
+        "comment": "dotnet",
+        "maintainer": "info@beckhoff.com",
+        "www": "https://github.com/dotnet/sdk",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "aaea0af98564d1e2c83e3e91b3418884e5ba0cf3f186995b355fcf42f57a3e7b",
+        "flatsize": 364764067,
+        "path": "All/dotnet-sdk-internal-subset-8.0-8.0.8.pkg",
+        "repopath": "All/dotnet-sdk-internal-subset-8.0-8.0.8.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "MIT"
+        ],
+        "pkgsize": 77430136,
+        "desc": "The .NET SDK contains the components required to build console, web and server\napps as well as class libraries. There are several .NET SDK packages available\nfor FreeBSD. If you just want to build apps and class libraries using .NET,\nyou can use the versionless dotnet-sdk-internal package, which isn't scheduled\nto expire because it will always contain the oldest supported .NET major\nversion according to the .NET support policy:\n  https://aka.ms/dotnet-core-support\n\nFor CI scenarios or if you just want to use the latest available .NET SDK, you\nshould take a dotnet-sdk-internal package with a version suffix instead, as\nthese guarantee that the major version won't change. Existing pipelines will\ntherefore not break when a dotnet-sdk-internal package with a version suffix\nis updated, since it's always possible to build .NET apps using a newer .NET\nSDK with the same major version. However, you will then have to manually\nupdate the version suffix of the used dotnet-sdk-internal package before the\ncorresponding .NET version reaches end of support.\n\nWWW: https://github.com/dotnet/sdk",
+        "deps": {
+            "dotnet-aspnetcore-runtime-subset-8.0": {
+                "origin": "lang/dotnet-aspnetcore-runtime-subset-8.0",
+                "version": "8.0.8"
+            }
+        },
+        "categories": [
+            "lang"
+        ],
+        "shlibs_required": [
+            "libc++.so.1",
+            "libc.so.7",
+            "libcxxrt.so.1",
+            "libdl.so.1",
+            "libgcc_s.so.1",
+            "libgssapi_krb5.so.2.2",
+            "libinotify.so.0",
+            "libm.so.5",
+            "librt.so.1",
+            "libthr.so.3",
+            "libunwind-x86_64.so.8",
+            "libunwind.so.8",
+            "libz.so.6"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T19:53:34+0000",
+            "built_by": "poudriere-git-1.0_2",
+            "expiration_date": "2026-11-10"
+        },
+        "messages": [
+            {
+                "message": "Create a Personal Access Token (PAT) with the 'Packaging (Read)' permissions\nfor 'All Accessible Organizations', if not existing. Read the following article\non how to create a PAT:\nhttps://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate#create-a-pat\n\nRun the following command to add NuGet source 'TcThirdParty' required to build\nself-contained apps and, authenticate to it with your username and PAT:\ndotnet nuget add source https://azdevops01.beckhoff.com/GSW01/_packaging/TcThirdParty/nuget/v3/index.json \\\n    --name TcThirdParty \\\n    --username <USERNAME> \\\n    --password <PAT> \\\n    --store-password-in-clear-text \\\n    --valid-authentication-types basic\n\nThe information is stored only for the current user at\n~/.nuget/NuGet/NuGet.Config. To save the information to another file, use the\n--configfile option.",
+                "type": "install"
+            }
+        ]
     },
     "double-conversion": {
         "name": "double-conversion",
@@ -28919,6 +29747,53 @@
         "annotations": {
             "FreeBSD_version": "1404000",
             "build_timestamp": "2026-03-25T11:27:56+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "jevops-internal": {
+        "name": "jevops-internal",
+        "origin": "bhf/jevops",
+        "version": "0.0.0.37_1",
+        "comment": "jevops | less pain with AzureDevOps",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "0d1c5b5cb9820b790ba901b9120a283f33e5597f48ece44a114ccbd0c695acb0",
+        "flatsize": 70441,
+        "path": "All/jevops-internal-0.0.0.37_1.pkg",
+        "repopath": "All/jevops-internal-0.0.0.37_1.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 25652,
+        "desc": "Shell script to reduce the pain with AzureDevOps",
+        "deps": {
+            "curl": {
+                "origin": "ftp/curl",
+                "version": "8.17.0"
+            },
+            "jq": {
+                "origin": "textproc/jq",
+                "version": "1.8.1"
+            },
+            "nuget-internal": {
+                "origin": "bhf/nuget-internal",
+                "version": "5.8.1_1"
+            },
+            "shlib": {
+                "origin": "bhf/shlib",
+                "version": "4.0.40.1"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T15:57:56+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -65085,6 +65960,82 @@
             "built_by": "poudriere-git-1.0_2"
         }
     },
+    "noto-sans-symbols": {
+        "name": "noto-sans-symbols",
+        "origin": "x11-fonts/noto-sans-symbols",
+        "version": "2.008_1",
+        "comment": "Google Noto Sans Symbols",
+        "maintainer": "sunpoet@FreeBSD.org",
+        "www": "https://fonts.google.com/noto",
+        "abi": "FreeBSD:14:*",
+        "arch": "freebsd:14:*",
+        "prefix": "/usr/local",
+        "sum": "6ddc5e4e3c83e49c5807f1b5f05821817d9a47062e360db306e627f54878ef74",
+        "flatsize": 2074518,
+        "path": "All/noto-sans-symbols-2.008_1.pkg",
+        "repopath": "All/noto-sans-symbols-2.008_1.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "OFL11"
+        ],
+        "pkgsize": 582839,
+        "desc": "When text is rendered by a computer, sometimes characters are displayed as\n\"tofu\". They are little boxes to indicate your device doesn't have a font to\ndisplay the text.\n\nGoogle has been developing a font family called Noto, which aims to support all\nlanguages with a harmonious look and feel. Noto is Google's answer to tofu. The\nname noto is to convey the idea that Google's goal is to see no more \"tofu\".\nNoto has multiple styles and weights, and is freely available to all. The\ncomprehensive set of fonts and tools used in our development is available in our\nGitHub repositories.\n\nThis port provides the fonts set of Noto Sans Symbols.",
+        "deps": {
+            "fontconfig": {
+                "origin": "x11-fonts/fontconfig",
+                "version": "2.17.1,1"
+            },
+            "mkfontscale": {
+                "origin": "x11-fonts/mkfontscale",
+                "version": "1.2.3"
+            }
+        },
+        "categories": [
+            "x11-fonts"
+        ],
+        "annotations": {
+            "build_timestamp": "2026-03-25T13:07:01+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "noto-sans-symbols2": {
+        "name": "noto-sans-symbols2",
+        "origin": "x11-fonts/noto-sans-symbols2",
+        "version": "2.008",
+        "comment": "Google Noto Sans Symbols 2",
+        "maintainer": "sunpoet@FreeBSD.org",
+        "www": "https://fonts.google.com/noto",
+        "abi": "FreeBSD:14:*",
+        "arch": "freebsd:14:*",
+        "prefix": "/usr/local",
+        "sum": "78a0c764ec4218cb60e5b239b493b5555288e69e0c642e6fa948d922e0ede81f",
+        "flatsize": 676288,
+        "path": "All/noto-sans-symbols2-2.008.pkg",
+        "repopath": "All/noto-sans-symbols2-2.008.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "OFL11"
+        ],
+        "pkgsize": 280330,
+        "desc": "When text is rendered by a computer, sometimes characters are displayed as\n\"tofu\". They are little boxes to indicate your device doesn't have a font to\ndisplay the text.\n\nGoogle has been developing a font family called Noto, which aims to support all\nlanguages with a harmonious look and feel. Noto is Google's answer to tofu. The\nname noto is to convey the idea that Google's goal is to see no more \"tofu\".\nNoto has multiple styles and weights, and is freely available to all. The\ncomprehensive set of fonts and tools used in our development is available in our\nGitHub repositories.\n\nThis port provides the fonts set of Noto Sans Symbols 2.",
+        "deps": {
+            "fontconfig": {
+                "origin": "x11-fonts/fontconfig",
+                "version": "2.17.1,1"
+            },
+            "mkfontscale": {
+                "origin": "x11-fonts/mkfontscale",
+                "version": "1.2.3"
+            }
+        },
+        "categories": [
+            "x11-fonts"
+        ],
+        "annotations": {
+            "build_timestamp": "2026-03-25T13:08:35+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
     "noto-serif": {
         "name": "noto-serif",
         "origin": "x11-fonts/noto-serif",
@@ -65407,6 +66358,41 @@
                 "type": "install"
             }
         ]
+    },
+    "nuget-internal": {
+        "name": "nuget-internal",
+        "origin": "bhf/nuget-internal",
+        "version": "5.8.1_1",
+        "comment": "Microsofts nuget.exe as a package",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "077dd01603734627657e2001c3eb8b9259379ef472d08c353a5fa69e1596dcbd",
+        "flatsize": 6719212,
+        "path": "All/nuget-internal-5.8.1_1.pkg",
+        "repopath": "All/nuget-internal-5.8.1_1.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "MIT"
+        ],
+        "pkgsize": 1686707,
+        "desc": "Microsofts nuget.exe as a packages",
+        "deps": {
+            "mono5.20": {
+                "origin": "lang/mono5.20",
+                "version": "5.20.1.34_4"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T15:40:16+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
     },
     "numlockx": {
         "name": "numlockx",
@@ -67412,6 +68398,332 @@
             "built_by": "poudriere-git-1.0_2"
         }
     },
+    "os-generic-buildkernel": {
+        "name": "os-generic-buildkernel",
+        "origin": "os/buildkernel",
+        "version": "14.4.5.0,2",
+        "comment": "Distribution tarball of kernel for packaging",
+        "maintainer": "info@beckhoff.com",
+        "www": "https://www.freebsd.org",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/",
+        "sum": "85cc19cfd763f1d0d3fba5a3d84312dd152eea710807ef6df2cdab254790ec78",
+        "flatsize": 225673830,
+        "path": "All/os-generic-buildkernel-14.4.5.0,2.pkg",
+        "repopath": "All/os-generic-buildkernel-14.4.5.0,2.pkg",
+        "licenselogic": "single",
+        "pkgsize": 225184436,
+        "desc": "This FreeBSD OS port performs the 'buildkernel' portion of the base build.\nThe resulting kernel is packaged and stored as a .txz file in /usr/dist/.\n\nThis .txz file is used by other OS ports in the packaging process for the\nkernel. This package does not need to be installed for runtime.\n\nWWW: https://www.freebsd.org",
+        "categories": [
+            "os"
+        ],
+        "options": {
+            "ACCT": "on",
+            "ACPI": "on",
+            "AMD": "on",
+            "APM": "on",
+            "ASSERT_DEBUG": "off",
+            "AT": "on",
+            "ATM": "on",
+            "AUDIT": "on",
+            "AUTHPF": "on",
+            "AUTOFS": "on",
+            "BHYVE": "on",
+            "BINUTILS": "on",
+            "BINUTILS_BOOTSTRAP": "on",
+            "BLACKLIST": "on",
+            "BLUETOOTH": "on",
+            "BOOT": "on",
+            "BOOTPARAMD": "on",
+            "BOOTPD": "on",
+            "BSDINSTALL": "on",
+            "BSD_CPIO": "on",
+            "BSD_CRTBEGIN": "on",
+            "BSD_GREP": "on",
+            "BSNMP": "on",
+            "BZIP2": "on",
+            "CALENDAR": "on",
+            "CAPSICUM": "on",
+            "CASPER": "on",
+            "CCD": "on",
+            "CDDL": "on",
+            "CPP": "on",
+            "CROSS_COMPILER": "on",
+            "CRYPT": "on",
+            "CUSE": "on",
+            "CXGBETOOL": "on",
+            "CXX": "on",
+            "DIALOG": "on",
+            "DICT": "on",
+            "DMAGENT": "on",
+            "DYNAMICROOT": "on",
+            "EE": "on",
+            "EFI": "on",
+            "ELFTOOLCHAIN_BOOTSTRAP": "on",
+            "EXAMPLES": "on",
+            "FDT": "on",
+            "FILE": "on",
+            "FINGER": "on",
+            "FLOPPY": "on",
+            "FMTREE": "on",
+            "FP_LIBC": "on",
+            "FREEBSD_UPDATE": "on",
+            "FTP": "on",
+            "GAMES": "on",
+            "GCOV": "on",
+            "GDB": "on",
+            "GNU_DIFF": "on",
+            "GNU_GREP": "on",
+            "GPIO": "on",
+            "HAST": "on",
+            "HTML": "on",
+            "HYPERV": "on",
+            "ICONV": "on",
+            "INET": "on",
+            "INET6": "on",
+            "INETD": "on",
+            "IPFILTER": "on",
+            "IPFW": "on",
+            "ISCSI": "on",
+            "JAIL": "on",
+            "KDUMP": "on",
+            "KVM": "on",
+            "LDNS": "on",
+            "LDNS_UTILS": "on",
+            "LEGACY_CONSOLE": "on",
+            "LIB32": "on",
+            "LIBPTHREAD": "on",
+            "LIBTHR": "on",
+            "LLVM_COV": "on",
+            "LOADER_EFI_SECUREBOOT": "off",
+            "LOADER_GELI": "on",
+            "LOADER_OFW": "on",
+            "LOADER_UBOOT": "on",
+            "LOADER_ZFS": "on",
+            "LOCALES": "on",
+            "LOCATE": "on",
+            "LPR": "on",
+            "LS_COLORS": "on",
+            "LZMA_SUPPORT": "on",
+            "MAIL": "on",
+            "MAILWRAPPER": "on",
+            "MAKE": "on",
+            "META_MODE": "off",
+            "MLX5TOOL": "on",
+            "NDIS": "on",
+            "NETCAT": "on",
+            "NETGRAPH": "on",
+            "NLS_CATALOGS": "on",
+            "NS_CACHING": "on",
+            "NTP": "on",
+            "NVME": "on",
+            "OFED": "on",
+            "PC_SYSINSTALL": "on",
+            "PF": "on",
+            "PKGBOOTSTRAP": "on",
+            "PMC": "on",
+            "PORTSNAP": "on",
+            "PPP": "on",
+            "QUOTAS": "on",
+            "RADIUS_SUPPORT": "on",
+            "RBOOTD": "on",
+            "REPRODUCIBLE_BUILD": "on",
+            "RESCUE": "on",
+            "ROUTED": "on",
+            "SENDMAIL": "on",
+            "SERVICESDB": "on",
+            "SETUID_LOGIN": "on",
+            "SHAREDOCS": "on",
+            "SOURCELESS_HOST": "on",
+            "SOURCELESS_UCODE": "on",
+            "SVNLITE": "on",
+            "SYSCONS": "on",
+            "SYSTEM_COMPILER": "on",
+            "SYSTEM_LINKER": "on",
+            "TALK": "on",
+            "TCP_WRAPPERS": "on",
+            "TCSH": "on",
+            "TELNET": "on",
+            "TEXTPROC": "on",
+            "TFTP": "on",
+            "UNBOUND": "on",
+            "USB": "on",
+            "UTMPX": "on",
+            "VI": "on",
+            "VT": "on",
+            "WIRELESS": "on",
+            "WPA_SUPPLICANT_EAPOL": "on",
+            "ZFS": "on",
+            "ZONEINFO": "on"
+        },
+        "annotations": {
+            "flavor": "generic"
+        }
+    },
+    "os-generic-buildworld": {
+        "name": "os-generic-buildworld",
+        "origin": "os/buildworld",
+        "version": "14.4.5.0,2",
+        "comment": "Distribution tarball of world for packaging",
+        "maintainer": "info@beckhoff.com",
+        "www": "https://www.freebsd.org",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/",
+        "sum": "6849629a791164856046aad8430b1950b337b2d7e9cc1e4adf0f8b327e0a9bee",
+        "flatsize": 597532765,
+        "path": "All/os-generic-buildworld-14.4.5.0,2.pkg",
+        "repopath": "All/os-generic-buildworld-14.4.5.0,2.pkg",
+        "licenselogic": "single",
+        "pkgsize": 597269715,
+        "desc": "This FreeBSD OS port performs the 'buildworld' portion of the base build.\nThe resulting world is packaged and stored as a .txz file in /usr/dist/.\n\nThis .txz file is used by other OS ports in the packaging process for the\nuserland. This package does not need to be installed for runtime, but may\nbe helpful to feed into other programs that can make use of a tarball of\nworld, I.E. jail managers, Poudriere and similar.\n\nWWW: https://www.freebsd.org",
+        "categories": [
+            "os"
+        ],
+        "options": {
+            "ACCT": "on",
+            "ACPI": "on",
+            "AMD": "on",
+            "APM": "on",
+            "ASSERT_DEBUG": "off",
+            "AT": "on",
+            "ATM": "on",
+            "AUDIT": "on",
+            "AUTHPF": "on",
+            "AUTOFS": "on",
+            "BHYVE": "on",
+            "BINUTILS": "on",
+            "BINUTILS_BOOTSTRAP": "on",
+            "BLACKLIST": "on",
+            "BLUETOOTH": "on",
+            "BOOT": "on",
+            "BOOTPARAMD": "on",
+            "BOOTPD": "on",
+            "BSDINSTALL": "on",
+            "BSD_CPIO": "on",
+            "BSD_CRTBEGIN": "on",
+            "BSD_GREP": "on",
+            "BSNMP": "on",
+            "BZIP2": "on",
+            "CALENDAR": "on",
+            "CAPSICUM": "on",
+            "CASPER": "on",
+            "CCD": "on",
+            "CDDL": "on",
+            "CPP": "on",
+            "CROSS_COMPILER": "on",
+            "CRYPT": "on",
+            "CUSE": "on",
+            "CXGBETOOL": "on",
+            "CXX": "on",
+            "DIALOG": "on",
+            "DICT": "on",
+            "DMAGENT": "on",
+            "DYNAMICROOT": "on",
+            "EE": "on",
+            "EFI": "on",
+            "ELFTOOLCHAIN_BOOTSTRAP": "on",
+            "EXAMPLES": "on",
+            "FDT": "on",
+            "FILE": "on",
+            "FINGER": "on",
+            "FLOPPY": "on",
+            "FMTREE": "on",
+            "FP_LIBC": "on",
+            "FREEBSD_UPDATE": "on",
+            "FTP": "on",
+            "GAMES": "on",
+            "GCOV": "on",
+            "GDB": "on",
+            "GNU_DIFF": "on",
+            "GNU_GREP": "on",
+            "GPIO": "on",
+            "HAST": "on",
+            "HTML": "on",
+            "HYPERV": "on",
+            "ICONV": "on",
+            "INET": "on",
+            "INET6": "on",
+            "INETD": "on",
+            "IPFILTER": "on",
+            "IPFW": "on",
+            "ISCSI": "on",
+            "JAIL": "on",
+            "KDUMP": "on",
+            "KVM": "on",
+            "LDNS": "on",
+            "LDNS_UTILS": "on",
+            "LEGACY_CONSOLE": "on",
+            "LIB32": "on",
+            "LIBPTHREAD": "on",
+            "LIBTHR": "on",
+            "LLVM_COV": "on",
+            "LOADER_EFI_SECUREBOOT": "off",
+            "LOADER_GELI": "on",
+            "LOADER_OFW": "on",
+            "LOADER_UBOOT": "on",
+            "LOADER_ZFS": "on",
+            "LOCALES": "on",
+            "LOCATE": "on",
+            "LPR": "on",
+            "LS_COLORS": "on",
+            "LZMA_SUPPORT": "on",
+            "MAIL": "on",
+            "MAILWRAPPER": "on",
+            "MAKE": "on",
+            "META_MODE": "off",
+            "MLX5TOOL": "on",
+            "NDIS": "on",
+            "NETCAT": "on",
+            "NETGRAPH": "on",
+            "NLS_CATALOGS": "on",
+            "NS_CACHING": "on",
+            "NTP": "on",
+            "NVME": "on",
+            "OFED": "on",
+            "PC_SYSINSTALL": "on",
+            "PF": "on",
+            "PKGBOOTSTRAP": "on",
+            "PMC": "on",
+            "PORTSNAP": "on",
+            "PPP": "on",
+            "QUOTAS": "on",
+            "RADIUS_SUPPORT": "on",
+            "RBOOTD": "on",
+            "REPRODUCIBLE_BUILD": "on",
+            "RESCUE": "on",
+            "ROUTED": "on",
+            "SENDMAIL": "on",
+            "SERVICESDB": "on",
+            "SETUID_LOGIN": "on",
+            "SHAREDOCS": "on",
+            "SOURCELESS_HOST": "on",
+            "SOURCELESS_UCODE": "on",
+            "SVNLITE": "on",
+            "SYSCONS": "on",
+            "SYSTEM_COMPILER": "on",
+            "SYSTEM_LINKER": "on",
+            "TALK": "on",
+            "TCP_WRAPPERS": "on",
+            "TCSH": "on",
+            "TELNET": "on",
+            "TEXTPROC": "on",
+            "TFTP": "on",
+            "UNBOUND": "on",
+            "USB": "on",
+            "UTMPX": "on",
+            "VI": "on",
+            "VT": "on",
+            "WIRELESS": "on",
+            "WPA_SUPPLICANT_EAPOL": "on",
+            "ZFS": "on",
+            "ZONEINFO": "on"
+        },
+        "annotations": {
+            "flavor": "generic"
+        }
+    },
     "os-generic-kernel": {
         "name": "os-generic-kernel",
         "origin": "os/kernel",
@@ -67441,6 +68753,32 @@
             "flavor": "generic"
         }
     },
+    "os-generic-kernel-symbols": {
+        "name": "os-generic-kernel-symbols",
+        "origin": "os/kernel-symbols",
+        "version": "14.4.5.0,2",
+        "comment": "FreeBSD kernel debugging symbols",
+        "maintainer": "info@beckhoff.com",
+        "www": "https://www.freebsd.org",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/",
+        "sum": "aaa0c837a0e3a66deae6c3cc2e61843eebb2bbfee26b12019856ccb4b9ef2568",
+        "flatsize": 584543168,
+        "path": "All/os-generic-kernel-symbols-14.4.5.0,2.pkg",
+        "repopath": "All/os-generic-kernel-symbols-14.4.5.0,2.pkg",
+        "licenselogic": "single",
+        "pkgsize": 127602382,
+        "desc": "This FreeBSD OS port installs the debugging symbols for the default kernel.\n\nWWW: https://www.freebsd.org",
+        "categories": [
+            "os"
+        ],
+        "annotations": {
+            "build_timestamp": "2026-05-21T12:10:48+0000",
+            "built_by": "poudriere-git-1.0_2",
+            "flavor": "generic"
+        }
+    },
     "os-generic-userland": {
         "name": "os-generic-userland",
         "origin": "os/userland",
@@ -67451,7 +68789,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "b05399f57d09eaa502697af43f6d77237828f36aa36d8b4eba964fdc76b5420d",
+        "sum": "87aba85e637c518141df300fe7ab60cf9bf0d4a041586dbf3bd384752e2564e6",
         "flatsize": 243,
         "path": "All/os-generic-userland-14.4.5.0,2.pkg",
         "repopath": "All/os-generic-userland-14.4.5.0,2.pkg",
@@ -67459,7 +68797,7 @@
         "licenses": [
             "NA"
         ],
-        "pkgsize": 1105,
+        "pkgsize": 1104,
         "desc": "This FreeBSD OS port installs the userland meta-package. This package\ninstalls the other OS dependancies to give you a fully functional FreeBSD\nenvironment, suitable for both a host system and jails.\n\nWWW: https://www.freebsd.org",
         "deps": {
             "os-generic-userland-base": {
@@ -67486,7 +68824,7 @@
             "TESTS": "off"
         },
         "annotations": {
-            "build_timestamp": "2026-05-28T09:35:25+0000",
+            "build_timestamp": "2026-05-21T12:13:44+0000",
             "built_by": "poudriere-git-1.0_2",
             "flavor": "generic"
         }
@@ -68476,32 +69814,58 @@
             "flavor": "generic"
         }
     },
+    "os-generic-userland-symbols": {
+        "name": "os-generic-userland-symbols",
+        "origin": "os/userland-symbols",
+        "version": "14.4.5.0,2",
+        "comment": "FreeBSD userland debugging symbols",
+        "maintainer": "info@beckhoff.com",
+        "www": "https://www.freebsd.org",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/",
+        "sum": "372ade9d51644328bc8666e951b38ea21feb9bb73cb1c2b8f3e1f568e70e79c0",
+        "flatsize": 774893456,
+        "path": "All/os-generic-userland-symbols-14.4.5.0,2.pkg",
+        "repopath": "All/os-generic-userland-symbols-14.4.5.0,2.pkg",
+        "licenselogic": "single",
+        "pkgsize": 245698458,
+        "desc": "This FreeBSD OS port installs the userland debug files normally found in\n/usr/lib/debug.\n\nWWW: https://www.freebsd.org",
+        "categories": [
+            "os"
+        ],
+        "annotations": {
+            "build_timestamp": "2026-05-21T12:11:22+0000",
+            "built_by": "poudriere-git-1.0_2",
+            "flavor": "generic"
+        }
+    },
     "os-release-bhf": {
         "name": "os-release-bhf",
         "origin": "bhf/os-release-bhf",
-        "version": "14.4.5.0_334630",
+        "version": "14.4.5.0_331159",
         "comment": "FreeBSD build id",
         "maintainer": "info@beckhoff.com",
         "www": "UNKNOWN",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "68949b86af203fb215fca279ff5abca64b50b913b64b34b2aaa4a5e8b8c5fbc7",
+        "sum": "9cd2f97e07961dbe48e563f83abcaa472ca077c8849d9fd470b4605a7308606e",
         "flatsize": 21759,
-        "path": "All/os-release-bhf-14.4.5.0_334630.pkg",
-        "repopath": "All/os-release-bhf-14.4.5.0_334630.pkg",
+        "path": "All/os-release-bhf-14.4.5.0_331159.pkg",
+        "repopath": "All/os-release-bhf-14.4.5.0_331159.pkg",
         "licenselogic": "single",
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 7512,
+        "pkgsize": 7514,
         "desc": "Installs /etc/os-release.d/666-bhf which includes the pipeline id the package was build from.",
         "categories": [
             "bhf"
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-05-28T09:35:25+0000",
+            "build_timestamp": "2026-05-21T12:10:18+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -97643,6 +99007,41 @@
             "built_by": "poudriere-git-1.0_2"
         }
     },
+    "rte-symbols": {
+        "name": "rte-symbols",
+        "origin": "bhf/rte-symbols",
+        "version": "4026.24.40",
+        "comment": "TwinCAT Realtime Ethernet driver tcether and tctap\" debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "95cb328fa93c7c17a543af60ae66f8b6e7f476c8b99d3bf97bf56469109dfda8",
+        "flatsize": 200611,
+        "path": "All/rte-symbols-4026.24.40.pkg",
+        "repopath": "All/rte-symbols-4026.24.40.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 54548,
+        "desc": "TwinCAT Realtime Ethernet driver tcether and tctap debugging symbols",
+        "deps": {
+            "git": {
+                "origin": "devel/git",
+                "version": "2.53.0"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-04-16T11:31:24+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
     "ruby": {
         "name": "ruby",
         "origin": "lang/ruby33",
@@ -101032,6 +102431,27 @@
             "flavor": "default"
         }
     },
+    "src": {
+        "name": "src",
+        "origin": "os/src",
+        "version": "14.4.5.0,2",
+        "comment": "FreeBSD base system source",
+        "maintainer": "info@beckhoff.com",
+        "www": "https://www.freebsd.org",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/",
+        "sum": "c2df5cd085acfd872ca22ee381502a87765e616d924883902c4da961613be7bb",
+        "flatsize": 1747488965,
+        "path": "All/src-14.4.5.0,2.pkg",
+        "repopath": "All/src-14.4.5.0,2.pkg",
+        "licenselogic": "single",
+        "pkgsize": 547382818,
+        "desc": "This FreeBSD OS port installs the system sources into /usr/src that\nwere used to create the other OS packages.\n\nWWW: https://www.freebsd.org",
+        "categories": [
+            "os"
+        ]
+    },
     "srt": {
         "name": "srt",
         "origin": "www/srt",
@@ -102970,7 +104390,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "65c4815f0563b729c580c3999bc64ecb5988b24c77441ab28b47b8b3a4373e31",
+        "sum": "a7acddeb56f00808c79b892b380d622bd64c78d1f7bfd915f175f0f9cc6ae63e",
         "flatsize": 473655,
         "path": "All/TC31-TcIoPtp-2.1.2_1.pkg",
         "repopath": "All/TC31-TcIoPtp-2.1.2_1.pkg",
@@ -102978,7 +104398,7 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 198565,
+        "pkgsize": 198554,
         "desc": "TwinCAT Precise Time Protocol",
         "deps": {
             "TC31-XAR": {
@@ -102991,7 +104411,42 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-05-28T09:35:46+0000",
+            "build_timestamp": "2026-05-05T07:07:17+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "TC31-TcIoPtp-symbols": {
+        "name": "TC31-TcIoPtp-symbols",
+        "origin": "bhf/TC31-TcIoPtp-symbols",
+        "version": "2.1.2_1",
+        "comment": "TwinCAT Precise Time Protocol driver\" debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "ee342f8f5f277d5685354494408e1710d255c9c705b63aade0182a69994df22c",
+        "flatsize": 3097863,
+        "path": "All/TC31-TcIoPtp-symbols-2.1.2_1.pkg",
+        "repopath": "All/TC31-TcIoPtp-symbols-2.1.2_1.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 691389,
+        "desc": "TwinCAT Precise Time Protocol debugging symbols",
+        "deps": {
+            "TC31-XAR": {
+                "origin": "bhf/TC31-XAR",
+                "version": "4026.24.40_17"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-05-05T07:09:14+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -103030,6 +104485,41 @@
             "built_by": "poudriere-git-1.0_2"
         }
     },
+    "TC31-TcOsSys-symbols": {
+        "name": "TC31-TcOsSys-symbols",
+        "origin": "bhf/TC31-TcOsSys-symbols",
+        "version": "4026.24.40",
+        "comment": "TwinCAT runtime component TcOsSys.dll and TwinCAT license text\" debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "fc462ce630720da5eb6aa5257c1f3d461438d5913a774527e875491b67767342",
+        "flatsize": 58700117,
+        "path": "All/TC31-TcOsSys-symbols-4026.24.40.pkg",
+        "repopath": "All/TC31-TcOsSys-symbols-4026.24.40.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 9792948,
+        "desc": "TwinCAT runtime component TcOsSys.dll debugging symbols",
+        "deps": {
+            "TC31-Legal": {
+                "origin": "bhf/TC31-Legal",
+                "version": "0.0.0.1_1"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-04-16T11:32:13+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
     "TC31-XAR": {
         "name": "TC31-XAR",
         "origin": "bhf/TC31-XAR",
@@ -103040,7 +104530,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "27fc0398cd79c76610aff5660fef45a3e53ca85e06f9ce901ab14a15ece40c5e",
+        "sum": "2e66a603dc0c4644707a5539005c8fd56c72b8c8333e9cb3dbf2b9b46d90dc75",
         "flatsize": 5635174,
         "path": "All/TC31-XAR-4026.24.40_17.pkg",
         "repopath": "All/TC31-XAR-4026.24.40_17.pkg",
@@ -103048,7 +104538,7 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 1807892,
+        "pkgsize": 1807787,
         "desc": "TwinCAT System Service and runtime\n\nWWW: https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_overview/4275768971.html",
         "deps": {
             "BapiCmd": {
@@ -103065,7 +104555,7 @@
             },
             "TC31-XAR-EtherCATSlave": {
                 "origin": "bhf/TC31-XAR-EtherCATSlave",
-                "version": "2.5.1"
+                "version": "2.3.4"
             },
             "TF5000-NC-PTP": {
                 "origin": "bhf/TF5000-NC-PTP",
@@ -103111,14 +104601,6 @@
                 "origin": "ftp/curl",
                 "version": "8.17.0"
             },
-            "os-generic-userland-base-bootstrap": {
-                "origin": "os/userland-base-bootstrap",
-                "version": "14.4.5.0,2"
-            },
-            "os-generic-userland-lib": {
-                "origin": "os/userland-lib",
-                "version": "14.4.5.0,2"
-            },
             "rte": {
                 "origin": "bhf/rte",
                 "version": "4026.24.40"
@@ -103149,7 +104631,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-05-28T09:35:42+0000",
+            "build_timestamp": "2026-05-05T07:05:55+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -103182,32 +104664,125 @@
             "built_by": "poudriere-git-1.0_2"
         }
     },
+    "TC31-XAR-EtherCATSimulation-symbols": {
+        "name": "TC31-XAR-EtherCATSimulation-symbols",
+        "origin": "bhf/TC31-XAR-EtherCATSimulation-symbols",
+        "version": "1.0.9",
+        "comment": "TwinCAT EtherCATSimulation driver\" debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "0fe9c7612a8d6de2709be2252dfc3ef1f3aac23b57e1c846cd41bcbb4970ea7e",
+        "flatsize": 3294481,
+        "path": "All/TC31-XAR-EtherCATSimulation-symbols-1.0.9.pkg",
+        "repopath": "All/TC31-XAR-EtherCATSimulation-symbols-1.0.9.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 791888,
+        "desc": "TwinCAT EtherCATSimulation debugging symbols",
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T21:23:46+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
     "TC31-XAR-EtherCATSlave": {
         "name": "TC31-XAR-EtherCATSlave",
         "origin": "bhf/TC31-XAR-EtherCATSlave",
-        "version": "2.5.1",
+        "version": "2.3.4",
         "comment": "TwinCAT EtherCATSlave driver",
         "maintainer": "info@beckhoff.com",
         "www": "UNKNOWN",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "12819730fae911db23425c9d9841ca69577ad3dc9d5f8ec012c2c7d5b6b2ca09",
+        "sum": "0926fb539e7a3f9236834004b86db834b1c4050ce71d05ed10e28d919154a1b4",
         "flatsize": 477244,
-        "path": "All/TC31-XAR-EtherCATSlave-2.5.1.pkg",
-        "repopath": "All/TC31-XAR-EtherCATSlave-2.5.1.pkg",
+        "path": "All/TC31-XAR-EtherCATSlave-2.3.4.pkg",
+        "repopath": "All/TC31-XAR-EtherCATSlave-2.3.4.pkg",
         "licenselogic": "single",
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 213057,
+        "pkgsize": 213067,
         "desc": "TwinCAT EtherCATSlave driver.",
         "categories": [
             "bhf"
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-05-28T09:35:25+0000",
+            "build_timestamp": "2026-03-25T17:17:32+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "TC31-XAR-EtherCATSlave-symbols": {
+        "name": "TC31-XAR-EtherCATSlave-symbols",
+        "origin": "bhf/TC31-XAR-EtherCATSlave-symbols",
+        "version": "2.3.4",
+        "comment": "TwinCAT EtherCATSlave driver\" debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "505ff4a76973b19d3579d0d3b65c79809c6eb517941cd1825b7af913c2c2e36a",
+        "flatsize": 3007756,
+        "path": "All/TC31-XAR-EtherCATSlave-symbols-2.3.4.pkg",
+        "repopath": "All/TC31-XAR-EtherCATSlave-symbols-2.3.4.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 714050,
+        "desc": "TwinCAT EtherCATSlave debugging symbols",
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T21:19:28+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "TC31-XAR-symbols": {
+        "name": "TC31-XAR-symbols",
+        "origin": "bhf/TC31-XAR-symbols",
+        "version": "4026.24.40_17",
+        "comment": "TwinCAT System Service\" debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "772e28b910152715923cd68a49382a6fee1f779a01c991e1bb31561da0c3e23c",
+        "flatsize": 38757469,
+        "path": "All/TC31-XAR-symbols-4026.24.40_17.pkg",
+        "repopath": "All/TC31-XAR-symbols-4026.24.40_17.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 7746123,
+        "desc": "TwinCAT System Service and runtime debugging symbols",
+        "deps": {
+            "git": {
+                "origin": "devel/git",
+                "version": "2.53.0"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-04-27T08:40:18+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -103296,6 +104871,41 @@
             "built_by": "poudriere-git-1.0_2"
         }
     },
+    "TcAdsWebService-symbols": {
+        "name": "TcAdsWebService-symbols",
+        "origin": "bhf/TcAdsWebService-symbols",
+        "version": "0.0.0.3_20",
+        "comment": "TwinCAT ADS WebService",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "9c398d761a028c268bc3637dbc3363eaaebb86123973508027bb155e393a8611",
+        "flatsize": 5909283,
+        "path": "All/TcAdsWebService-symbols-0.0.0.3_20.pkg",
+        "repopath": "All/TcAdsWebService-symbols-0.0.0.3_20.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 808888,
+        "desc": "TwinCAT Ads Webservice debugging symbols",
+        "deps": {
+            "git": {
+                "origin": "devel/git",
+                "version": "2.53.0"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-04-16T11:32:35+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
     "TcAmsLogger": {
         "name": "TcAmsLogger",
         "origin": "bhf/TcAmsLogger",
@@ -103306,7 +104916,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "ebab35d5cd9aa3527349eb2d3b43adf7265641f106d29d8f8d4ce56bee9fd435",
+        "sum": "8ad49001d7d21c2eac1b6404c7c8df690cb87dec077e0814854e7427d0540f3a",
         "flatsize": 5795531,
         "path": "All/TcAmsLogger-0.0.0.2_67.pkg",
         "repopath": "All/TcAmsLogger-0.0.0.2_67.pkg",
@@ -103314,7 +104924,7 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 1291302,
+        "pkgsize": 1291135,
         "desc": "TwinCAT ADS Monitor - AMS Logger",
         "deps": {
             "TC31-XAR": {
@@ -103337,7 +104947,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-05-28T09:36:21+0000",
+            "build_timestamp": "2026-05-05T07:09:24+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -103608,6 +105218,41 @@
             "built_by": "poudriere-git-1.0_2"
         }
     },
+    "TcCppUtils2.0-Dev-internal": {
+        "name": "TcCppUtils2.0-Dev-internal",
+        "origin": "bhf/TcCppUtils2.0-Dev",
+        "version": "2.0.263_2",
+        "comment": "",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "f59901f4f2bbc1fc2b73b94a7218b2c038a4ccaf90ce81fe94277b7d1353c7e6",
+        "flatsize": 1086262,
+        "path": "All/TcCppUtils2.0-Dev-internal-2.0.263_2.pkg",
+        "repopath": "All/TcCppUtils2.0-Dev-internal-2.0.263_2.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 163064,
+        "desc": "Internal C++ development library providing ATL like functionalities to implement Windows COM applications in a portable way and some more useful utility like a serialization framework, unicode UTF conversion functions, ADS client and utilities etc.",
+        "deps": {
+            "TcCppUtils2.0": {
+                "origin": "bhf/TcCppUtils2.0",
+                "version": "2.0.263_2"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T18:13:20+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
     "TcEventLoggerAdsProxy": {
         "name": "TcEventLoggerAdsProxy",
         "origin": "bhf/TcEventLoggerAdsProxy",
@@ -103646,6 +105291,80 @@
         "annotations": {
             "FreeBSD_version": "1404000",
             "build_timestamp": "2026-03-25T16:40:56+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "TcEventLoggerAdsProxy-Dev-internal": {
+        "name": "TcEventLoggerAdsProxy-Dev-internal",
+        "origin": "bhf/TcEventLoggerAdsProxy-Dev",
+        "version": "2.8.26",
+        "comment": "TcEventLoggerAdsProxy(development headers and cmake files)",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "79bf95031b456a81bbf89789067e28be925a18e0dd8de7996a68e035d8e9df84",
+        "flatsize": 145297,
+        "path": "All/TcEventLoggerAdsProxy-Dev-internal-2.8.26.pkg",
+        "repopath": "All/TcEventLoggerAdsProxy-Dev-internal-2.8.26.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 21425,
+        "desc": "TwinCAT 3 Eventlogger is part of the TwinCAT XAR and provides a framework for handling event-based communication. \r\nTcEventLoggerAdsProxy is a library to connect to the TwinCAT 3 Eventlogger of a runtime system from usermode applications written by customers. \r\nIt provides capabilities to send and receive events.\r\n\r\nThis package include the corresponding header files.",
+        "deps": {
+            "TcCppUtils2.0-Dev-internal": {
+                "origin": "bhf/TcCppUtils2.0-Dev",
+                "version": "2.0.263_2"
+            },
+            "TcEventLoggerAdsProxy": {
+                "origin": "bhf/TcEventLoggerAdsProxy",
+                "version": "2.8.26"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T18:22:57+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "TcEventLoggerAdsProxy-symbols": {
+        "name": "TcEventLoggerAdsProxy-symbols",
+        "origin": "bhf/TcEventLoggerAdsProxy-symbols",
+        "version": "2.8.26",
+        "comment": "TcEventLoggerAdsProxy(debugging symbols)",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "2c4808ee1a6385247fbb92f1cecf6c039a8c789708db8ac8624fe80210dcbc6d",
+        "flatsize": 19010307,
+        "path": "All/TcEventLoggerAdsProxy-symbols-2.8.26.pkg",
+        "repopath": "All/TcEventLoggerAdsProxy-symbols-2.8.26.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 3192341,
+        "desc": "TcEventLoggerAdsProxy debugging symbols",
+        "deps": {
+            "git": {
+                "origin": "devel/git",
+                "version": "2.53.0"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T21:29:57+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -103689,6 +105408,43 @@
         "annotations": {
             "FreeBSD_version": "1404000",
             "build_timestamp": "2026-04-16T11:29:43+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "TcIotDriverAPI-internal": {
+        "name": "TcIotDriverAPI-internal",
+        "origin": "bhf/TcIotDriverAPI-internal",
+        "version": "1.6.97_1",
+        "comment": "Beckhoff TwinCAT Iot Driver API Library for internal use",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "c7780335bb3eed73db613847404c5aeae9bf46a10d522887273ba3ef13124c3f",
+        "flatsize": 96757298,
+        "path": "All/TcIotDriverAPI-internal-1.6.97_1.pkg",
+        "repopath": "All/TcIotDriverAPI-internal-1.6.97_1.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 15526308,
+        "desc": "Beckhoff TwinCAT Iot Driver API for internal use only",
+        "categories": [
+            "bhf"
+        ],
+        "shlibs_required": [
+            "libc++.so.1",
+            "libc.so.7",
+            "libcxxrt.so.1",
+            "libgcc_s.so.1",
+            "libm.so.5",
+            "libthr.so.3"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T18:45:19+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -103825,6 +105581,79 @@
             "built_by": "poudriere-git-1.0_2"
         }
     },
+    "TcMeasurementCore-Data-internal": {
+        "name": "TcMeasurementCore-Data-internal",
+        "origin": "bhf/TcMeasurementCore-Data",
+        "version": "3.3.449.0",
+        "comment": "",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "deb42b6220fd6a4835e5c0a78d57e13f28993252a08712f6046817a1dcb3ff73",
+        "flatsize": 8343823,
+        "path": "All/TcMeasurementCore-Data-internal-3.3.449.0.pkg",
+        "repopath": "All/TcMeasurementCore-Data-internal-3.3.449.0.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 4271099,
+        "desc": "TwinCAT Measurement Core libraries for data handling.",
+        "categories": [
+            "bhf"
+        ],
+        "shlibs_required": [
+            "libc++.so.1",
+            "libc.so.7",
+            "libcxxrt.so.1",
+            "libgcc_s.so.1",
+            "libm.so.5",
+            "librt.so.1",
+            "libthr.so.3",
+            "libutil.so.9"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-05-21T12:09:30+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "TcNc-Api-internal": {
+        "name": "TcNc-Api-internal",
+        "origin": "bhf/TcNc-Api",
+        "version": "1.0.2_1",
+        "comment": "Beckhoff TwinCAT NC Api for internal use only",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "7fa6662cab9332e6710db12b3fac654ba80bc9c0ee8aaa380453b92d2cd1b262",
+        "flatsize": 566297,
+        "path": "All/TcNc-Api-internal-1.0.2_1.pkg",
+        "repopath": "All/TcNc-Api-internal-1.0.2_1.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 108259,
+        "desc": "Beckhoff TwinCAT NC Api for internal use only",
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T18:49:22+0000",
+            "built_by": "poudriere-git-1.0_2"
+        },
+        "messages": [
+            {
+                "message": "============================= !!!! ATTENTION !!!! =========================\n\nMake sure to point your TWINCATSDK environment variable to:\n/usr/local/include/TwinCAT\n\nLook for 'TWINCATSDK' in '/etc/csh.cshrc' and '/etc/profile', if you want a permanent change.\n\n============================= !!!! ATTENTION !!!! ========================="
+            }
+        ]
+    },
     "TcPalDrv": {
         "name": "TcPalDrv",
         "origin": "bhf/TcPalDrv",
@@ -103851,6 +105680,41 @@
         "annotations": {
             "FreeBSD_version": "1404000",
             "build_timestamp": "2026-04-16T11:28:33+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "TcPalDrv-symbols": {
+        "name": "TcPalDrv-symbols",
+        "origin": "bhf/TcPalDrv-symbols",
+        "version": "4026.24.40",
+        "comment": "TwinCAT PAL driver\" debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "c7358a47935804e143d991b067f10ca213b60061c838c59cf300861b51162e97",
+        "flatsize": 1072531,
+        "path": "All/TcPalDrv-symbols-4026.24.40.pkg",
+        "repopath": "All/TcPalDrv-symbols-4026.24.40.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 236132,
+        "desc": "TwinCAT PAL driver debugging symbols",
+        "deps": {
+            "git": {
+                "origin": "devel/git",
+                "version": "2.53.0"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-04-16T11:32:33+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -104018,6 +105882,41 @@
         "annotations": {
             "FreeBSD_version": "1404000",
             "build_timestamp": "2026-04-16T11:28:33+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "TcUsb-symbols": {
+        "name": "TcUsb-symbols",
+        "origin": "bhf/TcUsb-symbols",
+        "version": "4026.24.40",
+        "comment": "TwinCAT USB driver\" debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "85a43dfe2bb221aacf0efd19a74efab3e19dec814e021a4b6b39f448c9988abc",
+        "flatsize": 360267,
+        "path": "All/TcUsb-symbols-4026.24.40.pkg",
+        "repopath": "All/TcUsb-symbols-4026.24.40.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 86395,
+        "desc": "TwinCAT USB driver debugging symbols",
+        "deps": {
+            "git": {
+                "origin": "devel/git",
+                "version": "2.53.0"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-04-16T11:32:11+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -105457,7 +107356,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "56e29d38c74aeffd69c94ea5ad48497a469bbfe3a32ca6b9f85a228301b9ea4e",
+        "sum": "09fc8eccddaeeceb2b4127aeb76e9b1bb754897404185ee62b4bbcb6aa0a3a8a",
         "flatsize": 8714979,
         "path": "All/TF1810-PLC-HMI-Web-4.0.1.2_5.pkg",
         "repopath": "All/TF1810-PLC-HMI-Web-4.0.1.2_5.pkg",
@@ -105465,7 +107364,7 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 733542,
+        "pkgsize": 733535,
         "desc": "TC3 PLC HMI Web is a stand-alone web server for the presentation of visualisations which\nare created in the TwinCAT PLC development environment. In order to show the visualisations,\nyou need an HTML5 capable web browser.\nLocal URL: http://127.0.0.1:43241/Port_851/Visu/webvisu.htm\nRemote URL: https://device_name/Tc3PlcHmiWeb/Port_851/Visu/webvisu.htm\n\nWWW: https://www.beckhoff.com/tf1810/",
         "deps": {
             "TC31-XAR": {
@@ -105492,7 +107391,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-05-28T09:36:28+0000",
+            "build_timestamp": "2026-05-05T07:09:32+0000",
             "built_by": "poudriere-git-1.0_2"
         },
         "messages": [
@@ -105836,6 +107735,35 @@
             "built_by": "poudriere-git-1.0_2"
         }
     },
+    "TF5000-NC-PTP-symbols": {
+        "name": "TF5000-NC-PTP-symbols",
+        "origin": "bhf/TF5000-NC-PTP-symbols",
+        "version": "3.1.5041",
+        "comment": "TwinCAT NC PTP driver\" debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "fe7649c95eaef72b5d21d1c234ba42ce806258c712126390ee27739e8bc7a070",
+        "flatsize": 9790727,
+        "path": "All/TF5000-NC-PTP-symbols-3.1.5041.pkg",
+        "repopath": "All/TF5000-NC-PTP-symbols-3.1.5041.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 2183859,
+        "desc": "TwinCAT NC PTP debugging symbols",
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T22:23:55+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
     "TF5100-NCI": {
         "name": "TF5100-NCI",
         "origin": "bhf/TF5100-NCI",
@@ -105846,15 +107774,15 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "6e02ac4f870917e0b4c319bcfb502ad75c9090cb2f06380bdc44a5c9602706a2",
-        "flatsize": 7937990,
+        "sum": "3705485041d8bade11bf39af329c98bbce696b15385085727481cf1bba4db96f",
+        "flatsize": 7954502,
         "path": "All/TF5100-NCI-3.2.23.0_4.pkg",
         "repopath": "All/TF5100-NCI-3.2.23.0_4.pkg",
         "licenselogic": "single",
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 785860,
+        "pkgsize": 787320,
         "desc": "The TwinCAT NCI stands for 'numerical control interpolation' and is the NC\nsystem for interpolated path movements.  TwinCAT NCI offers 3D interpolation\n(interpreter, setpoint generation, position controller), an integrated PLC with\nan NC interface and an I/O connection for axes via the fieldbus.\n\nNCI can be used to drive 3 path axes and up to 5 auxiliary axes per channel. In\naddition, master/slave couplings can be formed. In combination with TwinCAT\nKinematic Transformation (TS 511x), complex kinematic systems can be controlled\nvia NCI.\n\nProgramming is done with a dedicated NC program, based on DIN 66025, with its\nown language extensions (cf. Interpreter (DIN 66025/G-Code)) or directly from\nthe PLC with the PLC Library: Tc2_PlcInterpolation.\n\nWWW: https://www.beckhoff.com/tf5100/",
         "deps": {
             "TC31-XAR": {
@@ -105876,7 +107804,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-05-28T09:35:46+0000",
+            "build_timestamp": "2026-05-05T07:06:19+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -105912,22 +107840,22 @@
     "TF5400-Advanced-Motion-Pack": {
         "name": "TF5400-Advanced-Motion-Pack",
         "origin": "bhf/TF5400-Advanced-Motion-Pack",
-        "version": "3.4.67",
+        "version": "3.4.64",
         "comment": "TwinCAT Advanced Motion driver",
         "maintainer": "info@beckhoff.com",
         "www": "https://www.beckhoff.com/tf5xxx/",
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "2569e54409a8b8c1284ed41ec3ad853979db93238ca60923b9572d590bb5ab7a",
-        "flatsize": 16317182,
-        "path": "All/TF5400-Advanced-Motion-Pack-3.4.67.pkg",
-        "repopath": "All/TF5400-Advanced-Motion-Pack-3.4.67.pkg",
+        "sum": "787100c6ec1c9a9eca2e4dddf2a27fb068b34f835934d2a395210e5fd919183e",
+        "flatsize": 16350462,
+        "path": "All/TF5400-Advanced-Motion-Pack-3.4.64.pkg",
+        "repopath": "All/TF5400-Advanced-Motion-Pack-3.4.64.pkg",
         "licenselogic": "single",
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 3429529,
+        "pkgsize": 3429848,
         "desc": "The package TF5400 TwinCAT 3 Advanced Motion Pack contains the necessary components\nfor the TwinCAT functions TF5110 - TF5112 TwinCAT 3 Kinematic Transformation, TF5410 TwinCAT 3\nMotion Collision Avoidance, TF5420 TwinCAT 3 Motion Pick-and-Place and TF5430 TwinCAT 3 Planar Motion.\n\nWWW: https://www.beckhoff.com/tf5xxx/",
         "deps": {
             "TF5000-NC-PTP": {
@@ -105940,7 +107868,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-05-28T09:35:25+0000",
+            "build_timestamp": "2026-05-05T12:58:58+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -106014,6 +107942,35 @@
             "built_by": "poudriere-git-1.0_2"
         }
     },
+    "TF6100-OPC-UA-Api-internal": {
+        "name": "TF6100-OPC-UA-Api-internal",
+        "origin": "bhf/TF6100-OPC-UA-Api-internal",
+        "version": "1.0.36",
+        "comment": "TwinCAT OpcUa Client and PubSub Headers",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "7b444f9c9c9fe1758cb6745c65c85cb1fe98ed5c8267957232986f89fd83504b",
+        "flatsize": 74206,
+        "path": "All/TF6100-OPC-UA-Api-internal-1.0.36.pkg",
+        "repopath": "All/TF6100-OPC-UA-Api-internal-1.0.36.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 19125,
+        "desc": "Header files for TF610x OPC UA Client and Pub/Sub Package.",
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T18:28:01+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
     "TF6100-OPC-UA-Server": {
         "name": "TF6100-OPC-UA-Server",
         "origin": "bhf/TF6100-OPC-UA-Server",
@@ -106024,7 +107981,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "dffd54fd65e6773a2490c5ad13962b5e699c217cb89e11a1edf0f97194931f83",
+        "sum": "e19849fef29382ebf27622809fe9efb3086557c1c1bd73da46e27f8eece88750",
         "flatsize": 30068297,
         "path": "All/TF6100-OPC-UA-Server-5.4.5_1,1.pkg",
         "repopath": "All/TF6100-OPC-UA-Server-5.4.5_1,1.pkg",
@@ -106086,7 +108043,109 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-05-28T09:35:46+0000",
+            "build_timestamp": "2026-05-05T07:06:02+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "TF6100-OPC-UA-Server-symbols": {
+        "name": "TF6100-OPC-UA-Server-symbols",
+        "origin": "bhf/TF6100-OPC-UA-Server-symbols",
+        "version": "5.4.5_1,1",
+        "comment": "TF6100 | TC3 OPC UA",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "2c09cbfea1d4aba78f2af459999c8aa0e88038318d768b9923bcf7411565a3b6",
+        "flatsize": 269984704,
+        "path": "All/TF6100-OPC-UA-Server-symbols-5.4.5_1,1.pkg",
+        "repopath": "All/TF6100-OPC-UA-Server-symbols-5.4.5_1,1.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 47972398,
+        "desc": "TF6100-OPC-UA-Server debugging symbols",
+        "deps": {
+            "git": {
+                "origin": "devel/git",
+                "version": "2.53.0"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-04-16T11:31:48+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "TF6100-OPC-UA-Server-Tests-internal": {
+        "name": "TF6100-OPC-UA-Server-Tests-internal",
+        "origin": "bhf/TF6100-OPC-UA-Server-Tests-internal",
+        "version": "5.4.5_1,1",
+        "comment": "TF6100 | TC3 OPC UA",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "4b084c9e5f6b6d7f79187327178894482a6f6ccc1843d86cb531ab83d037bb72",
+        "flatsize": 101971341,
+        "path": "All/TF6100-OPC-UA-Server-Tests-internal-5.4.5_1,1.pkg",
+        "repopath": "All/TF6100-OPC-UA-Server-Tests-internal-5.4.5_1,1.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 15303250,
+        "desc": "TwinCAT OPC UA Server Tests internal\n\ntests various server function by connecting as client and executing various actions.",
+        "deps": {
+            "TC31-XAR": {
+                "origin": "bhf/TC31-XAR",
+                "version": "4026.24.40_17"
+            },
+            "TF6000-ADS-Comm-Lib": {
+                "origin": "bhf/TF6000-ADS-Comm-Lib",
+                "version": "4026.24.40"
+            },
+            "TF6100-OPC-UA-Server": {
+                "origin": "bhf/TF6100-OPC-UA-Server",
+                "version": "5.4.5_1,1"
+            },
+            "cppunit": {
+                "origin": "devel/cppunit",
+                "version": "1.15.1"
+            },
+            "libxml2": {
+                "origin": "textproc/libxml2",
+                "version": "2.15.2"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "shlibs_required": [
+            "libTcAdsDll.so",
+            "libTcSystem.so",
+            "libc++.so.1",
+            "libc.so.7",
+            "libcppunit-1.15.so.1",
+            "libcrypto.so.30",
+            "libcxxrt.so.1",
+            "libgcc_s.so.1",
+            "libm.so.5",
+            "librt.so.1",
+            "libssl.so.30",
+            "libthr.so.3",
+            "libutil.so.9",
+            "libxml2.so.16"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-05-05T07:09:01+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -106110,6 +108169,35 @@
         ],
         "pkgsize": 721690,
         "desc": "TwinCAT 3 OPC UA Pub/Sub extends the OPC UA client/server architecture to include publisher/subscriber communication patterns.\r\nThe TF6105 TwinCAT 3 OPC UA Pub/Sub provides the necessary implementations of the protocol so that these kinds of communication patterns can be readily integrated into the TwinCAT application.\r\nIt includes various transport protocols as defined in the corresponding OPC UA specification part (OPC10000-14), e.g. UDP and MQTT.",
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-05-18T14:45:33+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "TF610x-OPC-UA-Client-PubSub-symbols": {
+        "name": "TF610x-OPC-UA-Client-PubSub-symbols",
+        "origin": "bhf/TF610x-OPC-UA-Client-PubSub-symbols",
+        "version": "2.1.11",
+        "comment": "TwinCAT OpcUa Client and PubSub driver\" debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "d18947b62dca71f08367d9458c40da5e35938047afd93586d8f4eefd204a7e1d",
+        "flatsize": 11486469,
+        "path": "All/TF610x-OPC-UA-Client-PubSub-symbols-2.1.11.pkg",
+        "repopath": "All/TF610x-OPC-UA-Client-PubSub-symbols-2.1.11.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 2390717,
+        "desc": "TF610x TC3 OPC UA Client Pub/Sub debugging symbols",
         "categories": [
             "bhf"
         ],
@@ -106148,6 +108236,35 @@
             "built_by": "poudriere-git-1.0_2"
         }
     },
+    "TF6230-Parallel-Redundancy-Protocol-symbols": {
+        "name": "TF6230-Parallel-Redundancy-Protocol-symbols",
+        "origin": "bhf/TF6230-Parallel-Redundancy-Protocol-symbols",
+        "version": "3.1.1.0_1",
+        "comment": "TF6230 | TC3 Parallel Redundancy Protocol",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "b47da6243968b02e12d9a33e4286a55a05d2247bd589021a5adb524dbac7f663",
+        "flatsize": 1672470,
+        "path": "All/TF6230-Parallel-Redundancy-Protocol-symbols-3.1.1.0_1.pkg",
+        "repopath": "All/TF6230-Parallel-Redundancy-Protocol-symbols-3.1.1.0_1.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 340829,
+        "desc": "TwinCAT Parallel Redundancy Protocol debugging symbols",
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T21:30:02+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
     "TF6250-Modbus-TCP": {
         "name": "TF6250-Modbus-TCP",
         "origin": "bhf/TF6250-Modbus-TCP",
@@ -106158,7 +108275,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "71d489a0b1a3623be4387189d421ca9a359b460bd0e146c4b6655136663fb74e",
+        "sum": "e54a0d91051357bff06b333046a875a8b91ec4abf2e7b2bb75e1e9d66a324bc1",
         "flatsize": 3509526,
         "path": "All/TF6250-Modbus-TCP-2.0.17.0_15.pkg",
         "repopath": "All/TF6250-Modbus-TCP-2.0.17.0_15.pkg",
@@ -106166,7 +108283,7 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 881435,
+        "pkgsize": 881473,
         "desc": "TwinCAT Modbus represents a simple gateway between Modbus TCP and TwinCAT ADS devices.\n\nWWW: https://www.beckhoff.com/tf6250/",
         "deps": {
             "TC31-XAR": {
@@ -106189,7 +108306,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-05-28T09:35:56+0000",
+            "build_timestamp": "2026-05-05T07:08:10+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -106213,6 +108330,35 @@
         ],
         "pkgsize": 572533,
         "desc": "The TwinCAT PROFINET RT driver is a supplement that turns any PC-based controller with an Intel%c2%ae chipset and the real-time Ethernet driver developed by Beckhoff into a PROFINET RT device. By installing the function, a standard Ethernet interface becomes a PROFINET device.",
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-04-28T08:11:34+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "TF627x-PROFINET-RT-symbols": {
+        "name": "TF627x-PROFINET-RT-symbols",
+        "origin": "bhf/TF627x-PROFINET-RT-symbols",
+        "version": "2.7.0",
+        "comment": "TwinCAT PROFINET RT driver\" debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "a2ead07c7eca5a90bf84e4293da0af20290805315a182098748509bdcebe2f9c",
+        "flatsize": 5973255,
+        "path": "All/TF627x-PROFINET-RT-symbols-2.7.0.pkg",
+        "repopath": "All/TF627x-PROFINET-RT-symbols-2.7.0.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 1241963,
+        "desc": "TwinCAT PROFINET RT debugging symbols",
         "categories": [
             "bhf"
         ],
@@ -106250,6 +108396,34 @@
             "built_by": "poudriere-git-1.0_2"
         }
     },
+    "TF6280-EtherNetIP-symbols": {
+        "name": "TF6280-EtherNetIP-symbols",
+        "origin": "bhf/TF6280-EtherNetIP-symbols",
+        "version": "3.1.2_1",
+        "comment": "This package was replaced by TF628x-EthernetIP-symbols",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:*",
+        "arch": "freebsd:14:*",
+        "prefix": "/usr/local",
+        "sum": "565ef7afcb00b8b6e9e867c4d00440a69c442747263642d82651ef71b609215f",
+        "flatsize": 243,
+        "path": "All/TF6280-EtherNetIP-symbols-3.1.2_1.pkg",
+        "repopath": "All/TF6280-EtherNetIP-symbols-3.1.2_1.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "NA"
+        ],
+        "pkgsize": 922,
+        "desc": "ATTENTION: This package was replaced by TF628x-EthernetIP-symbols and will be dropped soon.",
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "build_timestamp": "2026-03-25T21:42:43+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
     "TF628x-EtherNetIP": {
         "name": "TF628x-EtherNetIP",
         "origin": "bhf/TF628x-EtherNetIP",
@@ -106279,6 +108453,35 @@
             "built_by": "poudriere-git-1.0_2"
         }
     },
+    "TF628x-EtherNetIP-symbols": {
+        "name": "TF628x-EtherNetIP-symbols",
+        "origin": "bhf/TF628x-EtherNetIP-symbols",
+        "version": "3.2.7",
+        "comment": "TwinCAT EtherNet/IP driver\" debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "8242e5d2c0f898853760e081c742e8fa0f4895ef0ff911e082ac37027b3a76e8",
+        "flatsize": 3712265,
+        "path": "All/TF628x-EtherNetIP-symbols-3.2.7.pkg",
+        "repopath": "All/TF628x-EtherNetIP-symbols-3.2.7.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 872472,
+        "desc": "TwinCAT EtherNet/IP debugging symbols",
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T22:29:04+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
     "TF6310-TCP-IP": {
         "name": "TF6310-TCP-IP",
         "origin": "bhf/TF6310-TCP-IP",
@@ -106289,7 +108492,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "d18c345986dc1e0172aa7d79c25946a5dbd47648f1d88132e92cee1e245b6a89",
+        "sum": "5051c34aff81a15d5fc62bcc3f6af302e0396073e4eae54a94d54859b54f72d5",
         "flatsize": 4028082,
         "path": "All/TF6310-TCP-IP-2.0.21.0_67.pkg",
         "repopath": "All/TF6310-TCP-IP-2.0.21.0_67.pkg",
@@ -106297,7 +108500,7 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 1209244,
+        "pkgsize": 1209230,
         "desc": "TwinCAT TCP/IP enables the implementation and realisation of one or several TCP/IP server/ clients within the TwinCAT 3 PLC.\n\nWWW: https://www.beckhoff.com/tf6310/",
         "deps": {
             "TC31-XAR": {
@@ -106320,7 +108523,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-05-28T09:36:30+0000",
+            "build_timestamp": "2026-05-05T07:09:38+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -106359,6 +108562,41 @@
         "annotations": {
             "FreeBSD_version": "1404000",
             "build_timestamp": "2026-03-25T21:23:46+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "TF6340-Serial-Communication-symbols": {
+        "name": "TF6340-Serial-Communication-symbols",
+        "origin": "bhf/TF6340-Serial-Communication-symbols",
+        "version": "2.4.5_3",
+        "comment": "TF6340 | TC3 Serial Communication(debugging symbols)",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "eeb5b52b0d7a0f78fcf7fbf7fe8d31aef95d3287bdca1bf781e93654da8b454f",
+        "flatsize": 632979,
+        "path": "All/TF6340-Serial-Communication-symbols-2.4.5_3.pkg",
+        "repopath": "All/TF6340-Serial-Communication-symbols-2.4.5_3.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 169542,
+        "desc": "TF6340 TC3 Serial Communication debugging symbol",
+        "deps": {
+            "git": {
+                "origin": "devel/git",
+                "version": "2.53.0"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T22:25:24+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -106440,7 +108678,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "25870815a4ddf561fd84ffed7d4e8e606d9bfbe9baac4a496e7c156c2684f4b2",
+        "sum": "5e16202f9a3f4dae13708e2ecffe5fcb6aa1fae69aeaa2cecfeca0a61d31e167",
         "flatsize": 4414549,
         "path": "All/TF6421-XML-Server-3.2.38.3_3.pkg",
         "repopath": "All/TF6421-XML-Server-3.2.38.3_3.pkg",
@@ -106448,7 +108686,7 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 960744,
+        "pkgsize": 960694,
         "desc": "The TwinCAT XML Data Server enables initialising of TwinCAT PLC variables with data stored in an XML file, or formatted saving of PLC variables in an XML file.\n\nWWW: https://www.beckhoff.com/tf6421/",
         "deps": {
             "TC31-XAR": {
@@ -106471,7 +108709,7 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-05-28T09:36:06+0000",
+            "build_timestamp": "2026-05-05T07:08:41+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
@@ -106533,6 +108771,35 @@
             "built_by": "poudriere-git-1.0_2"
         }
     },
+    "TF8020-BACnet-symbols": {
+        "name": "TF8020-BACnet-symbols",
+        "origin": "bhf/TF8020-BACnet-symbols",
+        "version": "4.4.15",
+        "comment": "TwinCAT BACnet driver\" debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "4a816dfa431dcf5854935a106786a94802100d069ecfef3afb6ddd879217e9f6",
+        "flatsize": 6825222,
+        "path": "All/TF8020-BACnet-symbols-4.4.15.pkg",
+        "repopath": "All/TF8020-BACnet-symbols-4.4.15.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 1473439,
+        "desc": "TwinCAT BACnet debugging symbols",
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T21:24:41+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
     "TF8310-Wind-Framework": {
         "name": "TF8310-Wind-Framework",
         "origin": "bhf/TF8310-Wind-Framework",
@@ -106543,7 +108810,7 @@
         "abi": "FreeBSD:14:amd64",
         "arch": "freebsd:14:x86:64",
         "prefix": "/usr/local",
-        "sum": "6ebd5ec6137db9efc9817d8545a29886f4f631f47af62b054a80aa9b1db1844f",
+        "sum": "0c0662737efbffbd7d866b948077ec191430747996255356c7d064dbd19bc0de",
         "flatsize": 1112121,
         "path": "All/TF8310-Wind-Framework-3.1.2.19_3.pkg",
         "repopath": "All/TF8310-Wind-Framework-3.1.2.19_3.pkg",
@@ -106551,7 +108818,7 @@
         "licenses": [
             "SLA4BSP"
         ],
-        "pkgsize": 373374,
+        "pkgsize": 373380,
         "desc": "The TwinCAT 3 Wind Framework is based on the modular architecture of TwinCAT 3\nand provides control technology and industry expertise in the form of\nencapsulated modules and an application template. TcCOM modules provide\nhigher-level system services. The status module enables the monitoring of all\ncomponents and includes error detection, event management, error handling and\nreporting. The parameter and command modules provide services for configuration\nand interaction with the system.",
         "deps": {
             "TC31-XAR": {
@@ -106564,7 +108831,49 @@
         ],
         "annotations": {
             "FreeBSD_version": "1404000",
-            "build_timestamp": "2026-05-28T09:36:32+0000",
+            "build_timestamp": "2026-05-05T07:09:51+0000",
+            "built_by": "poudriere-git-1.0_2",
+            "deprecated": "Unversioned driver is deprecated, prefer to use versioned driver.",
+            "expiration_date": "2025-01-10"
+        },
+        "messages": [
+            {
+                "message": "===>   NOTICE:\n\nThis port is deprecated; you may wish to reconsider installing it:\n\nUnversioned driver is deprecated, prefer to use versioned driver..\n\nIt is scheduled to be removed on or after 2025-01-10."
+            }
+        ]
+    },
+    "TF8310-Wind-Framework-symbols": {
+        "name": "TF8310-Wind-Framework-symbols",
+        "origin": "bhf/TF8310-Wind-Framework-symbols",
+        "version": "3.1.2.19_3",
+        "comment": "TF8310 | TC3 Wind Framework",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "c8a55b66aa8c9307196592f0d869b16a182002d79d48210a1bd64c0a19873cb6",
+        "flatsize": 7546121,
+        "path": "All/TF8310-Wind-Framework-symbols-3.1.2.19_3.pkg",
+        "repopath": "All/TF8310-Wind-Framework-symbols-3.1.2.19_3.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 1583025,
+        "desc": "TwinCAT Wind Framework debugging symbols",
+        "deps": {
+            "TC31-XAR": {
+                "origin": "bhf/TC31-XAR",
+                "version": "4026.24.40_17"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-05-05T07:08:37+0000",
             "built_by": "poudriere-git-1.0_2",
             "deprecated": "Unversioned driver is deprecated, prefer to use versioned driver.",
             "expiration_date": "2025-01-10"
@@ -107645,6 +109954,121 @@
             "built_by": "poudriere-git-1.0_2"
         }
     },
+    "TwinCAT-AFM-BridgingGateway-internal": {
+        "name": "TwinCAT-AFM-BridgingGateway-internal",
+        "origin": "bhf/TwinCAT-AFM-BridgingGateway-internal",
+        "version": "0.0.1_1",
+        "comment": "TwinCAT-AFM-BridgingGateway",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "ff41f7a78c4ee4375ad77a8c5f30d145bd8ecabb667fc097c285a9382f879556",
+        "flatsize": 1339202,
+        "path": "All/TwinCAT-AFM-BridgingGateway-internal-0.0.1_1.pkg",
+        "repopath": "All/TwinCAT-AFM-BridgingGateway-internal-0.0.1_1.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 493258,
+        "desc": "The TwinCAT-AFM-BridgingGateway is the connection to the outside for the Fleet- and Device-Management",
+        "categories": [
+            "bhf"
+        ],
+        "shlibs_required": [
+            "libc++.so.1",
+            "libc.so.7",
+            "libcxxrt.so.1",
+            "libgcc_s.so.1",
+            "libm.so.5",
+            "libthr.so.3"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T21:42:20+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "TwinCAT-AFM-BridgingGateway-internal-symbols": {
+        "name": "TwinCAT-AFM-BridgingGateway-internal-symbols",
+        "origin": "bhf/TwinCAT-AFM-BridgingGateway-internal-symbols",
+        "version": "0.0.1_1",
+        "comment": "TwinCAT-AFM-BridgingGateway\" debugging symbols\"",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "a796385c536b91d37b25c7f753e131d1089cccad9a0124473f024d12f78abd53",
+        "flatsize": 6144131,
+        "path": "All/TwinCAT-AFM-BridgingGateway-internal-symbols-0.0.1_1.pkg",
+        "repopath": "All/TwinCAT-AFM-BridgingGateway-internal-symbols-0.0.1_1.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 1298125,
+        "desc": "TwinCAT-AFM-BridgingGateway debugging symbols",
+        "deps": {
+            "git": {
+                "origin": "devel/git",
+                "version": "2.53.0"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T21:56:06+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "TwinCAT-SDK-internal": {
+        "name": "TwinCAT-SDK-internal",
+        "origin": "bhf/TwinCAT-SDK-internal",
+        "version": "4026.24.40",
+        "comment": "Beckhoff TwinCAT Software Development Kit for internal use only",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "438c7fa72c7579457e7e8e15ec333a7de382ca72564c63b3ed0f8cb438aab56a",
+        "flatsize": 981543518,
+        "path": "All/TwinCAT-SDK-internal-4026.24.40.pkg",
+        "repopath": "All/TwinCAT-SDK-internal-4026.24.40.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 173776527,
+        "desc": "Beckhoff TwinCAT Software Develoment Kit for internal use only",
+        "categories": [
+            "bhf"
+        ],
+        "shlibs_required": [
+            "libc++.so.1",
+            "libc.so.7",
+            "libcxxrt.so.1",
+            "libgcc_s.so.1",
+            "libm.so.5",
+            "librt.so.1",
+            "libthr.so.3"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-04-16T11:28:08+0000",
+            "built_by": "poudriere-git-1.0_2"
+        },
+        "messages": [
+            {
+                "message": "============================= !!!! ATTENTION !!!! =========================\n\nMake sure to point your TWINCATSDK environment variable to:\n/usr/local/include/TwinCAT\n\nLook for 'TWINCATSDK' in '/etc/csh.cshrc' and '/etc/profile', if you want a permanent change.\n\n============================= !!!! ATTENTION !!!! ========================="
+            }
+        ]
+    },
     "twm": {
         "name": "twm",
         "origin": "x11-wm/twm",
@@ -107711,6 +110135,49 @@
         "annotations": {
             "FreeBSD_version": "1404000",
             "build_timestamp": "2026-03-25T18:40:41+0000",
+            "built_by": "poudriere-git-1.0_2"
+        }
+    },
+    "UaCpp-SDK-internal": {
+        "name": "UaCpp-SDK-internal",
+        "origin": "bhf/UaCpp-SDK-internal",
+        "version": "1.8.8.648_1,1",
+        "comment": "Unified Architecture Software Development Kit for internal use only",
+        "maintainer": "info@beckhoff.com",
+        "www": "UNKNOWN",
+        "abi": "FreeBSD:14:amd64",
+        "arch": "freebsd:14:x86:64",
+        "prefix": "/usr/local",
+        "sum": "cf412ae2e377693ed51c1ceffe9910aa9104ed2bfdac72c6a3cecbc40326dccd",
+        "flatsize": 1906438522,
+        "path": "All/UaCpp-SDK-internal-1.8.8.648_1,1.pkg",
+        "repopath": "All/UaCpp-SDK-internal-1.8.8.648_1,1.pkg",
+        "licenselogic": "single",
+        "licenses": [
+            "SLA4BSP"
+        ],
+        "pkgsize": 159512870,
+        "desc": "Unified Architecture Software Development Kit for internal use only",
+        "deps": {
+            "libxml2": {
+                "origin": "textproc/libxml2",
+                "version": "2.15.2"
+            }
+        },
+        "categories": [
+            "bhf"
+        ],
+        "shlibs_required": [
+            "libc.so.7",
+            "libcrypto.so.30"
+        ],
+        "shlibs_provided": [
+            "libuastack.so",
+            "libuastackd.so"
+        ],
+        "annotations": {
+            "FreeBSD_version": "1404000",
+            "build_timestamp": "2026-03-25T18:28:52+0000",
             "built_by": "poudriere-git-1.0_2"
         }
     },
