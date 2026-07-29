@@ -98,7 +98,7 @@ export function PackageLogAnalysis({ results, buildId, history }: PackageLogAnal
         <div className="flex flex-wrap gap-2 mb-4">
           <button
             onClick={() => setFilter('all')}
-            className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${
+            className={`px-4 py-1.5 min-h-11 md:min-h-0 text-sm font-medium rounded-lg transition-colors ${
               filter === 'all'
                 ? 'bg-twincat-red text-white'
                 : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
@@ -108,7 +108,7 @@ export function PackageLogAnalysis({ results, buildId, history }: PackageLogAnal
           </button>
           <button
             onClick={() => setFilter('mismatch')}
-            className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${
+            className={`px-4 py-1.5 min-h-11 md:min-h-0 text-sm font-medium rounded-lg transition-colors ${
               filter === 'mismatch'
                 ? 'bg-red-600 text-white'
                 : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
@@ -118,7 +118,7 @@ export function PackageLogAnalysis({ results, buildId, history }: PackageLogAnal
           </button>
           <button
             onClick={() => setFilter('not_found')}
-            className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${
+            className={`px-4 py-1.5 min-h-11 md:min-h-0 text-sm font-medium rounded-lg transition-colors ${
               filter === 'not_found'
                 ? 'bg-amber-600 text-white'
                 : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
@@ -130,8 +130,8 @@ export function PackageLogAnalysis({ results, buildId, history }: PackageLogAnal
 
         {/* Package Table */}
         <div className="bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
-          <div className="overflow-auto">
-            <table className="w-full text-sm">
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[44rem] text-sm">
               <thead>
                 <tr className="text-left border-b border-slate-200 dark:border-slate-700">
                   <th className="px-4 py-3 font-medium text-slate-500 dark:text-slate-400">Status</th>

@@ -1,7 +1,11 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
 import { useTheme } from './hooks/useTheme';
 import { usePackageData } from './hooks/usePackageData';
+import { useIsMobile } from './hooks/useMediaQuery';
 import { Header } from './components/Header';
+import { BottomSheet } from './components/BottomSheet';
+import { MobileNav } from './components/MobileNav';
+import { MobileTabBar } from './components/MobileTabBar';
 import { PackageList } from './components/PackageList';
 import { PackageDetails } from './components/PackageDetails';
 import { PackageLogAnalysis } from './components/PackageLogAnalysis';
@@ -21,14 +25,27 @@ type Tab =
   | { id: string; type: 'reverse'; packageName: string; label: string }
   | { id: string; type: 'impact'; label: string; packageName?: string };
 
+let tabSequence = 0;
+const nextTabId = (prefix: string) => `${prefix}-${Date.now()}-${tabSequence++}`;
+
 function App() {
   const { theme, toggleTheme } = useTheme();
   const { packageSite, packageHistory, loading, error } = usePackageData();
+  const isMobile = useIsMobile();
   const [selectedBuild, setSelectedBuild] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState('');
   const [openTabs, setOpenTabs] = useState<Tab[]>([]);
   const [activeTabId, setActiveTabId] = useState<string | null>(null);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [packageSheetOpen, setPackageSheetOpen] = useState(false);
+  const [tabSheetOpen, setTabSheetOpen] = useState(false);
+
+  // Sheets are a phone-only surface; never leave one open when the layout switches.
+  useEffect(() => {
+    if (!isMobile) {
+      setPackageSheetOpen(false);
+      setTabSheetOpen(false);
+    }
+  }, [isMobile]);
 
   const latestBuild = useMemo(() => {
     if (!packageHistory) return '';
@@ -47,17 +64,17 @@ function App() {
     const existingTab = openTabs.find(tab => tab.type === 'package' && tab.packageName === packageName);
     if (existingTab) {
       setActiveTabId(existingTab.id);
-      setSidebarOpen(false);
+      setPackageSheetOpen(false);
       return;
     }
     const newTab: Tab = {
-      id: `tab-${Date.now()}`,
+      id: nextTabId('tab'),
       type: 'package',
       packageName,
     };
     setOpenTabs(prev => [...prev, newTab]);
     setActiveTabId(newTab.id);
-    setSidebarOpen(false);
+    setPackageSheetOpen(false);
   }, [openTabs]);
 
   const handleUploadPackageLog = useCallback((content: string) => {
@@ -70,7 +87,7 @@ function App() {
     const results = analyzePackages(parsed, detectedBuild, packageHistory);
 
     const newTab: Tab = {
-      id: `analysis-${Date.now()}`,
+      id: nextTabId('analysis'),
       type: 'analysis',
       label: `Analysis (${detectedBuild})`,
       results,
@@ -82,7 +99,7 @@ function App() {
 
   const handleCompareBuilds = useCallback(() => {
     const newTab: Tab = {
-      id: `compare-${Date.now()}`,
+      id: nextTabId('compare'),
       type: 'compare',
       label: 'Build Compare',
     };
@@ -97,7 +114,7 @@ function App() {
       return;
     }
     const newTab: Tab = {
-      id: `graph-${Date.now()}`,
+      id: nextTabId('graph'),
       type: 'graph',
       packageName,
       label: `Graph: ${packageName}`,
@@ -113,7 +130,7 @@ function App() {
       return;
     }
     const newTab: Tab = {
-      id: `reverse-${Date.now()}`,
+      id: nextTabId('reverse'),
       type: 'reverse',
       packageName,
       label: `Used by: ${packageName}`,
@@ -124,13 +141,19 @@ function App() {
 
   const handleImpactAnalysis = useCallback((packageName?: string) => {
     const newTab: Tab = {
-      id: `impact-${Date.now()}`,
+      id: nextTabId('impact'),
       type: 'impact',
       label: 'Impact Analysis',
       packageName,
     };
     setOpenTabs(prev => [...prev, newTab]);
     setActiveTabId(newTab.id);
+  }, []);
+
+  const closeAllTabs = useCallback(() => {
+    setOpenTabs([]);
+    setActiveTabId(null);
+    setTabSheetOpen(false);
   }, []);
 
   const closeTab = useCallback((tabId: string) => {
@@ -190,8 +213,132 @@ function App() {
     return tab.label;
   };
 
+  const tabItems = openTabs.map(tab => ({ id: tab.id, label: getTabLabel(tab) }));
+
+  const selectTab = (tabId: string) => {
+    setActiveTabId(tabId);
+    setTabSheetOpen(false);
+  };
+
+  const packageListView = (
+    <PackageList
+      packages={packageSite}
+      history={packageHistory}
+      selectedBuild={currentBuild}
+      selectedPackage={activeTab?.type === 'package' ? activeTab.packageName : null}
+      onSelectPackage={openPackageInTab}
+      searchQuery={searchQuery}
+      onSearchChange={setSearchQuery}
+      rowHeight={isMobile ? 60 : 48}
+    />
+  );
+
+  const tabContent = activeTab?.type === 'analysis' ? (
+    <PackageLogAnalysis
+      results={activeTab.results}
+      buildId={activeTab.buildId}
+      history={packageHistory}
+    />
+  ) : activeTab?.type === 'compare' ? (
+    <BuildCompare
+      history={packageHistory}
+    />
+  ) : activeTab?.type === 'graph' ? (
+    <DependencyGraph
+      rootPackage={activeTab.packageName}
+      packages={packageSite}
+      reverseIndex={reverseIndex}
+      onOpenPackageTab={openPackageInTab}
+      isMobile={isMobile}
+    />
+  ) : activeTab?.type === 'reverse' ? (
+    <ReverseDependencies
+      packageName={activeTab.packageName}
+      packages={packageSite}
+      reverseIndex={reverseIndex}
+      onOpenPackageTab={openPackageInTab}
+    />
+  ) : activeTab?.type === 'impact' ? (
+    <UpdateImpactAnalysis
+      history={packageHistory}
+      reverseIndex={reverseIndex}
+      initialPackage={activeTab.packageName}
+      onOpenPackageTab={openPackageInTab}
+    />
+  ) : (
+    <PackageDetails
+      pkg={activeTabPkg}
+      packages={packageSite}
+      history={packageHistory}
+      selectedBuild={currentBuild}
+      onOpenPackageTab={openPackageInTab}
+      onOpenGraph={openGraphInTab}
+      onOpenReverse={openReverseInTab}
+      onOpenImpact={handleImpactAnalysis}
+    />
+  );
+
+  // Phone layout: compact header, one tab at a time and a bottom navigation
+  // that carries every action the header has no room for.
+  if (isMobile) {
+    return (
+      <div className="h-full flex flex-col overflow-hidden bg-slate-50 dark:bg-slate-900" data-testid="mobile-layout">
+        <Header
+          compact
+          theme={theme}
+          onToggleTheme={toggleTheme}
+          builds={packageHistory.builds}
+          selectedBuild={currentBuild}
+          onSelectBuild={setSelectedBuild}
+          onUploadPackageLog={handleUploadPackageLog}
+          onCompareBuilds={handleCompareBuilds}
+          onImpactAnalysis={() => handleImpactAnalysis()}
+        />
+
+        <MobileTabBar
+          tabs={tabItems}
+          activeTabId={activeTabId}
+          sheetOpen={tabSheetOpen}
+          onOpenSheet={() => setTabSheetOpen(true)}
+          onCloseSheet={() => setTabSheetOpen(false)}
+          onSelectTab={selectTab}
+          onCloseTab={closeTab}
+          onCloseAllTabs={closeAllTabs}
+        />
+
+        <main className="flex-1 min-h-0 overflow-hidden">
+          {openTabs.length === 0 ? (
+            <MobileWelcome onBrowsePackages={() => setPackageSheetOpen(true)} />
+          ) : (
+            tabContent
+          )}
+        </main>
+
+        <MobileNav
+          theme={theme}
+          onToggleTheme={toggleTheme}
+          openTabCount={openTabs.length}
+          onOpenPackages={() => setPackageSheetOpen(true)}
+          onOpenTabs={() => (openTabs.length > 0 ? setTabSheetOpen(true) : setPackageSheetOpen(true))}
+          onCompareBuilds={handleCompareBuilds}
+          onImpactAnalysis={() => handleImpactAnalysis()}
+          onUploadPackageLog={handleUploadPackageLog}
+        />
+
+        <BottomSheet
+          open={packageSheetOpen}
+          title="Packages"
+          size="full"
+          onClose={() => setPackageSheetOpen(false)}
+        >
+          <div className="h-full">{packageListView}</div>
+        </BottomSheet>
+      </div>
+    );
+  }
+
   return (
-    <div className="h-full flex flex-col bg-slate-50 dark:bg-slate-900">
+    <div className="h-full flex flex-col bg-slate-50 dark:bg-slate-900" data-testid="desktop-layout">
       <Header
         theme={theme}
         onToggleTheme={toggleTheme}
@@ -201,42 +348,11 @@ function App() {
         onUploadPackageLog={handleUploadPackageLog}
         onCompareBuilds={handleCompareBuilds}
         onImpactAnalysis={() => handleImpactAnalysis()}
-        onToggleSidebar={() => setSidebarOpen(prev => !prev)}
       />
 
       <div className="flex-1 flex min-h-0">
-        {/* Mobile sidebar overlay */}
-        {sidebarOpen && (
-          <div
-            className="fixed inset-0 z-40 bg-black/50 md:hidden"
-            onClick={() => setSidebarOpen(false)}
-          />
-        )}
-
-        {/* Sidebar - overlay on mobile, static on desktop */}
-        <div className={`
-          fixed inset-y-0 left-0 z-50 w-80 transform transition-transform duration-200 ease-in-out md:relative md:z-auto md:transform-none md:transition-none md:w-80 lg:w-96 md:shrink-0
-          ${sidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
-        `}>
-          {/* Mobile close button */}
-          <button
-            onClick={() => setSidebarOpen(false)}
-            className="absolute top-3 right-3 z-10 p-1 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 md:hidden"
-            aria-label="Close sidebar"
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-          <PackageList
-            packages={packageSite}
-            history={packageHistory}
-            selectedBuild={currentBuild}
-            selectedPackage={activeTab?.type === 'package' ? activeTab.packageName : null}
-            onSelectPackage={openPackageInTab}
-            searchQuery={searchQuery}
-            onSearchChange={setSearchQuery}
-          />
+        <div className="w-80 lg:w-96 shrink-0">
+          {packageListView}
         </div>
 
         <div className="flex-1 min-w-0 flex flex-col">
@@ -268,6 +384,7 @@ function App() {
                       closeTab(tab.id);
                     }}
                     className="pr-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300"
+                    aria-label={`Close ${getTabLabel(tab)}`}
                     title="Close tab"
                   >
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -281,49 +398,7 @@ function App() {
 
           {/* Tab Content */}
           <div className="flex-1 min-h-0">
-            {activeTab?.type === 'analysis' ? (
-              <PackageLogAnalysis
-                results={activeTab.results}
-                buildId={activeTab.buildId}
-                history={packageHistory}
-              />
-            ) : activeTab?.type === 'compare' ? (
-              <BuildCompare
-                history={packageHistory}
-              />
-            ) : activeTab?.type === 'graph' ? (
-              <DependencyGraph
-                rootPackage={activeTab.packageName}
-                packages={packageSite}
-                reverseIndex={reverseIndex}
-                onOpenPackageTab={openPackageInTab}
-              />
-            ) : activeTab?.type === 'reverse' ? (
-              <ReverseDependencies
-                packageName={activeTab.packageName}
-                packages={packageSite}
-                reverseIndex={reverseIndex}
-                onOpenPackageTab={openPackageInTab}
-              />
-            ) : activeTab?.type === 'impact' ? (
-              <UpdateImpactAnalysis
-                history={packageHistory}
-                reverseIndex={reverseIndex}
-                initialPackage={activeTab.packageName}
-                onOpenPackageTab={openPackageInTab}
-              />
-            ) : (
-              <PackageDetails
-                pkg={activeTabPkg}
-                packages={packageSite}
-                history={packageHistory}
-                selectedBuild={currentBuild}
-                onOpenPackageTab={openPackageInTab}
-                onOpenGraph={openGraphInTab}
-                onOpenReverse={openReverseInTab}
-                onOpenImpact={handleImpactAnalysis}
-              />
-            )}
+            {tabContent}
           </div>
         </div>
       </div>
@@ -332,6 +407,23 @@ function App() {
         This is an independent, community-driven project — not affiliated with, endorsed by, or sponsored by Beckhoff Automation GmbH &amp; Co. KG.
         "TwinCAT" and "TwinCAT/BSD" are registered trademarks of Beckhoff Automation GmbH &amp; Co. KG.
       </footer>
+    </div>
+  );
+}
+
+function MobileWelcome({ onBrowsePackages }: { onBrowsePackages: () => void }) {
+  return (
+    <div className="h-full flex flex-col items-center justify-center gap-4 px-8 text-center text-slate-500 dark:text-slate-400">
+      <svg className="w-14 h-14 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+      </svg>
+      <p>Pick a package to see its details, or use the tools in the bottom bar.</p>
+      <button
+        onClick={onBrowsePackages}
+        className="min-h-12 px-5 rounded-xl bg-twincat-red text-white font-medium"
+      >
+        Browse packages
+      </button>
     </div>
   );
 }

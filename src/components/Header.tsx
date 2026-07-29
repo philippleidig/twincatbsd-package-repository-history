@@ -10,10 +10,14 @@ interface HeaderProps {
   onUploadPackageLog: (content: string) => void;
   onCompareBuilds: () => void;
   onImpactAnalysis: () => void;
-  onToggleSidebar: () => void;
+  /**
+   * Phone layout: only branding and the build selector stay in the header,
+   * every action moves into the bottom navigation.
+   */
+  compact?: boolean;
 }
 
-export function Header({ theme, onToggleTheme, builds, selectedBuild, onSelectBuild, onUploadPackageLog, onCompareBuilds, onImpactAnalysis, onToggleSidebar }: HeaderProps) {
+export function Header({ theme, onToggleTheme, builds, selectedBuild, onSelectBuild, onUploadPackageLog, onCompareBuilds, onImpactAnalysis, compact = false }: HeaderProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,18 +36,33 @@ export function Header({ theme, onToggleTheme, builds, selectedBuild, onSelectBu
   const sortedBuilds = Object.entries(builds).sort(([a], [b]) => Number(b) - Number(a));
   const currentBuild = builds[selectedBuild];
 
-  return (
-    <header className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-3 md:px-4 py-3 flex items-center justify-between shadow-xs gap-2">
-      <div className="flex items-center gap-2 md:gap-4">
-        <button
-          onClick={onToggleSidebar}
-          className="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors md:hidden"
-          aria-label="Toggle package list"
+  if (compact) {
+    return (
+      <header className="shrink-0 bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-3 py-2 flex items-center justify-between gap-3 shadow-xs">
+        <img src="./images/twincatbsd.svg" alt="TwinCAT/BSD" className="h-6 shrink-0" />
+
+        <label htmlFor="build-select" className="sr-only">
+          Build
+        </label>
+        <select
+          id="build-select"
+          value={selectedBuild}
+          onChange={(e) => onSelectBuild(e.target.value)}
+          className="max-w-40 min-h-11 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-2 py-2 text-sm font-medium text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-twincat-red"
         >
-          <svg className="w-5 h-5 text-slate-600 dark:text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+          {sortedBuilds.map(([buildId]) => (
+            <option key={buildId} value={buildId}>
+              Build {buildId}
+            </option>
+          ))}
+        </select>
+      </header>
+    );
+  }
+
+  return (
+    <header className="shrink-0 bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-3 md:px-4 py-3 flex items-center justify-between shadow-xs gap-2">
+      <div className="flex items-center gap-2 md:gap-4">
         <img
           src="./images/twincatbsd.svg"
           alt="TwinCAT/BSD"

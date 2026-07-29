@@ -104,7 +104,7 @@ export function BuildCompare({ history, initialBuildA, initialBuildB }: BuildCom
               <select
                 value={buildA}
                 onChange={(e) => setBuildA(e.target.value)}
-                className="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 text-sm font-medium text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-twincat-red"
+                className="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 min-h-11 md:min-h-0 text-sm font-medium text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-twincat-red"
               >
                 {sortedBuilds.map(([buildId, info]) => (
                   <option key={buildId} value={buildId}>
@@ -127,7 +127,7 @@ export function BuildCompare({ history, initialBuildA, initialBuildB }: BuildCom
               <select
                 value={buildB}
                 onChange={(e) => setBuildB(e.target.value)}
-                className="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 text-sm font-medium text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-twincat-red"
+                className="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 min-h-11 md:min-h-0 text-sm font-medium text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-twincat-red"
               >
                 {sortedBuilds.map(([buildId, info]) => (
                   <option key={buildId} value={buildId}>
@@ -140,7 +140,7 @@ export function BuildCompare({ history, initialBuildA, initialBuildB }: BuildCom
             <button
               onClick={handleCompare}
               disabled={!buildA || !buildB || buildA === buildB}
-              className="px-5 py-2 rounded-lg bg-twincat-red text-white font-medium text-sm hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full sm:w-auto px-5 py-2 min-h-11 md:min-h-0 rounded-lg bg-twincat-red text-white font-medium text-sm hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Compare
             </button>
@@ -213,7 +213,7 @@ export function BuildCompare({ history, initialBuildA, initialBuildB }: BuildCom
           <div className="flex flex-wrap gap-2 mb-4">
             <button
               onClick={() => setFilter('all')}
-              className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${
+              className={`px-4 py-1.5 min-h-11 md:min-h-0 text-sm font-medium rounded-lg transition-colors ${
                 filter === 'all'
                   ? 'bg-twincat-red text-white'
                   : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
@@ -223,7 +223,7 @@ export function BuildCompare({ history, initialBuildA, initialBuildB }: BuildCom
             </button>
             <button
               onClick={() => setFilter('added')}
-              className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${
+              className={`px-4 py-1.5 min-h-11 md:min-h-0 text-sm font-medium rounded-lg transition-colors ${
                 filter === 'added'
                   ? 'bg-green-600 text-white'
                   : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
@@ -233,7 +233,7 @@ export function BuildCompare({ history, initialBuildA, initialBuildB }: BuildCom
             </button>
             <button
               onClick={() => setFilter('deleted')}
-              className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${
+              className={`px-4 py-1.5 min-h-11 md:min-h-0 text-sm font-medium rounded-lg transition-colors ${
                 filter === 'deleted'
                   ? 'bg-red-600 text-white'
                   : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
@@ -243,7 +243,7 @@ export function BuildCompare({ history, initialBuildA, initialBuildB }: BuildCom
             </button>
             <button
               onClick={() => setFilter('modified')}
-              className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${
+              className={`px-4 py-1.5 min-h-11 md:min-h-0 text-sm font-medium rounded-lg transition-colors ${
                 filter === 'modified'
                   ? 'bg-slate-600 text-white'
                   : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
@@ -257,8 +257,8 @@ export function BuildCompare({ history, initialBuildA, initialBuildB }: BuildCom
         {/* Results Table */}
         {results && (
           <div className="bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
-            <div className="overflow-auto">
-              <table className="w-full text-sm">
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[36rem] text-sm">
                 <thead>
                   <tr className="text-left border-b border-slate-200 dark:border-slate-700">
                     <th className="px-4 py-3 font-medium text-slate-500 dark:text-slate-400">Status</th>

@@ -9,8 +9,19 @@ corepack enable            # picks up the pnpm version pinned in package.json
 pnpm install               # install dependencies
 pnpm dev                   # start the dev server
 pnpm build                 # type-check and build into ./docs
+pnpm test                  # run the unit and component tests (vitest)
+pnpm test:watch            # same, in watch mode
 pnpm audit                 # check dependencies for known vulnerabilities
 ```
+
+### Layouts
+
+The browser ships two layouts driven by `useIsMobile()` (`max-width: 767px`):
+
+- **Desktop** — static package sidebar, horizontal tab strip, dependency graph canvas.
+- **Phone** — compact header (branding and build selector only), a bottom navigation that
+  carries the tools, bottom sheets for the package list, the open tabs and the menus, and a
+  list view instead of the drag-and-drop dependency graph.
 
 The Python scripts that refresh the package data are unaffected and still use `pip install -r requirements.txt`.
 

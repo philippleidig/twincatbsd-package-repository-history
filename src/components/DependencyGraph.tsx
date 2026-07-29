@@ -7,7 +7,11 @@ interface DependencyGraphProps {
   packages: PackageSite;
   reverseIndex: Map<string, string[]>;
   onOpenPackageTab?: (packageName: string) => void;
+  /** Phones default to the list view — dragging nodes around is unusable on a small touch screen. */
+  isMobile?: boolean;
 }
+
+type ViewMode = 'graph' | 'list';
 
 type NodeKind = 'focus' | 'dependency' | 'dependent';
 
@@ -30,9 +34,10 @@ const COLORS = {
   dependent: '#059669',
 };
 
-export function DependencyGraph({ rootPackage, packages, reverseIndex, onOpenPackageTab }: DependencyGraphProps) {
+export function DependencyGraph({ rootPackage, packages, reverseIndex, onOpenPackageTab, isMobile = false }: DependencyGraphProps) {
   const [focus, setFocus] = useState(rootPackage);
   const [history, setHistory] = useState<string[]>([]);
+  const [view, setView] = useState<ViewMode>(isMobile ? 'list' : 'graph');
   const [isDark, setIsDark] = useState(() =>
     typeof document !== 'undefined' && document.documentElement.classList.contains('dark')
   );
@@ -65,6 +70,11 @@ export function DependencyGraph({ rootPackage, packages, reverseIndex, onOpenPac
     setHistory([]);
     setFocus(rootPackage);
   }, [rootPackage]);
+
+  // Follow the layout: switching to a phone-sized viewport drops the canvas.
+  useEffect(() => {
+    setView(isMobile ? 'list' : 'graph');
+  }, [isMobile]);
 
   // Watch dark-mode class so node/link colours stay in sync with the theme.
   useEffect(() => {
@@ -118,6 +128,8 @@ export function DependencyGraph({ rootPackage, packages, reverseIndex, onOpenPac
 
   // Build / rebuild the D3 force graph whenever the focus, theme or data changes.
   useEffect(() => {
+    if (view !== 'graph') return;
+
     const svgEl = svgRef.current;
     const container = containerRef.current;
     if (!svgEl || !container) return;
@@ -250,7 +262,7 @@ export function DependencyGraph({ rootPackage, packages, reverseIndex, onOpenPac
     return () => {
       simulation.stop();
     };
-  }, [graphData, isDark, navigateTo]);
+  }, [graphData, isDark, navigateTo, view]);
 
   return (
     <div className="h-full flex flex-col bg-slate-50 dark:bg-slate-900">
@@ -261,7 +273,9 @@ export function DependencyGraph({ rootPackage, packages, reverseIndex, onOpenPac
         </h1>
         <p className="text-slate-600 dark:text-slate-400">
           Browse dependencies and dependents around <span className="font-semibold text-twincat-red">{focus}</span>.
-          Drag to rearrange, scroll to zoom, click a node to re-center, double-click to open it.
+          {view === 'graph'
+            ? ' Drag to rearrange, scroll to zoom, click a node to re-center, double-click to open it.'
+            : ' Tap an entry to re-center on it, or open it in its own tab.'}
         </p>
       </div>
 
@@ -271,7 +285,7 @@ export function DependencyGraph({ rootPackage, packages, reverseIndex, onOpenPac
           <button
             onClick={goBack}
             disabled={history.length === 0}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center justify-center gap-1.5 px-3 py-1.5 min-h-11 md:min-h-0 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -281,42 +295,93 @@ export function DependencyGraph({ rootPackage, packages, reverseIndex, onOpenPac
           <button
             onClick={reset}
             disabled={focus === rootPackage && history.length === 0}
-            className="px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-3 py-1.5 min-h-11 md:min-h-0 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Reset to {truncate(rootPackage, 18)}
           </button>
           {onOpenPackageTab && (
             <button
               onClick={() => onOpenPackageTab(focus)}
-              className="px-3 py-1.5 rounded-lg bg-twincat-red text-white text-sm font-medium hover:bg-red-700 transition-colors"
+              className="px-3 py-1.5 min-h-11 md:min-h-0 rounded-lg bg-twincat-red text-white text-sm font-medium hover:bg-red-700 transition-colors"
             >
               Open {truncate(focus, 18)}
             </button>
           )}
 
-          {/* Legend */}
-          <div className="flex items-center gap-3 ml-auto text-xs text-slate-500 dark:text-slate-400">
-            <LegendDot color={COLORS.dependent} label={`Dependents (${graphData.dependentsTotal})`} />
-            <LegendDot color={COLORS.focus} label="Focused" />
-            <LegendDot color={COLORS.dependency} label={`Dependencies (${graphData.depsTotal})`} />
+          <div className="flex items-center gap-3 ml-auto">
+            {/* Legend - only meaningful for the canvas */}
+            {view === 'graph' && (
+              <div className="hidden md:flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
+                <LegendDot color={COLORS.dependent} label={`Dependents (${graphData.dependentsTotal})`} />
+                <LegendDot color={COLORS.focus} label="Focused" />
+                <LegendDot color={COLORS.dependency} label={`Dependencies (${graphData.depsTotal})`} />
+              </div>
+            )}
+
+            <div role="group" aria-label="View mode" className="flex rounded-lg bg-slate-200 dark:bg-slate-700 p-0.5">
+              <button
+                onClick={() => setView('list')}
+                aria-pressed={view === 'list'}
+                className={`px-4 py-1.5 min-h-11 md:min-h-0 rounded-md text-sm font-medium transition-colors ${
+                  view === 'list' ? 'bg-white dark:bg-slate-800 text-twincat-red' : 'text-slate-600 dark:text-slate-300'
+                }`}
+              >
+                List
+              </button>
+              <button
+                onClick={() => setView('graph')}
+                aria-pressed={view === 'graph'}
+                className={`px-4 py-1.5 min-h-11 md:min-h-0 rounded-md text-sm font-medium transition-colors ${
+                  view === 'graph' ? 'bg-white dark:bg-slate-800 text-twincat-red' : 'text-slate-600 dark:text-slate-300'
+                }`}
+              >
+                Graph
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Graph canvas */}
-        <div
-          ref={containerRef}
-          className="flex-1 min-h-[420px] bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden"
-        >
-          {graphData.depsTotal === 0 && graphData.dependentsTotal === 0 ? (
-            <div className="h-full flex items-center justify-center p-12 text-center text-slate-500 dark:text-slate-400">
-              <p className="font-medium">{focus} has no dependencies and no dependents.</p>
-            </div>
-          ) : (
+        {graphData.depsTotal === 0 && graphData.dependentsTotal === 0 ? (
+          <div className="flex-1 flex items-center justify-center p-8 text-center bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400">
+            <p className="font-medium">{focus} has no dependencies and no dependents.</p>
+          </div>
+        ) : view === 'graph' ? (
+          /* Graph canvas */
+          <div
+            ref={containerRef}
+            data-testid="dependency-graph-canvas"
+            className="flex-1 min-h-[420px] bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden"
+          >
             <svg ref={svgRef} className="w-full h-full" />
-          )}
-        </div>
+          </div>
+        ) : (
+          <div data-testid="dependency-graph-list" className="flex-1 min-h-0 overflow-auto space-y-4">
+            <RelationList
+              title="Dependencies"
+              emptyText={`${focus} has no dependencies.`}
+              accent={COLORS.dependency}
+              names={graphData.nodes.filter(n => n.kind === 'dependency').map(n => n.id)}
+              total={graphData.depsTotal}
+              hidden={graphData.depsHidden}
+              packages={packages}
+              onFocus={navigateTo}
+              onOpen={onOpenPackageTab}
+            />
+            <RelationList
+              title="Dependents"
+              emptyText={`No package depends on ${focus}.`}
+              accent={COLORS.dependent}
+              names={graphData.nodes.filter(n => n.kind === 'dependent').map(n => n.id)}
+              total={graphData.dependentsTotal}
+              hidden={graphData.dependentsHidden}
+              packages={packages}
+              onFocus={navigateTo}
+              onOpen={onOpenPackageTab}
+            />
+          </div>
+        )}
 
-        {(graphData.depsHidden > 0 || graphData.dependentsHidden > 0) && (
+        {view === 'graph' && (graphData.depsHidden > 0 || graphData.dependentsHidden > 0) && (
           <p className="mt-3 text-xs text-amber-600 dark:text-amber-400">
             {graphData.dependentsHidden > 0 && `${graphData.dependentsHidden} more dependent(s) hidden. `}
             {graphData.depsHidden > 0 && `${graphData.depsHidden} more dependency(ies) hidden. `}
@@ -325,6 +390,73 @@ export function DependencyGraph({ rootPackage, packages, reverseIndex, onOpenPac
         )}
       </div>
     </div>
+  );
+}
+
+function RelationList({
+  title,
+  emptyText,
+  accent,
+  names,
+  total,
+  hidden,
+  packages,
+  onFocus,
+  onOpen,
+}: {
+  title: string;
+  emptyText: string;
+  accent: string;
+  names: string[];
+  total: number;
+  hidden: number;
+  packages: PackageSite;
+  onFocus: (name: string) => void;
+  onOpen?: (name: string) => void;
+}) {
+  return (
+    <section className="bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+      <h2 className="flex items-center gap-2 px-4 py-3 border-b border-slate-200 dark:border-slate-700 font-semibold text-slate-800 dark:text-slate-200">
+        <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: accent }} aria-hidden="true" />
+        {title}
+        <span className="text-sm font-normal text-slate-500 dark:text-slate-400">({total})</span>
+      </h2>
+
+      {names.length === 0 ? (
+        <p className="px-4 py-4 text-sm text-slate-500 dark:text-slate-400">{emptyText}</p>
+      ) : (
+        <ul className="divide-y divide-slate-100 dark:divide-slate-700/50">
+          {names.map(name => (
+            <li key={name} className="flex items-stretch">
+              <button
+                onClick={() => onFocus(name)}
+                className="flex-1 min-w-0 min-h-14 px-4 py-3 text-left hover:bg-slate-50 dark:hover:bg-slate-700/50"
+              >
+                <span className="block truncate font-medium text-slate-800 dark:text-slate-200">{name}</span>
+                <span className="block text-xs text-slate-500 dark:text-slate-400">
+                  {packages[name]?.version || 'unknown version'}
+                </span>
+              </button>
+              {onOpen && (
+                <button
+                  onClick={() => onOpen(name)}
+                  aria-label={`Open ${name}`}
+                  className="px-4 text-sm font-medium text-twincat-red hover:bg-slate-50 dark:hover:bg-slate-700/50"
+                >
+                  Open
+                </button>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {hidden > 0 && (
+        <p className="px-4 py-3 text-xs text-amber-600 dark:text-amber-400 border-t border-slate-200 dark:border-slate-700">
+          {hidden} more not shown — re-center on an entry to explore further.
+        </p>
+      )}
+    </section>
   );
 }
 
