@@ -10,9 +10,10 @@ interface PackageListProps {
   onSelectPackage: (packageName: string) => void;
   searchQuery: string;
   onSearchChange: (query: string) => void;
+  /** Taller rows give thumb-sized touch targets on phones. */
+  rowHeight?: number;
 }
 
-const ITEM_HEIGHT = 48;
 const OVERSCAN = 5;
 
 export function PackageList({
@@ -23,7 +24,9 @@ export function PackageList({
   onSelectPackage,
   searchQuery,
   onSearchChange,
+  rowHeight = 48,
 }: PackageListProps) {
+  const ITEM_HEIGHT = rowHeight;
   const containerRef = useRef<HTMLDivElement>(null);
   const [scrollTop, setScrollTop] = useState(0);
   const [containerHeight, setContainerHeight] = useState(600);
@@ -97,8 +100,9 @@ export function PackageList({
             const actualIndex = startIndex + index;
 
             return (
-              <div
+              <button
                 key={name}
+                type="button"
                 style={{
                   position: 'absolute',
                   top: actualIndex * ITEM_HEIGHT,
@@ -106,7 +110,8 @@ export function PackageList({
                   right: 0,
                   height: ITEM_HEIGHT,
                 }}
-                className={`flex items-center px-4 cursor-pointer border-b border-slate-100 dark:border-slate-700/50 transition-colors ${
+                aria-current={isSelected ? 'true' : undefined}
+                className={`w-full flex items-center text-left px-4 cursor-pointer border-b border-slate-100 dark:border-slate-700/50 transition-colors ${
                   isSelected
                     ? 'bg-twincat-red/10 border-l-2 border-l-twincat-red'
                     : 'hover:bg-slate-50 dark:hover:bg-slate-700/50'
@@ -128,7 +133,7 @@ export function PackageList({
                     N/A
                   </span>
                 )}
-              </div>
+              </button>
             );
           })}
         </div>

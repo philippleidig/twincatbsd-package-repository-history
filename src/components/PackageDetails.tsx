@@ -47,41 +47,47 @@ export function PackageDetails({ pkg, packages, history, selectedBuild, onOpenPa
         <h1 className="text-xl md:text-2xl font-bold text-slate-800 dark:text-slate-100 mb-1 break-all">
           {pkg.name}
         </h1>
-        <p className="text-slate-600 dark:text-slate-400 mb-3">
+        <p className="text-slate-600 dark:text-slate-400 mb-3 line-clamp-2 md:line-clamp-none">
           {pkg.comment}
         </p>
         <div className="flex flex-wrap gap-2">
           {onOpenGraph && (
             <button
               onClick={() => onOpenGraph(pkg.name)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors text-sm font-medium text-slate-700 dark:text-slate-300"
+              aria-label="Dependency Graph"
+              className="flex items-center gap-1.5 px-3 py-1.5 min-h-11 md:min-h-0 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors text-sm font-medium text-slate-700 dark:text-slate-300"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7a3 3 0 11-6 0 3 3 0 016 0zM18 11a2 2 0 100-4 2 2 0 000 4zM18 17a2 2 0 100-4 2 2 0 000 4zM6 19a2 2 0 100-4 2 2 0 000 4zM10 9.5L16 7m-6 5l6 2m-9 .5l2-2" />
               </svg>
-              Dependency Graph
+              <span className="sm:hidden">Graph</span>
+              <span className="hidden sm:inline">Dependency Graph</span>
             </button>
           )}
           {onOpenReverse && (
             <button
               onClick={() => onOpenReverse(pkg.name)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors text-sm font-medium text-slate-700 dark:text-slate-300"
+              aria-label="Reverse Dependencies"
+              className="flex items-center gap-1.5 px-3 py-1.5 min-h-11 md:min-h-0 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors text-sm font-medium text-slate-700 dark:text-slate-300"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
               </svg>
-              Reverse Dependencies
+              <span className="sm:hidden">Used by</span>
+              <span className="hidden sm:inline">Reverse Dependencies</span>
             </button>
           )}
           {onOpenImpact && (
             <button
               onClick={() => onOpenImpact(pkg.name)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors text-sm font-medium text-slate-700 dark:text-slate-300"
+              aria-label="Impact Analysis"
+              className="flex items-center gap-1.5 px-3 py-1.5 min-h-11 md:min-h-0 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors text-sm font-medium text-slate-700 dark:text-slate-300"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
-              Impact Analysis
+              <span className="sm:hidden">Impact</span>
+              <span className="hidden sm:inline">Impact Analysis</span>
             </button>
           )}
         </div>
@@ -94,7 +100,7 @@ export function PackageDetails({ pkg, packages, history, selectedBuild, onOpenPa
       <div className={`flex gap-6 ${hasDependencies ? 'flex-col xl:flex-row' : ''}`}>
         {/* Left column - Package info */}
         <div className={hasDependencies ? 'xl:w-1/2 min-w-0' : 'max-w-3xl'}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6">
             <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
               <div className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-1">
                 Current Version
@@ -154,7 +160,7 @@ export function PackageDetails({ pkg, packages, history, selectedBuild, onOpenPa
             </div>
             <div className="p-4">
               <div className="max-h-64 overflow-auto">
-                <table className="w-full text-sm">
+                <table className="w-full min-w-[20rem] text-sm">
                   <thead>
                     <tr className="text-left text-slate-500 dark:text-slate-400">
                       <th className="pb-2 font-medium">Build</th>
