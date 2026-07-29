@@ -1,5 +1,19 @@
 # TwinCAT/BSD 14 - Package History
 
+## Development
+
+The package browser is a React + Vite application. [pnpm](https://pnpm.io/) is the package manager for this repository — `pnpm-lock.yaml` is the single source of truth, there is no `package-lock.json`.
+
+```sh
+corepack enable            # picks up the pnpm version pinned in package.json
+pnpm install               # install dependencies
+pnpm dev                   # start the dev server
+pnpm build                 # type-check and build into ./docs
+pnpm audit                 # check dependencies for known vulnerabilities
+```
+
+The Python scripts that refresh the package data are unaffected and still use `pip install -r requirements.txt`.
+
 ## Disclaimer
 
 This is an independent, community-driven project and is **not affiliated with, endorsed by, or sponsored by Beckhoff Automation GmbH & Co. KG**. "TwinCAT" and "TwinCAT/BSD" are registered trademarks of Beckhoff Automation GmbH & Co. KG. All trademarks belong to their respective owners. The use of these names is solely for descriptive and informational purposes and does not imply any association with or endorsement by the trademark holder.

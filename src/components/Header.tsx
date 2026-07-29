@@ -33,7 +33,7 @@ export function Header({ theme, onToggleTheme, builds, selectedBuild, onSelectBu
   const currentBuild = builds[selectedBuild];
 
   return (
-    <header className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-3 md:px-4 py-3 flex items-center justify-between shadow-sm gap-2">
+    <header className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-3 md:px-4 py-3 flex items-center justify-between shadow-xs gap-2">
       <div className="flex items-center gap-2 md:gap-4">
         <button
           onClick={onToggleSidebar}
