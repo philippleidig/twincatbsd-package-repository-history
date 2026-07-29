@@ -120,26 +120,26 @@ export function PackageDetails({ pkg, packages, history, selectedBuild, onOpenPa
             </div>
             <div className="p-4 space-y-3 text-sm">
               <div className="flex flex-col sm:flex-row">
-                <span className="w-28 flex-shrink-0 font-medium text-slate-500 dark:text-slate-400">Maintainer</span>
+                <span className="w-28 shrink-0 font-medium text-slate-500 dark:text-slate-400">Maintainer</span>
                 <a href={`mailto:${pkg.maintainer}`} className="text-twincat-red hover:underline">
                   {pkg.maintainer}
                 </a>
               </div>
               <div className="flex flex-col sm:flex-row">
-                <span className="w-28 flex-shrink-0 font-medium text-slate-500 dark:text-slate-400">Origin</span>
+                <span className="w-28 shrink-0 font-medium text-slate-500 dark:text-slate-400">Origin</span>
                 <span className="text-slate-700 dark:text-slate-300 break-all">{pkg.origin}</span>
               </div>
               <div className="flex flex-col sm:flex-row">
-                <span className="w-28 flex-shrink-0 font-medium text-slate-500 dark:text-slate-400">Architecture</span>
+                <span className="w-28 shrink-0 font-medium text-slate-500 dark:text-slate-400">Architecture</span>
                 <span className="text-slate-700 dark:text-slate-300">{pkg.arch}</span>
               </div>
               <div className="flex flex-col sm:flex-row">
-                <span className="w-28 flex-shrink-0 font-medium text-slate-500 dark:text-slate-400">License</span>
+                <span className="w-28 shrink-0 font-medium text-slate-500 dark:text-slate-400">License</span>
                 <span className="text-slate-700 dark:text-slate-300">{pkg.licenses?.join(', ') || 'N/A'}</span>
               </div>
               {pkg.www && (
                 <div className="flex flex-col sm:flex-row">
-                  <span className="w-28 flex-shrink-0 font-medium text-slate-500 dark:text-slate-400">Website</span>
+                  <span className="w-28 shrink-0 font-medium text-slate-500 dark:text-slate-400">Website</span>
                   <a href={pkg.www} target="_blank" rel="noopener noreferrer" className="text-twincat-red hover:underline break-all">
                     {pkg.www}
                   </a>

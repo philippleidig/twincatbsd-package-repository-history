@@ -215,7 +215,7 @@ function App() {
 
         {/* Sidebar - overlay on mobile, static on desktop */}
         <div className={`
-          fixed inset-y-0 left-0 z-50 w-80 transform transition-transform duration-200 ease-in-out md:relative md:z-auto md:transform-none md:transition-none md:w-80 lg:w-96 md:flex-shrink-0
+          fixed inset-y-0 left-0 z-50 w-80 transform transition-transform duration-200 ease-in-out md:relative md:z-auto md:transform-none md:transition-none md:w-80 lg:w-96 md:shrink-0
           ${sidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
         `}>
           {/* Mobile close button */}
@@ -328,7 +328,7 @@ function App() {
         </div>
       </div>
 
-      <footer className="flex-shrink-0 border-t border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-4 py-2 text-center text-xs text-slate-500 dark:text-slate-400">
+      <footer className="shrink-0 border-t border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-4 py-2 text-center text-xs text-slate-500 dark:text-slate-400">
         This is an independent, community-driven project — not affiliated with, endorsed by, or sponsored by Beckhoff Automation GmbH &amp; Co. KG.
         "TwinCAT" and "TwinCAT/BSD" are registered trademarks of Beckhoff Automation GmbH &amp; Co. KG.
       </footer>
