@@ -1,4 +1,17 @@
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="public/images/twincatbsd-dark.svg">
+  <img src="public/images/twincatbsd.svg" alt="TwinCAT/BSD" width="280">
+</picture>
+
 # TwinCAT/BSD 14 - Package History
+
+### [🔎 Open the Package Browser](https://philippleidig.github.io/twincatbsd-package-repository-history/)
+
+Browse every package of the TwinCAT/BSD repository, compare builds, inspect dependencies and analyse the impact of an update — directly in your browser.
+
+</div>
 
 ## Development
 
