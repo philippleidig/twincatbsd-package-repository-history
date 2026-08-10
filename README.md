@@ -71,3 +71,4 @@ This is an independent, community-driven project and is **not affiliated with, e
 | 319475 | 2026-04-29 | 14.4-RELEASE-p2 | 1798 | 2026-05-10 |
 | 334630 | 2026-05-29 | 14.4-RELEASE-p5 | 1798 | 2026-06-10 |
 | 347903 | 2026-05-21 | 14.4-RELEASE-p5 | 1859 | 2026-07-10 |
+| 347903 | 2026-05-21 | 14.4-RELEASE-p5 | 1859 | 2026-08-10 |
